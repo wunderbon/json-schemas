@@ -1,0 +1,45 @@
+{
+  "name": "@wunderbon/json-schemas",
+  "description": "JSON schemas definitions for models used by wunderbon applications.",
+  "homepage": "https://bitbucket.org/wunderbon/json-schemas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/wunderbon/json-schemas.git"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/wunderbon/json-schemas/issues"
+  },
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^8.9.3"
+  },
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set NODE_ENV=production && node ./server.js",
+    "development": "set NODE_ENV=development && nodemon -L ./server.js"
+  },
+  "keywords": [
+    "json",
+    "schema",
+    "wunderbon",
+    "model"
+  ],
+  "author": "Benjamin Carl",
+  "maintainers": [
+    {
+      "name": "Benjamin Carl",
+      "email": "benjamin.carl@wunderbon.io",
+      "web": "https://developer.wunderbon.io"
+    }
+  ],
+  "devDependencies": {
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "node-docson": "^0.4.6",
+    "nodemon": "^1.17.4",
+    "serve-static": "^1.13.2",
+    "showdown": "^1.8.6"
+  }
+}
