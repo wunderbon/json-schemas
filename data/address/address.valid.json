@@ -1,0 +1,12 @@
+{
+  "street": {
+    "name": "Santa Cruz Ave",
+    "number": 2160
+  },
+  "zip": "CA 94025",
+  "city": "West Menlo Park",
+  "country": "US",
+  "gps": {
+
+  }
+}
