@@ -3,20 +3,24 @@
   "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/gps/gps.schema.json",
   "title": "GPS",
   "description": "A GPS coordinates representation in wunderbon domain.",
-  "type": "object",
-  "properties": {
-    "latitude": {
-      "type": "number"
-    },
-    "longitude": {
-      "type": "number"
+  "definitions": {
+    "gps": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "latitude",
+        "longitude"
+      ]
     }
-  },
-  "additionalProperties": false,
-  "required": [
-    "latitude",
-    "longitude"
-  ]
+  }
 }
 
 

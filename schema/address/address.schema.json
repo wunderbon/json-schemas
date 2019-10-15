@@ -295,7 +295,7 @@
       "maxLength": 2
     },
     "gps": {
-      "$ref": "#../gps/gps.schema.json"
+      "$ref": "../gps/gps.schema.json#/definitions/gps"
     }
   },
   "additionalProperties": false,
