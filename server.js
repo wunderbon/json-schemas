@@ -13,7 +13,7 @@ var showdown    = require('showdown');
 var info        = require('./package.json');
 var template;
 
-var webserverPort = process.env.WUNDERBON_DATA_STRUCTURE_MODELS_PORT || 8080;
+var webserverPort = process.env.WUNDERBON_JSON_SCHEMAS_PORT || 8080;
 
 /**
  * Live reload middleware of JSON schemes below "schema" directory.

@@ -1,7 +1,8 @@
 {
   "street": {
     "name": "Santa Cruz Ave",
-    "number": 2160
+    "number": 2160,
+    "additional": "App. 23"
   },
   "zip": "CA 94025",
   "city": "West Menlo Park",
@@ -9,5 +10,6 @@
   "gps": {
     "latitude": 37.426473,
     "longitude": -122.193146
-  }
+  },
+  "www": "ffff"
 }
