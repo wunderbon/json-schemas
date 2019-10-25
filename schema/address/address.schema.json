@@ -5,6 +5,9 @@
   "description": "An address in wunderbon domain.",
   "type": "object",
   "properties": {
+    "name": {
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/name.schema.json"
+    },
     "street": {
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/street/street.schema.json"
     },
@@ -30,6 +33,7 @@
   },
   "additionalProperties": false,
   "required": [
+    "name",
     "street",
     "zip",
     "city",
