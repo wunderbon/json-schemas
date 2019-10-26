@@ -5,13 +5,22 @@
   "description": "A schema for legal entity name representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-    "name": {
+    "entityName": {
       "type": "string",
       "minLength": 3,
       "maxLength": 255
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
+      "pattern": "^[A-Za-z-\\d\\ ]+$"
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "required": [
+    "name"
+  ]
 }
 
 
