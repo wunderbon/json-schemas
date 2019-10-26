@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/private/name.schema.json",
+  "title": "Name-Private",
+  "description": "A schema for PRIVATE name representation of private persons or legal entities in wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "salutation": {
+      "type": "string",
+      "enum": [
+        "Mrs",
+        "Mr",
+        "Ms"
+      ]
+    },
+    "firstName": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 255
+    },
+    "lastName": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 255
+    }
+  },
+  "required": [
+    "firstName",
+    "lastName"
+  ],
+  "additionalProperties": false
+}
+
+

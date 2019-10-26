@@ -6,7 +6,14 @@
   "type": "object",
   "properties": {
     "name": {
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/name.schema.json"
+      "oneOf": [
+        {
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/private/name.schema.json"
+        },
+        {
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/legal/name.schema.json"
+        }
+      ]
     },
     "street": {
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/street/street.schema.json"
