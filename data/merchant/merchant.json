@@ -1,11 +1,12 @@
 {
   "name": {
-    "entityName": "Aldi Einkauf GmbH & Co. oHG Süd",
-    "displayName": "ALDI Süd"
+    "entityName": "Foo",
+    "displayName": "Foo"
   },
   "address": {
     "name": {
-      "$ref":  "#/name/displayName"
+      "firstName": "",
+      "lastName": ""
     },
     "street": {
       "name": "Burgstraße",
@@ -20,7 +21,7 @@
     }
   },
   "communication": {
-
+    "phone": []
   },
   "taxId": "DE127135609"
 }
