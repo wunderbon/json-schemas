@@ -11,73 +11,6 @@
   "description": "Merchant representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-    "name": {
-      "oneOf": [
-        {
-          "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/legal/name.schema.json",
-          "$schema": "http://json-schema.org/draft-07/schema#",
-          "title": "Legal Entity",
-          "description": "A schema for legal entity name representation within the wunderbon domain.",
-          "type": "object",
-          "properties": {
-            "entityName": {
-              "type": "string",
-              "minLength": 3,
-              "maxLength": 255
-            },
-            "displayName": {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 255
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "entityName"
-          ]
-        },
-        {
-          "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/private/name.schema.json",
-          "$schema": "http://json-schema.org/draft-07/schema#",
-          "version": "0.0.1",
-          "contact": {
-            "name": "wunderbon support",
-            "url": "https://wunderbon.io/support",
-            "email": "api-support@wunderbon.io"
-          },
-          "title": "Private Person",
-          "description": "A schema for private persons name representation within the wunderbon domain.",
-          "type": "object",
-          "properties": {
-            "salutation": {
-              "type": "string",
-              "enum": [
-                "Mrs",
-                "Mr",
-                "Ms"
-              ]
-            },
-            "firstName": {
-              "type": "string",
-              "minLength": 2,
-              "maxLength": 255,
-              "pattern": "^[A-Za-z-\\\\ ]+$"
-            },
-            "lastName": {
-              "type": "string",
-              "minLength": 2,
-              "maxLength": 255,
-              "pattern": "^[A-Za-z-\\\\ ]+$"
-            }
-          },
-          "required": [
-            "firstName",
-            "lastName"
-          ],
-          "additionalProperties": false
-        }
-      ]
-    },
     "address": {
       "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/address/address.schema.json",
       "$schema": "http://json-schema.org/draft-07/schema#",
@@ -136,6 +69,12 @@
             {
               "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/legal/name.schema.json",
               "$schema": "http://json-schema.org/draft-07/schema#",
+              "version": "0.0.1",
+              "contact": {
+                "name": "wunderbon support",
+                "url": "https://wunderbon.io/support",
+                "email": "api-support@wunderbon.io"
+              },
               "title": "Legal Entity",
               "description": "A schema for legal entity name representation within the wunderbon domain.",
               "type": "object",
@@ -143,12 +82,14 @@
                 "entityName": {
                   "type": "string",
                   "minLength": 3,
-                  "maxLength": 255
+                  "maxLength": 255,
+                  "pattern": "^[A-Za-z-\\\\d\\\\ \\.\\&üäö]+$"
                 },
                 "displayName": {
                   "type": "string",
                   "minLength": 1,
-                  "maxLength": 255
+                  "maxLength": 255,
+                  "pattern": "^[A-Za-z-\\\\d\\\\ \\.\\&üäö]+$"
                 }
               },
               "additionalProperties": false,
@@ -161,6 +102,12 @@
         "street": {
           "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/street/street.schema.json",
           "$schema": "http://json-schema.org/draft-07/schema#",
+          "version": "0.0.1",
+          "contact": {
+            "name": "wunderbon support",
+            "url": "https://wunderbon.io/support",
+            "email": "api-support@wunderbon.io"
+          },
           "title": "Street",
           "description": "A street representation within the wunderbon domain.",
           "type": "object",
@@ -464,6 +411,12 @@
         "gps": {
           "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/gps/gps.schema.json",
           "$schema": "http://json-schema.org/draft-07/schema#",
+          "version": "0.0.1",
+          "contact": {
+            "name": "wunderbon support",
+            "url": "https://wunderbon.io/support",
+            "email": "api-support@wunderbon.io"
+          },
           "title": "GPS",
           "description": "A GPS coordinates representation within the wunderbon domain.",
           "type": "object",
@@ -511,6 +464,12 @@
             {
               "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/phoneNumber/phoneNumber.schema.json",
               "$schema": "http://json-schema.org/draft-07/schema#",
+              "version": "0.0.1",
+              "contact": {
+                "name": "wunderbon support",
+                "url": "https://wunderbon.io/support",
+                "email": "api-support@wunderbon.io"
+              },
               "title": "Phone-Number",
               "description": "Phone-Number representation within the wunderbon domain.",
               "type": "object",
@@ -519,14 +478,14 @@
                   "type": "object",
                   "properties": {
                     "country": {
-                      "type": "integer",
+                      "type": "string",
                       "minLength": 2,
                       "maxLength": 2
                     },
                     "local": {
-                      "type": "integer",
+                      "type": "string",
                       "minLength": 2,
-                      "maxLength": 2
+                      "maxLength": 12
                     }
                   },
                   "additionalProperties": false,
@@ -544,7 +503,7 @@
                   "type": "string",
                   "minLength": 3,
                   "maxLength": 255,
-                  "pattern": "^[A-Za-z]+$"
+                  "pattern": "^[A-Za-z\\ ]+$"
                 }
               },
               "additionalProperties": false,
@@ -564,6 +523,12 @@
             {
               "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/phoneNumber/phoneNumber.schema.json",
               "$schema": "http://json-schema.org/draft-07/schema#",
+              "version": "0.0.1",
+              "contact": {
+                "name": "wunderbon support",
+                "url": "https://wunderbon.io/support",
+                "email": "api-support@wunderbon.io"
+              },
               "title": "Phone-Number",
               "description": "Phone-Number representation within the wunderbon domain.",
               "type": "object",
@@ -572,14 +537,14 @@
                   "type": "object",
                   "properties": {
                     "country": {
-                      "type": "integer",
+                      "type": "string",
                       "minLength": 2,
                       "maxLength": 2
                     },
                     "local": {
-                      "type": "integer",
+                      "type": "string",
                       "minLength": 2,
-                      "maxLength": 2
+                      "maxLength": 12
                     }
                   },
                   "additionalProperties": false,
@@ -597,7 +562,7 @@
                   "type": "string",
                   "minLength": 3,
                   "maxLength": 255,
-                  "pattern": "^[A-Za-z]+$"
+                  "pattern": "^[A-Za-z\\ ]+$"
                 }
               },
               "additionalProperties": false,
@@ -623,9 +588,35 @@
         }
       },
       "additionalProperties": false
-    },
-    "taxId": {}
+    }
   },
+  "oneOf": [
+    {
+      "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tax/id/eu/id.schema.json",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "version": "0.0.1",
+      "contact": {
+        "name": "wunderbon support",
+        "url": "https://wunderbon.io/support",
+        "email": "api-support@wunderbon.io"
+      },
+      "title": "EU USTID Entity",
+      "description": "A schema for European USTID (https://de.wikipedia.org/wiki/Umsatzsteuer-Identifikationsnummer) representation within the wunderbon domain.",
+      "type": "object",
+      "properties": {
+        "taxId": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 255,
+          "pattern": "^((AT)?U[0-9]{8}|(BE)?0[0-9]{9}|(BG)?[0-9]{9,10}|(CY)?[0-9]{8}L|(CZ)?[0-9]{8,10}|(DE)?[0-9]{9}|(DK)?[0-9]{8}|(EE)?[0-9]{9}|(EL|GR)?[0-9]{9}|(ES)?[0-9A-Z][0-9]{7}[0-9A-Z]|(FI)?[0-9]{8}|(FR)?[0-9A-Z]{2}[0-9]{9}|(GB)?([0-9]{9}([0-9]{3})?|[A-Z]{2}[0-9]{3})|(HU)?[0-9]{8}|(IE)?[0-9]S[0-9]{5}L|(IT)?[0-9]{11}|(LT)?([0-9]{9}|[0-9]{12})|(LU)?[0-9]{8}|(LV)?[0-9]{11}|(MT)?[0-9]{8}|(NL)?[0-9]{9}B[0-9]{2}|(PL)?[0-9]{10}|(PT)?[0-9]{9}|(RO)?[0-9]{2,10}|(SE)?[0-9]{12}|(SI)?[0-9]{8}|(SK)?[0-9]{10})$"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "taxId"
+      ]
+    }
+  ],
   "additionalProperties": false,
   "required": [
     "name",
