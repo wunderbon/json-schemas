@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/phoneNumber/phoneNumber.schema.json",
   "title": "Phone-Number",
   "description": "Phone-Number representation within the wunderbon domain.",

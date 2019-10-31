@@ -1,0 +1,14 @@
+{
+  "name": "ALDI Süd",
+  "street": {
+    "name": "Burgstraße",
+    "number": 37
+  },
+  "zip": "45476",
+  "city": "Mülheim an der Ruhr",
+  "country": "DE",
+  "gps": {
+    "latitude": 51.441050,
+    "longitude": 6.861170
+  }
+}
