@@ -1,27 +1,17 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/merchant.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tax/id/eu/id.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Merchant",
-  "description": "Merchant representation within the wunderbon domain.",
+  "version": "0.0.1",
+  "contact": {
+    "name": "wunderbon support",
+    "url": "https://wunderbon.io/support",
+    "email": "api-support@wunderbon.io"
+  },
+  "title": "EU USTID Entity",
+  "description": "A schema for European USTID (https://de.wikipedia.org/wiki/Umsatzsteuer-Identifikationsnummer) representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-    "name": {
-      "oneOf": [
-        {
-          "$ref": "name/legal/name.schema.json"
-        },
-        {
-          "$ref": "name/private/name.schema.json"
-        }
-      ]
-    },
-    "address": {
-      "$ref": "address/address.schema.json"
-    },
-    "communication": {
-      "$ref": "communication/communication.schema.json"
-    },
-    "taxId": {
+    "id": {
       "type": "string",
       "minLength": 3,
       "maxLength": 255,
@@ -30,9 +20,8 @@
   },
   "additionalProperties": false,
   "required": [
-    "name",
-    "address",
-    "communication",
-    "taxId"
+    "id"
   ]
 }
+
+

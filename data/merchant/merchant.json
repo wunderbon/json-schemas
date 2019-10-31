@@ -1,12 +1,12 @@
 {
   "name": {
-    "entityName": "Foo",
-    "displayName": "Foo"
+    "entityName": "Supermarket GmbH",
+    "displayName": "SUPERMarket"
   },
   "address": {
     "name": {
-      "firstName": "",
-      "lastName": ""
+      "entityName": "Supermarket Germany GmbH",
+      "displayName": "SUPERMarket DE"
     },
     "street": {
       "name": "Burgstraße",
@@ -21,7 +21,16 @@
     }
   },
   "communication": {
-    "phone": []
+    "phone": [
+      {
+        "areaCode": {
+          "country": "49",
+          "local": "211"
+        },
+        "number": "123456",
+        "name": "Customer Care"
+      }
+    ]
   },
   "taxId": "DE127135609"
 }

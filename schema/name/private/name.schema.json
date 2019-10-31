@@ -1,6 +1,12 @@
 {
   "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/private/name.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "0.0.1",
+  "contact": {
+    "name": "wunderbon support",
+    "url": "https://wunderbon.io/support",
+    "email": "api-support@wunderbon.io"
+  },
   "title": "Private Person",
   "description": "A schema for private persons name representation within the wunderbon domain.",
   "type": "object",
@@ -16,12 +22,14 @@
     "firstName": {
       "type": "string",
       "minLength": 2,
-      "maxLength": 255
+      "maxLength": 255,
+      "pattern": "^[A-Za-z-\\\\ ]+$"
     },
     "lastName": {
       "type": "string",
       "minLength": 2,
-      "maxLength": 255
+      "maxLength": 255,
+      "pattern": "^[A-Za-z-\\\\ ]+$"
     }
   },
   "required": [

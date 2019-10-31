@@ -1,6 +1,12 @@
 {
   "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/phoneNumber/phoneNumber.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "0.0.1",
+  "contact": {
+    "name": "wunderbon support",
+    "url": "https://wunderbon.io/support",
+    "email": "api-support@wunderbon.io"
+  },
   "title": "Phone-Number",
   "description": "Phone-Number representation within the wunderbon domain.",
   "type": "object",
@@ -9,12 +15,12 @@
       "type": "object",
       "properties": {
         "country": {
-          "type": "integer",
+          "type": "string",
           "minLength": 2,
           "maxLength": 2
         },
         "local": {
-          "type": "integer",
+          "type": "string",
           "minLength": 2,
           "maxLength": 2
         }
@@ -34,7 +40,7 @@
       "type": "string",
       "minLength": 3,
       "maxLength": 255,
-      "pattern": "^[A-Za-z]+$"
+      "pattern": "^[A-Za-z\\ ]+$"
     }
   },
   "additionalProperties": false,
