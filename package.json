@@ -19,10 +19,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "set NODE_ENV=production && node ./server.js",
     "development": "set NODE_ENV=development && nodemon -L ./server.js",
-    "validate": "./tools/validate.sh"
+    "build": "./.circleci/build.sh"
   },
   "directories": {
-    "doc": "docs"
+    "doc": "docs",
+    "bin": "bin"
   },
   "keywords": [
     "json",

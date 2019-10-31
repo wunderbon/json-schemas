@@ -61,3 +61,5 @@ public/*
 
 # Exclude generated schema files
 docker-run-result
+
+.tmp/*
