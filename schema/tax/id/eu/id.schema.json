@@ -11,7 +11,7 @@
   "description": "A schema for European USTID (https://de.wikipedia.org/wiki/Umsatzsteuer-Identifikationsnummer) representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-    "id": {
+    "taxId": {
       "type": "string",
       "minLength": 3,
       "maxLength": 255,
@@ -20,8 +20,6 @@
   },
   "additionalProperties": false,
   "required": [
-    "id"
+    "taxId"
   ]
 }
-
-

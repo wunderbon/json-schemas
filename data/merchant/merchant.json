@@ -1,8 +1,6 @@
 {
-  "name": {
-    "entityName": "Supermarket GmbH",
-    "displayName": "SUPERMarket"
-  },
+  "entityName": "Supermarket GmbH",
+  "displayName": "SUPERMarket",
   "address": {
     "name": {
       "entityName": "Supermarket Germany GmbH",
