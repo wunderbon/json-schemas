@@ -1,7 +1,6 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/merchant/merchant.schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/merchant/merchant.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/merchant.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Merchant",
   "description": "Merchant representation within the wunderbon domain.",
   "type": "object",
@@ -9,18 +8,18 @@
     "name": {
       "oneOf": [
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/legal/name.schema.json"
+          "$ref": "name/legal/name.schema.json"
         },
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/private/name.schema.json"
+          "$ref": "name/private/name.schema.json"
         }
       ]
     },
     "address": {
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/address/address.schema.json"
+      "$ref": "address/address.schema.json"
     },
     "communication": {
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/communication/communication.schema.json"
+      "$ref": "communication/communication.schema.json"
     },
     "taxId": {
       "type": "string",

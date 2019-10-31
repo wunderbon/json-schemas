@@ -1,7 +1,6 @@
 {
   "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/gps/gps.schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/gps/gps.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "GPS",
   "description": "A GPS coordinates representation within the wunderbon domain.",
   "type": "object",
