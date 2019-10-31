@@ -8,14 +8,12 @@
     "entityName": {
       "type": "string",
       "minLength": 3,
-      "maxLength": 255,
-      "pattern": "^[A-Za-z-\\\\d\\\\ \\.\\&üäö]+$"
+      "maxLength": 255
     },
     "displayName": {
       "type": "string",
       "minLength": 1,
-      "maxLength": 255,
-      "pattern": "^[A-Za-z-\\\\d\\\\ \\.\\&üäö]+$"
+      "maxLength": 255
     }
   },
   "additionalProperties": false,
