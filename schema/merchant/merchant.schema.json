@@ -1,6 +1,7 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/merchant/merchant.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/merchant/merchant.schema.json",
   "title": "Merchant",
   "description": "Merchant representation within the wunderbon domain.",
   "type": "object",
