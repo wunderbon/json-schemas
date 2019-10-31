@@ -32,7 +32,7 @@
         {
           "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tax/id/eu/id.schema.json"
         }
-    ]
+      ]
     }
   },
   "additionalProperties": false,
