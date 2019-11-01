@@ -1,0 +1,52 @@
+{
+  "name": {
+    "entityName": "Supermarket GmbH",
+    "displayName": "SUPERMarket"
+  },
+  "address": {
+    "name": {
+      "entityName": "Supermarket Germany GmbH",
+      "displayName": "SUPERMarket DE"
+    },
+    "street": {
+      "name": "Burgstraße",
+      "number": 37
+    },
+    "zip": "45476",
+    "city": "Mülheim an der Ruhr",
+    "country": "DE",
+    "gps": {
+      "latitude": 51.441050,
+      "longitude": 6.861170
+    }
+  },
+  "communication": {
+    "phone": [
+      {
+        "areaCode": {
+          "country": "49",
+          "local": "211"
+        },
+        "number": "123456",
+        "name": "Customer Care"
+      }
+    ]
+  },
+  "taxId": "DE127135609",
+  "posData": {
+    "count": 5
+  },
+  "serviceTime": [
+    {
+      "weekday": "Monday",
+      "from": {
+        "hour": 8,
+        "minute": 0
+      },
+      "to": {
+        "hour": 20,
+        "minute": 0
+      }
+    }
+  ]
+}

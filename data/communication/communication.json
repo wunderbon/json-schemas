@@ -1,0 +1,36 @@
+{
+  "phone": [
+    {
+      "areaCode": {
+        "country": "49",
+        "local": "23235"
+      },
+      "number": "2323235"
+    },
+    {
+      "areaCode": {
+        "country": "49",
+        "local": "23235"
+      },
+      "number": "5232323"
+    }
+  ],
+  "fax": [
+    {
+      "areaCode": {
+        "country": "49",
+        "local": "23235"
+      },
+      "number": "2323236"
+    },
+    {
+      "areaCode": {
+        "country": "49",
+        "local": "23235"
+      },
+      "number": "6232323"
+    }
+  ],
+  "email": "foo@bar.com",
+  "www": "https://www.google.com/"
+}

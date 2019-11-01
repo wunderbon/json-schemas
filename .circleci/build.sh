@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Build the JSON-Schemas
-./dereference-json-schemas.sh && \
-./validate-json-schemas.sh && \
-./validate-json-data.sh
+./.circleci/dereference-json-schemas.sh && \
+./.circleci/validate-json-schemas.sh && \
+./.circleci/validate-json-data.sh
 
 # Now -> Create Fake data

@@ -1,0 +1,11 @@
+{
+  "weekday": "Monday",
+  "from": {
+    "hour": 8,
+    "minute": 0
+  },
+  "to": {
+    "hour": 20,
+    "minute": 0
+  }
+}

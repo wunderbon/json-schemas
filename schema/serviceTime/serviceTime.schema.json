@@ -1,0 +1,73 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/phoneNumber/phoneNumber.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "0.0.1",
+  "contact": {
+    "name": "wunderbon support",
+    "url": "https://wunderbon.io/support",
+    "email": "api-support@wunderbon.io"
+  },
+  "title": "Service-Time",
+  "description": "Service-Time representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "weekday": {
+      "type": "string",
+      "enum": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "from": {
+      "type": "object",
+      "properties": {
+        "hour": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 23
+        },
+        "minute": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 59
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "hour",
+        "minute"
+      ]
+    },
+    "to": {
+      "type": "object",
+      "properties": {
+        "hour": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 23
+        },
+        "minute": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 59
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "hour",
+        "minute"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "weekday",
+    "from",
+    "to"
+  ]
+}

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-PATH="./.tmp/schema/**/*.schema.json"
+TARGETPATH="./.tmp/schema/**/*.schema.json"
 
-echo "Validating dereferenced JSON-Schemas from \"${PATH}\""
+echo "Validating dereferenced JSON-Schemas from \"${TARGETPATH}\""
 shopt -s globstar
-for file in ${PATH}; do
+for file in ${TARGETPATH}; do
   OUTDIR="`dirname ${file}`/"
   FILENAME="`basename ${file}`"
   OUTFILE="${OUTDIR}${FILENAME/.schema.json/.validate.js}"

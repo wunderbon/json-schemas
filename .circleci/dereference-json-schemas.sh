@@ -1,10 +1,10 @@
 #!/bin/bash
 
-PATH="./schema/**/*.schema.json"
+TARGETPATH="./schema/**/*.schema.json"
 
-echo "Dereferencing JSON-Schemas from \"${PATH}\""
+echo "Dereferencing JSON-Schemas from \"${TARGETPATH}\""
 shopt -s globstar
-for file in ${PATH}; do
+for file in ${TARGETPATH}; do
   # New filename and path for dereferenced schema
   TEMPSCHEMAFILE=${file/schema\//.tmp/schema\/}
   mkdir -p "`dirname $TEMPSCHEMAFILE`/"

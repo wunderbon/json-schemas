@@ -1,10 +1,10 @@
 #!/bin/bash
 
-PATH="./.tmp/schema/**/*.schema.json"
+TARGETPATH="./.tmp/schema/**/*.schema.json"
 
-echo "Validating Data against JSON-Schemas from \"${PATH}\""
+echo "Validating Data against JSON-Schemas from \"${TARGETPATH}\""
 shopt -s globstar
-for file in ${PATH}; do
+for file in ${TARGETPATH}; do
   DATAFILE=${file/.tmp\/schema\//data\/}
   DATAFILE=${DATAFILE/schema.json/json}
 
