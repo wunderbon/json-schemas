@@ -3,7 +3,7 @@
 
 wunderbon **JSON-schemas** representing models of our provided `REST APIs`.
 
-[![wunderbon Projects](https://img.shields.io/badge/wunderbon-Projects-green.svg?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/license-MIT-green?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/wunderbon-Open_Standard-orange?style=flat)](https://wunderbon.io/) 
+[![wunderbon Projects](https://img.shields.io/badge/wunderbon-Projects-green.svg?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/license-MIT-green?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/wunderbon-Open_Standard-orange?style=flat)](https://wunderbon.io/) ![CircleCI](https://img.shields.io/circleci/build/bitbucket/wunderbon/json-schemas)
 
 
 ## Table of Contents
