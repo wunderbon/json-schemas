@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "system",
+    "moduleResolution": "node",
+    "outDir": ".tmp/ts",
+    "sourceMap": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "declaration": true
+  },
+  "include": [
+    ".tmp/ts/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

@@ -10,7 +10,7 @@
     "url": "https://bitbucket.org/wunderbon/json-schemas/issues"
   },
   "version": "0.1.0",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "engines": {
     "node": "^8.9.3"
   },
@@ -22,8 +22,7 @@
     "build": "./.circleci/build.sh"
   },
   "directories": {
-    "doc": "docs",
-    "bin": "bin"
+    "doc": "docs"
   },
   "keywords": [
     "json",
@@ -42,15 +41,17 @@
   "devDependencies": {
     "ajv": "^6.10.2",
     "ajv-cli": "^3.0.0",
+    "dts-bundle-generator": "^3.2.0",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "json-dereference-cli": "^0.1.2",
-    "json-schema-ref-parser": "^7.1.2",
     "json-schema-faker": "^0.5.0-rc23",
     "json-schema-faker-cli": "^2.0.6",
+    "json-schema-ref-parser": "^7.1.2",
     "json-schema-to-typescript": "^7.1.0",
     "node-docson": "^0.4.6",
     "nodemon": "^1.19.4",
+    "quicktype": "^15.0.207",
     "serve-static": "^1.14.1",
     "showdown": "^1.9.0"
   }

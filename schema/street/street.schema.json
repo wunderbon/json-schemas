@@ -17,7 +17,8 @@
       "maxLength": 255
     },
     "number": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1
     },
     "additional": {
       "type": "string",

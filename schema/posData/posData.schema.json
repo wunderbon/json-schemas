@@ -14,7 +14,8 @@
     "count": {
       "type": "integer",
       "description": "Count of POS.",
-      "minimum": 1
+      "minimum": 1,
+      "maximum": 100
     }
   },
   "additionalProperties": false,
