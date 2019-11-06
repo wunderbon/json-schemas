@@ -12,6 +12,7 @@
   "type": "object",
   "properties": {
     "name": {
+      "type": "object",
       "oneOf": [
         {
           "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/legal/name.schema.json"
@@ -28,6 +29,7 @@
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/communication/communication.schema.json"
     },
     "taxId": {
+      "type": "object",
       "oneOf": [
         {
           "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tax/id/eu/id.schema.json"

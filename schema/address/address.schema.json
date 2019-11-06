@@ -12,6 +12,7 @@
   "type": "object",
   "properties": {
     "name": {
+      "type": "object",
       "oneOf": [
         {
           "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/private/name.schema.json"
