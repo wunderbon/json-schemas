@@ -51,7 +51,7 @@ jobs:
           command: ${HOME}/project/.circleci/validate-json-schemas.sh
 
       - run:
-          name: Validating JSON SChemas against Blueprint Model(s)
+          name: Validating JSON Schemas against Blueprint Model(s)
           command: ${HOME}/project/.circleci/validate-json-data.sh
 
       - run:
