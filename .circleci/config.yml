@@ -20,7 +20,7 @@ jobs:
       - save_cache:
           key: cache-{{ .Branch }}-{{ .Revision }}
           paths:
-            - ".git"
+            - "~/project"
 
       - restore_cache:
           key: cache-{{ checksum "package-lock.json" }}
@@ -50,10 +50,6 @@ jobs:
           name: Faking data by JSON Schemas ...
           command: ${HOME}/project/.circleci/create-fake-json-data.sh
 
-      - run:
-          name: Debugging output ...
-          command: ls -alR ${HOME}/project/.tmp
-
       - save_cache:
           key: cache-circleci-{{ checksum "CACHE_KEY" }}
           paths:
@@ -73,7 +69,7 @@ jobs:
       - save_cache:
           key: cache-{{ .Branch }}-{{ .Revision }}
           paths:
-            - ".git"
+            - "~/project"
 
       - restore_cache:
           key: cache-{{ checksum "package-lock.json" }}
@@ -95,6 +91,9 @@ jobs:
           name: Managing permissions ...
           command: chmod +x ${HOME}/project/.circleci/*.sh
 
+      - restore_cache:
+          key: cache-circleci-{{ checksum "CACHE_KEY" }}
+
       - run:
           name: Testing JSON Schemas validity ...
           command: ${HOME}/project/.circleci/test-json-schemas.sh
@@ -102,6 +101,11 @@ jobs:
       - run:
           name: Testing JSON Schema inplementations against blueprints ...
           command: ${HOME}/project/.circleci/test-json-data.sh
+
+      - save_cache:
+          key: cache-circleci-{{ checksum "CACHE_KEY" }}
+          paths:
+            - "~/project"
 
   deploy:
     <<: *defaults
@@ -118,7 +122,7 @@ jobs:
       - save_cache:
           key: cache-{{ .Branch }}-{{ .Revision }}
           paths:
-            - ".git"
+            - "~/project"
 
       - restore_cache:
           key: cache-{{ checksum "package-lock.json" }}
