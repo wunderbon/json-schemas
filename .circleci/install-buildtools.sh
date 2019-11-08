@@ -12,6 +12,8 @@ apk update && \
   git \
   openssh-client \
   tar \
+  nodejs \
+  npm \
   curl \
   gettext
 

@@ -2,7 +2,7 @@ version: 2
 
 defaults: &defaults
   docker:
-    - image: node/10.17-alpine
+    - image: google/cloud-sdk:alpine
 
 jobs:
   build:
