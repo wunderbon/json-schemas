@@ -2,7 +2,7 @@
 
 TARGETPATH="./.tmp/schema/**/*.schema.json"
 
-echo "Validating dereferenced JSON-Schemas from \"${TARGETPATH}\""
+echo "Testing dereferenced JSON-Schemas from \"${TARGETPATH}\""
 shopt -s globstar
 for file in ${TARGETPATH}; do
   OUTDIR="`dirname ${file}`/"

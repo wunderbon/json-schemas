@@ -6,9 +6,9 @@ echo "Dereferencing JSON-Schemas from \"${TARGETPATH}\""
 shopt -s globstar
 for file in ${TARGETPATH}; do
   # New filename and path for dereferenced schema
-  TEMPSCHEMAFILE=${file/schema\//.tmp/schema\/}
-  mkdir -p "`dirname $TEMPSCHEMAFILE`/"
-  ./node_modules/.bin/json-dereference -s $file -o $TEMPSCHEMAFILE
+  OUTPUTFILENAME=${file/schema\//.tmp/schema\/}
+  mkdir -p "`dirname $OUTPUTFILENAME`/"
+  ./node_modules/.bin/json-dereference -s $file -o $OUTPUTFILENAME
 done
 
 if [ "$?" = "0" ]; then
