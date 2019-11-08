@@ -22,6 +22,14 @@ jobs:
           paths:
             - "~/project"
 
+      - run:
+          name: Managing permissions ...
+          command: chmod +x ${HOME}/project/.circleci/*.sh
+
+      - run:
+          name: Installing build tools ...
+          command: ${HOME}/project/.circleci/install-buildtools.sh
+
       - restore_cache:
           key: cache-{{ checksum "package-lock.json" }}
 
@@ -37,14 +45,6 @@ jobs:
       - run:
           name: Generating build cache key ...
           command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
-
-      - run:
-          name: Managing permissions ...
-          command: chmod +x ${HOME}/project/.circleci/*.sh
-
-      - run:
-          name: Installing build tools ...
-          command: ${HOME}/project/.circleci/install-buildtools.sh
 
       - run:
           name: Dereferencing JSON Schemas ...
