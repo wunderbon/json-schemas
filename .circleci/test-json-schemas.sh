@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGETPATH="./.tmp/schema/**/*.schema.json"
+TARGETPATH=".tmp/schema/**/*.schema.json"
 
 echo "Testing dereferenced JSON-Schemas from \"${TARGETPATH}\""
 shopt -s globstar
