@@ -55,6 +55,10 @@ jobs:
           command: ${HOME}/project/.circleci/validate-json-data.sh
 
       - run:
+          name: Faking data by JSON Schemas
+          command: ls -al
+
+      - run:
           name: Debug output
           command: ls -alR ${HOME}/project/.tmp
 
@@ -68,4 +72,4 @@ workflows:
   build:
     jobs:
       - build:
-          context: wunderbon-build-api-staging
+          context: wunderbon-open-source-api
