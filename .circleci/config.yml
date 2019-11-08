@@ -8,8 +8,8 @@ jobs:
   build:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: cache-{{ .Branch }}-{{ .Revision }}
+      #- restore_cache:
+      #    key: cache-{{ .Branch }}-{{ .Revision }}
 
       - checkout
 
@@ -17,10 +17,10 @@ jobs:
           name: Tidy-Up git (git gc)
           command: git gc
 
-      - save_cache:
-          key: cache-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - "~/project"
+      #- save_cache:
+      #    key: cache-{{ .Branch }}-{{ .Revision }}
+      #    paths:
+      #      - "~/project"
 
       - run:
           name: Managing permissions ...
@@ -30,21 +30,24 @@ jobs:
           name: Installing build tools ...
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
-      - restore_cache:
-          key: cache-{{ checksum "package-lock.json" }}
+      #- restore_cache:
+      #    key: cache-{{ checksum "package-lock.json" }}
 
       - run:
           name: Installing packages ...
           command: npm install
 
-      - save_cache:
-          key: cache-{{ checksum "package-lock.json" }}
-          paths:
-            - "node_modules"
+      #- save_cache:
+      #    key: cache-{{ checksum "package-lock.json" }}
+      #    paths:
+      #      - "node_modules"
 
       - run:
           name: Generating build cache key ...
           command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
+
+      - restore_cache:
+          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Dereferencing JSON Schemas ...
@@ -55,14 +58,20 @@ jobs:
           command: ${HOME}/project/.circleci/create-fake-json-data.sh
 
       - save_cache:
-          key: cache-circleci-{{ checksum "CACHE_KEY" }}
+          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
           paths:
-            - "~/project"
+            - "~/project/.tmp"
+
+      #- save_cache:
+      #    key: cache-circleci-{{ checksum "CACHE_KEY" }}
+      #    paths:
+      #      - "~/project"
+
   test:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: cache-{{ .Branch }}-{{ .Revision }}
+      #- restore_cache:
+       #   key: cache-{{ .Branch }}-{{ .Revision }}
 
       - checkout
 
@@ -70,10 +79,10 @@ jobs:
           name: Tidy-Up git (git gc)
           command: git gc
 
-      - save_cache:
-          key: cache-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - "~/project"
+      #- save_cache:
+       #   key: cache-{{ .Branch }}-{{ .Revision }}
+      #    paths:
+      #      - "~/project"
 
       - run:
           name: Managing permissions ...
@@ -83,24 +92,27 @@ jobs:
           name: Installing build tools ...
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
-      - restore_cache:
-          key: cache-{{ checksum "package-lock.json" }}
+      #- restore_cache:
+      #    key: cache-{{ checksum "package-lock.json" }}
 
       - run:
           name: Installing packages ...
           command: npm install
 
-      - save_cache:
-          key: cache-{{ checksum "package-lock.json" }}
-          paths:
-            - "node_modules"
+      #- save_cache:
+      #    key: cache-{{ checksum "package-lock.json" }}
+      #    paths:
+      #      - "node_modules"
 
       - run:
           name: Generating build cache key ...
           command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
 
+      #- restore_cache:
+      #    key: cache-circleci-{{ checksum "CACHE_KEY" }}
+
       - restore_cache:
-          key: cache-circleci-{{ checksum "CACHE_KEY" }}
+          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: DEBUG +++
@@ -114,16 +126,16 @@ jobs:
           name: Testing JSON Schema inplementations against blueprints ...
           command: ${HOME}/project/.circleci/test-json-data.sh
 
-      - save_cache:
-          key: cache-circleci-{{ checksum "CACHE_KEY" }}
-          paths:
-            - "~/project"
+      #- save_cache:
+#          key: cache-circleci-{{ checksum "CACHE_KEY" }}
+ #         paths:
+  #          - "~/project"
 
   deploy:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: cache-{{ .Branch }}-{{ .Revision }}
+      #- restore_cache:
+      #    key: cache-{{ .Branch }}-{{ .Revision }}
 
       - checkout
 
@@ -131,10 +143,10 @@ jobs:
           name: Tidy-Up git (git gc)
           command: git gc
 
-      - save_cache:
-          key: cache-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - "~/project"
+      #- save_cache:
+      #    key: cache-{{ .Branch }}-{{ .Revision }}
+      #    paths:
+      #      - "~/project"
 
       - run:
           name: Managing permissions ...
@@ -144,17 +156,17 @@ jobs:
           name: Installing build tools ...
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
-      - restore_cache:
-          key: cache-{{ checksum "package-lock.json" }}
+      #- restore_cache:
+      #    key: cache-{{ checksum "package-lock.json" }}
 
       - run:
           name: Installing packages ...
           command: npm install
 
-      - save_cache:
-          key: cache-{{ checksum "package-lock.json" }}
-          paths:
-            - "node_modules"
+      #- save_cache:
+      #    key: cache-{{ checksum "package-lock.json" }}
+      #    paths:
+      #      - "node_modules"
 
       - run:
           name: Generating build cache key ...
