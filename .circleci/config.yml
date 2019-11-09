@@ -104,10 +104,6 @@ jobs:
       - restore_cache:
           key: cache-tmp-{{ .Branch }}-{{ .Revision }}
 
-#      - run:
-#          name: DEBUG +++
-#          command: ls -alR ${HOME}/project/.tmp
-
       - run:
           name: Testing JSON Schemas validity ...
           command: ${HOME}/project/.circleci/test-json-schemas.sh
@@ -153,6 +149,14 @@ jobs:
           key: cache-dependencies-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
+
+      - run:
+          name: Cloning typescript-declaration repository ...
+          command: git clone https://benjamin-carl@bitbucket.org/wunderbon/typescript-declarations.git ${HOME}/project/.tmp/typescript-declarations
+
+      - run:
+          name: DEBUG ...
+          command: ls -alR ${HOME}/project/.tmp/typescript-declarations
 
 workflows:
   version: 2
