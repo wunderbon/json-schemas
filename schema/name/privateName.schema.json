@@ -1,5 +1,5 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/private/name.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/privateName.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "version": "0.0.1",
   "contact": {

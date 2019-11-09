@@ -15,10 +15,10 @@
       "type": "object",
       "oneOf": [
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/legal/name.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/legalName.schema.json"
         },
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/private/name.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/privateName.schema.json"
         }
       ]
     },
