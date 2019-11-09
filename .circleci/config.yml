@@ -112,6 +112,11 @@ jobs:
           name: Testing JSON Schema inplementations against blueprints ...
           command: ${HOME}/project/.circleci/test-json-data.sh
 
+      - save_cache:
+          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".tmp"
+
   deploy:
     <<: *defaults
     steps:
@@ -150,6 +155,9 @@ jobs:
           paths:
             - "node_modules"
 
+      - restore_cache:
+          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
+
       - run:
           name: Creating TypeScript declarations ...
           command: ${HOME}/project/.circleci/create-typescript-declarations.sh
@@ -161,6 +169,11 @@ jobs:
       - run:
           name: DEBUG ...
           command: ls -alR ${HOME}/project/.tmp/typescript-declarations
+
+      - save_cache:
+          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".tmp"
 
 workflows:
   version: 2
