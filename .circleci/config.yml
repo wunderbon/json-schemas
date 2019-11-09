@@ -168,7 +168,7 @@ jobs:
 
       - run:
           name: DEBUG ...
-          command: ls -alR ${HOME}/project/.tmp/typescript-declarations
+          command: ls -alR ${HOME}/project/.tmp/ts
 
       - save_cache:
           key: cache-tmp-{{ .Branch }}-{{ .Revision }}
