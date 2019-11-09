@@ -7,4 +7,6 @@
 # Validating JSON Schemas against Blueprint Model(s)
 ./.circleci/test-json-data.sh && \
 # Faking data by JSON Schemas
-./.circleci/create-fake-json-data.sh
+./.circleci/create-fake-json-data.sh && \
+# Create typescript declarations
+./.circleci/create-typescript-declarations.sh

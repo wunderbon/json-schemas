@@ -13,6 +13,7 @@ for file in ${TARGETPATH}; do
   # Check return value in loop for quick exit
   if [ "$?" = "1" ]; then
     # exit with success - important for ci system
+    echo "Error while creating fake JSON data!" 1>&2
     exit 1
   fi
 done
@@ -21,7 +22,7 @@ if [ "$?" = "0" ]; then
   # exit with success - important for ci system
   exit 0
 else
-	echo "Error while dereferencing!" 1>&2
+	echo "Error while creating fake JSON data!" 1>&2
 	# exit with error - important for ci system
 	exit 1
 fi

@@ -151,6 +151,10 @@ jobs:
             - "node_modules"
 
       - run:
+          name: Creating TypeScript declarations ...
+          command: ${HOME}/project/.circleci/create-typescript-declarations.sh
+
+      - run:
           name: Cloning typescript-declaration repository ...
           command: git clone https://benjamin-carl@bitbucket.org/wunderbon/typescript-declarations.git ${HOME}/project/.tmp/typescript-declarations
 

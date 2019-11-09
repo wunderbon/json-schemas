@@ -14,6 +14,7 @@ for file in ${TARGETPATH}; do
 
     if [ "$?" = "1" ]; then
       # exit with error - important for ci system
+      echo "Error while validating!" 1>&2
       exit 1
     fi
 

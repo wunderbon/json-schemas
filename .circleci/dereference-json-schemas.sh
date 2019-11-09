@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGETPATH="./schema/**/*.schema.json"
+TARGETPATH="schema/**/*.schema.json"
 
 echo "Dereferencing JSON-Schemas from \"${TARGETPATH}\""
 shopt -s globstar
