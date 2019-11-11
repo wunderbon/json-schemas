@@ -1,16 +1,20 @@
 #!/bin/bash
 
-TARGETPATH=".tmp/schema/**/*.schema.json"
+# Environment configuration
+PATH_SOURCE_FILES=".tmp/schema/**/*.schema.json"
 
-echo "Testing Data against JSON-Schemas from \"${TARGETPATH}\""
+# What we do
+echo "Testing Data against JSON-Schemas from \"${PATH_SOURCE_FILES}\""
+
+# Do it
 shopt -s globstar
-for file in ${TARGETPATH}; do
+for file in ${PATH_SOURCE_FILES}; do
   DATAFILE=${file/.tmp\/schema\//data\/}
   DATAFILE=${DATAFILE/schema.json/json}
 
   if [ -f "$DATAFILE" ]; then
     echo -e "\e[0mValidating: \e[5m$file\e[0m"
-    res=$(./node_modules/.bin/ajv validate -s $file -d $DATAFILE 1>&2)
+    ./node_modules/.bin/ajv validate -s $file -d $DATAFILE 1>&2
 
     if [ "$?" = "1" ]; then
       # exit with error - important for ci system

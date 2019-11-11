@@ -164,11 +164,15 @@ jobs:
 
       - run:
           name: Cloning typescript-declaration repository ...
-          command: git clone https://benjamin-carl@bitbucket.org/wunderbon/typescript-declarations.git ${HOME}/project/.tmp/typescript-declarations
+          command: ${HOME}/project/.circleci/clone-typescript-declarations-repository.sh
+
+      #- run:
+      #    name: Merging files for update! (git add / git commit / git pr)
+      #    command: foo
 
       - run:
-          name: DEBUG ...
-          command: ls -alR ${HOME}/project/.tmp/ts
+          name: DEBUG
+          command: ls -alR /tmp/typescript-declarations
 
       - save_cache:
           key: cache-tmp-{{ .Branch }}-{{ .Revision }}

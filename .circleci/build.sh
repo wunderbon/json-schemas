@@ -9,4 +9,8 @@
 # Faking data by JSON Schemas
 ./.circleci/create-fake-json-data.sh && \
 # Create typescript declarations
-./.circleci/create-typescript-declarations.sh
+./.circleci/create-typescript-declarations.sh && \
+# Clone typescript declarations repository
+./.circleci/clone-typescript-declarations-repository.sh && \
+# Publish typescript declarations
+./.circleci/publish-typescript-declarations.sh

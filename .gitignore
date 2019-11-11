@@ -63,3 +63,4 @@ public/*
 docker-run-result
 
 .tmp/*
+/test.ts

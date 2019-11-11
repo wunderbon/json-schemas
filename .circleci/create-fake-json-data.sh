@@ -1,10 +1,14 @@
 #!/bin/bash
 
-TARGETPATH="./.tmp/schema/**/*.schema.json"
+# Environment configuration
+PATH_SOURCE_FILES="./.tmp/schema/**/*.schema.json"
 
-echo "Faking data by collected JSON-Schemas from \"${TARGETPATH}\""
+# What we do
+echo "Faking data by collected JSON-Schemas from \"${PATH_SOURCE_FILES}\""
+
+# Do it
 shopt -s globstar
-for file in ${TARGETPATH}; do
+for file in ${PATH_SOURCE_FILES}; do
   # New filename and path for faked data json file
   OUTPUTFILENAME=${file/schema\//data\/}
   OUTPUTFILENAME=${OUTPUTFILENAME/.schema.json/.json}

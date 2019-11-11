@@ -1,10 +1,11 @@
 #!/bin/bash
 
-TARGETPATH=".tmp/schema/**/*.schema.json"
+# Environment configuration
+PATH_SOURCE_FILES=".tmp/schema/**/*.schema.json"
 
-echo "Testing dereferenced JSON-Schemas from \"${TARGETPATH}\""
+echo "Testing dereferenced JSON-Schemas from \"${PATH_SOURCE_FILES}\""
 shopt -s globstar
-for file in ${TARGETPATH}; do
+for file in ${PATH_SOURCE_FILES}; do
   OUTDIR="`dirname ${file}`/"
   FILENAME="`basename ${file}`"
   OUTFILE="${OUTDIR}${FILENAME/.schema.json/.validate.js}"

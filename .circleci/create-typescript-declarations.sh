@@ -1,19 +1,23 @@
 #!/bin/bash
 
-TARGETPATH=".tmp/schema/**/*.schema.json"
+# Environment configuration
+PATH_SOURCE_FILES=".tmp/schema/**/*.schema.json"
 
-echo "Creating typescript declarations from JSON-Schemas from \"${TARGETPATH}\""
+# What we do
+echo "Creating typescript declarations from JSON-Schemas from \"${PATH_SOURCE_FILES}\""
+
+# Do it
 shopt -s globstar
-for file in ${TARGETPATH}; do
+for file in ${PATH_SOURCE_FILES}; do
   # New filename and path for dereferenced schema
-  OUTPUTFILENAME=${file/.tmp\/schema\//.tmp/ts\/}
-  OUTPUTFILENAME=${OUTPUTFILENAME/.schema.json/.ts}
+  OUTPUTFILENAME="`basename $file`"
+  OUTPUTFILENAME=.tmp/ts/${OUTPUTFILENAME/.schema.json/.ts}
   mkdir -p "`dirname $OUTPUTFILENAME`/"
   ./node_modules/.bin/quicktype --src-lang schema --lang ts --acronym-style pascal ${file} -o ${OUTPUTFILENAME}
 
   DTSFILENAME="`basename $OUTPUTFILENAME`"
   DTSFILENAME=${DTSFILENAME/.ts/}
-  DTSFILENAME=.tmp/types/${DTSFILENAME}/${DTSFILENAME}.d.ts
+  DTSFILENAME=.tmp/ts/${DTSFILENAME}.d.ts
   mkdir -p "`dirname $DTSFILENAME`/"
   ./node_modules/.bin/dts-bundle-generator -o ${DTSFILENAME} ${OUTPUTFILENAME}
 
@@ -23,6 +27,7 @@ for file in ${TARGETPATH}; do
 	  exit 1
   fi
 done
+
 
 if [ "$?" = "0" ]; then
   # exit with success - important for ci system

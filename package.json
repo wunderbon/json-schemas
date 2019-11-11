@@ -41,7 +41,8 @@
   "devDependencies": {
     "ajv": "^6.10.2",
     "ajv-cli": "^3.0.0",
-    "dts-bundle-generator": "^3.2.0",
+    "dts-bundle-generator": "^3.3.0",
+    "dts-generator": "^3.0.0",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "json-dereference-cli": "^0.1.2",

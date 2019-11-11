@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "module": "system",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": ".tmp/ts",
+    "outDir": "./.tmp/js",
     "sourceMap": true,
     "removeComments": false,
     "preserveConstEnums": true,
     "declaration": true
   },
   "include": [
-    ".tmp/ts/**/*"
+    "./.tmp/ts/**/*"
   ],
   "exclude": [
     "node_modules",
