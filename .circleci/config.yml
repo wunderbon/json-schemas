@@ -101,6 +101,13 @@ jobs:
           paths:
             - "node_modules"
 
+      - run:
+          name: Generating build cache key ...
+          command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
+
+      - restore_cache:
+          key: cache-build-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
+
       - restore_cache:
           key: cache-test-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
 
@@ -154,6 +161,16 @@ jobs:
           key: cache-dependencies-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
+
+      - run:
+          name: Generating build cache key ...
+          command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
+
+      - restore_cache:
+          key: cache-build-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
+
+      - restore_cache:
+          key: cache-test-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
 
       - restore_cache:
           key: cache-deploy-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
