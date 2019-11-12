@@ -20,11 +20,15 @@ rm -rf /tmp/typescript-declarations/declarations/*
 # Copy all typescript declaration files from build to target repository
 cp -R ./build/ts/* /tmp/typescript-declarations/declarations || exit 0;
 # Add them
-git add --all
+git --git-dir /tmp/typescript-declarations/.git add --all
 # Commit changes
-git commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
+git --git-dir /tmp/typescript-declarations/.git commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
 # Add credentials to remote
-git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
+git --git-dir /tmp/typescript-declarations/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
+
+git --git-dir /tmp/typescript-declarations/.git branch -u origin/${CIRCLE_BRANCH}
+#git branch --set-upstream-to=origin/master master
+
 # Local update
 git --git-dir /tmp/typescript-declarations/.git fetch && \
   git --git-dir /tmp/typescript-declarations/.git pull

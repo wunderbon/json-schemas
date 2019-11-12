@@ -108,19 +108,6 @@ jobs:
       - restore_cache:
           key: cache-build-{{ .Branch }}-{{ .Revision }}
 
-      - run:
-          name: Dereferencing JSON Schemas ...
-          command: ${HOME}/project/.circleci/dereference-json-schemas.sh
-
-      - run:
-          name: Faking data by JSON Schemas ...
-          command: ${HOME}/project/.circleci/create-fake-json-data.sh
-
-      - save_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - "~/project/build"
-
       - restore_cache:
           key: cache-test-{{ .Branch }}-{{ .Revision }}
 
