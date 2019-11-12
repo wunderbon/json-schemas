@@ -12,6 +12,10 @@ echo "Cloning typescript declarations repository from \"${GIT_REPOSITORY_URL}\""
 # Do it
 git clone -b ${GIT_REPOSITORY_BRANCH} ${GIT_REPOSITORY_URL} ${TARGETPATH}/typescript-declarations 2>&1
 
+# Local update
+git --git-dir ${TARGETPATH}/typescript-declarations/.git fetch && \
+git --git-dir ${TARGETPATH}/typescript-declarations/.git pull
+
 # Return status
 if [ "$?" = "0" ]; then
   # exit with success - important for ci system
