@@ -45,7 +45,7 @@ jobs:
 
       - run:
           name: Generating build cache key ...
-          command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
+          command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1) >> CACHE_KEY
 
       - restore_cache:
           key: cache-build-{{ .Branch }}-{{ .Revision }}

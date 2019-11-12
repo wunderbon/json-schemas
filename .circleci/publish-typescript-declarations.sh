@@ -25,6 +25,9 @@ git add --all
 git commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
 # Add credentials to remote
 git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
+# Local update
+git --git-dir /tmp/typescript-declarations/.git fetch && \
+  git --git-dir /tmp/typescript-declarations/.git pull
 # Push them to repository
 git push -u origin ${CIRCLE_BRANCH}
 
