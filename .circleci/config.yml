@@ -58,6 +58,10 @@ jobs:
           name: Faking data by JSON Schemas ...
           command: ${HOME}/project/.circleci/create-fake-json-data.sh
 
+      - run:
+          name: CACHE_KEY
+          command: echo ${CACHE_KEY}
+
       - save_cache:
           key: cache-build-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
           paths:
@@ -118,6 +122,10 @@ jobs:
       - run:
           name: Testing JSON Schema inplementations against blueprints ...
           command: ${HOME}/project/.circleci/test-json-data.sh
+
+      - run:
+          name: CACHE_KEY
+          command: echo ${CACHE_KEY}
 
       - save_cache:
           key: cache-test-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
@@ -190,6 +198,10 @@ jobs:
       - run:
           name: DEBUG
           command: ls -alR /tmp/typescript-declarations
+
+      - run:
+          name: CACHE_KEY
+          command: echo ${CACHE_KEY}
 
       - save_cache:
           key: cache-deploy-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
