@@ -48,7 +48,7 @@ jobs:
           command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
 
       - restore_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Dereferencing JSON Schemas ...
@@ -58,12 +58,8 @@ jobs:
           name: Faking data by JSON Schemas ...
           command: ${HOME}/project/.circleci/create-fake-json-data.sh
 
-      - run:
-          name: CACHE_KEY
-          command: echo ${CACHE_KEY}
-
       - save_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
           paths:
             - "~/project/build"
 
@@ -110,10 +106,23 @@ jobs:
           command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
 
       - restore_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
+
+      - run:
+          name: Dereferencing JSON Schemas ...
+          command: ${HOME}/project/.circleci/dereference-json-schemas.sh
+
+      - run:
+          name: Faking data by JSON Schemas ...
+          command: ${HOME}/project/.circleci/create-fake-json-data.sh
+
+      - save_cache:
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - "~/project/build"
 
       - restore_cache:
-          key: cache-test-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
+          key: cache-test-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Testing JSON Schemas validity ...
@@ -123,14 +132,10 @@ jobs:
           name: Testing JSON Schema inplementations against blueprints ...
           command: ${HOME}/project/.circleci/test-json-data.sh
 
-      - run:
-          name: CACHE_KEY
-          command: echo ${CACHE_KEY}
-
       - save_cache:
-          key: cache-test-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
+          key: cache-test-{{ .Branch }}-{{ .Revision }}
           paths:
-            - "build"
+            - "~/project/build"
 
   deploy:
     <<: *defaults
@@ -175,13 +180,39 @@ jobs:
           command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
 
       - restore_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
+
+      - run:
+          name: Dereferencing JSON Schemas ...
+          command: ${HOME}/project/.circleci/dereference-json-schemas.sh
+
+      - run:
+          name: Faking data by JSON Schemas ...
+          command: ${HOME}/project/.circleci/create-fake-json-data.sh
+
+      - save_cache:
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - "~/project/build"
 
       - restore_cache:
-          key: cache-test-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
+          key: cache-test-{{ .Branch }}-{{ .Revision }}
+
+      - run:
+          name: Testing JSON Schemas validity ...
+          command: ${HOME}/project/.circleci/test-json-schemas.sh
+
+      - run:
+          name: Testing JSON Schema inplementations against blueprints ...
+          command: ${HOME}/project/.circleci/test-json-data.sh
+
+      - save_cache:
+          key: cache-test-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - "~/project/build"
 
       - restore_cache:
-          key: cache-deploy-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
+          key: cache-deploy-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Creating TypeScript declarations ...
@@ -199,14 +230,10 @@ jobs:
           name: DEBUG
           command: ls -alR /tmp/typescript-declarations
 
-      - run:
-          name: CACHE_KEY
-          command: echo ${CACHE_KEY}
-
       - save_cache:
-          key: cache-deploy-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
+          key: cache-deploy-{{ .Branch }}-{{ .Revision }}
           paths:
-            - "build"
+            - "~/project/build"
 
 workflows:
   version: 2
