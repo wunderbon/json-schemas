@@ -23,9 +23,6 @@ cp -R build/ts/* /tmp/typescript-declarations/declarations || exit 0;
 # Add them
 git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations add --all
 
-# Commit changes
-git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
-
 # Add credentials to remote
 git --git-dir /tmp/typescript-declarations/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
 
@@ -35,6 +32,9 @@ git --git-dir /tmp/typescript-declarations/.git branch -u origin/${CIRCLE_BRANCH
 # Local update
 git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations fetch && \
   git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations pull
+
+# Commit changes
+git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
 
 # Push them to repository
 git --git-dir /tmp/typescript-declarations/.git push -u origin ${CIRCLE_BRANCH}
