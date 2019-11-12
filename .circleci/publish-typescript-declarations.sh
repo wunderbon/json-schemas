@@ -18,25 +18,27 @@ git --git-dir /tmp/typescript-declarations/.git checkout -b ${CIRCLE_BRANCH}
 # Remove all existing files (soft reset)
 rm -rf /tmp/typescript-declarations/declarations/*
 # Copy all typescript declaration files from build to target repository
-cp -R ./build/ts/* /tmp/typescript-declarations/declarations || exit 0;
-# Add them
-git --git-dir /tmp/typescript-declarations/.git add --all
-# Commit changes
-git --git-dir /tmp/typescript-declarations/.git commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
-# Add credentials to remote
-git --git-dir /tmp/typescript-declarations/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
+cp -R build/ts/* /tmp/typescript-declarations/declarations || exit 0;
 
-git --git-dir /tmp/typescript-declarations/.git branch -u origin/${CIRCLE_BRANCH}
-#git branch --set-upstream-to=origin/master master
+ls -alR /tmp/typescript-declarations/declarations
+
+# Add them
+#git --git-dir /tmp/typescript-declarations/.git add --all
+# Commit changes
+#git --git-dir /tmp/typescript-declarations/.git commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
+# Add credentials to remote
+#git --git-dir /tmp/typescript-declarations/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
+
+#git --git-dir /tmp/typescript-declarations/.git branch -u origin/${CIRCLE_BRANCH}
 
 # Local update
-echo FETCHING & PULLING
-git --git-dir /tmp/typescript-declarations/.git fetch && \
-  git --git-dir /tmp/typescript-declarations/.git pull
+#echo FETCHING & PULLING
+#git --git-dir /tmp/typescript-declarations/.git fetch && \
+#  git --git-dir /tmp/typescript-declarations/.git pull
 
 # Push them to repository
-echo PUSHING
-git --git-dir /tmp/typescript-declarations/.git push -u origin ${CIRCLE_BRANCH}
+#echo PUSHING
+#git --git-dir /tmp/typescript-declarations/.git push -u origin ${CIRCLE_BRANCH}
 
 # Return status
 if [ "$?" = "0" ]; then
