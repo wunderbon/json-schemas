@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Environment configuration
-PATH_SOURCE_FILES=".tmp/schema/**/*.schema.json"
+PATH_SOURCE_FILES="build/schema/**/*.schema.json"
 
 # What we do
 echo "Testing Data against JSON-Schemas from \"${PATH_SOURCE_FILES}\""
@@ -9,7 +9,7 @@ echo "Testing Data against JSON-Schemas from \"${PATH_SOURCE_FILES}\""
 # Do it
 shopt -s globstar
 for file in ${PATH_SOURCE_FILES}; do
-  DATAFILE=${file/.tmp\/schema\//data\/}
+  DATAFILE=${file/build\/schema\//data\/}
   DATAFILE=${DATAFILE/schema.json/json}
 
   if [ -f "$DATAFILE" ]; then

@@ -3,11 +3,24 @@
 # Repository access data (configured at https://circleci.com/bb/organizations/wunderbon/settings#contexts)
 
 # What we do
-echo "Cloning typescript declarations repository from \"${GIT_REPOSITORY_URL}\""
+echo "Publishing typescript declarations ... "
 
 # Do it
-# A) PUBLISH TO OUR REPOSITORY (BASE FOR NEXT STEP B)
-echo ${GIT_REPOSITORY_USERNAME}
+echo "Creating Feature Branch ..."
+# Change into (systems) temp directory
+cd /tmp/typescript-declarations/declarations || exit 0; # Exit in case that directory switch fails
+# Checkout new branch and switch to it (name is branch name from this repository)
+git checkout -b ${CIRCLE_BRANCH}
+# Remove all existing files (soft reset)
+rm -rf /tmp/typescript-declarations/declarations/*
+# Copy all typescript declaration files from build to target repository
+cp -R ./build/ts/* /tmp/typescript-declarations/declarations
+# Add them
+git add --all
+# Commit changes
+git commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
+# Push them to repository
+git push -u origin ${CIRCLE_BRANCH}
 
 # Return status
 if [ "$?" = "0" ]; then
@@ -18,20 +31,5 @@ else
 	# exit with error - important for ci system
 	exit 1
 fi
-
-
-# Send pull request with updated files  ...
-#curl https://api.bitbucket.org/2.0/repositories/wunderbon/typescript-declarations/pullrequests \
-#    -u ${REPOSITORY_USERNAME}:${REPOSITORY_PASSWORD} \
-#    --request POST \
-#    --header 'Content-Type: application/json' \
-#    --data '{
-#        "title": "Automatic PR from: ",
-#        "source": {
-#            "branch": {
-#                "name": "staging"
-#            }
-#        }
-#    }'
 
 # B) PUBLISH TO DEFINITELY TYPED

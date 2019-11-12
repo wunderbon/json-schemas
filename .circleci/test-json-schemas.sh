@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Environment configuration
-PATH_SOURCE_FILES=".tmp/schema/**/*.schema.json"
+PATH_SOURCE_FILES="build/schema/**/*.schema.json"
 
 echo "Testing dereferenced JSON-Schemas from \"${PATH_SOURCE_FILES}\""
 shopt -s globstar

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Environment configuration
-PATH_SOURCE_FILES=".tmp/schema/**/*.schema.json"
+PATH_SOURCE_FILES="build/schema/**/*.schema.json"
 
 # What we do
 echo "Creating typescript declarations from JSON-Schemas from \"${PATH_SOURCE_FILES}\""
@@ -11,13 +11,13 @@ shopt -s globstar
 for file in ${PATH_SOURCE_FILES}; do
   # New filename and path for dereferenced schema
   OUTPUTFILENAME="`basename $file`"
-  OUTPUTFILENAME=.tmp/ts/${OUTPUTFILENAME/.schema.json/.ts}
+  OUTPUTFILENAME=build/ts/${OUTPUTFILENAME/.schema.json/.ts}
   mkdir -p "`dirname $OUTPUTFILENAME`/"
   ./node_modules/.bin/quicktype --src-lang schema --lang ts --acronym-style pascal ${file} -o ${OUTPUTFILENAME}
 
   DTSFILENAME="`basename $OUTPUTFILENAME`"
   DTSFILENAME=${DTSFILENAME/.ts/}
-  DTSFILENAME=.tmp/ts/${DTSFILENAME}.d.ts
+  DTSFILENAME=build/ts/${DTSFILENAME}.d.ts
   mkdir -p "`dirname $DTSFILENAME`/"
   ./node_modules/.bin/dts-bundle-generator -o ${DTSFILENAME} ${OUTPUTFILENAME}
 

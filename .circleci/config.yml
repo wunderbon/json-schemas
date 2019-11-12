@@ -48,7 +48,7 @@ jobs:
           command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
 
       - restore_cache:
-          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Dereferencing JSON Schemas ...
@@ -59,9 +59,9 @@ jobs:
           command: ${HOME}/project/.circleci/create-fake-json-data.sh
 
       - save_cache:
-          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
           paths:
-            - "~/project/.tmp"
+            - "~/project/build"
 
   test:
     <<: *defaults
@@ -102,7 +102,7 @@ jobs:
             - "node_modules"
 
       - restore_cache:
-          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Testing JSON Schemas validity ...
@@ -113,9 +113,9 @@ jobs:
           command: ${HOME}/project/.circleci/test-json-data.sh
 
       - save_cache:
-          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
           paths:
-            - ".tmp"
+            - "build"
 
   deploy:
     <<: *defaults
@@ -156,7 +156,7 @@ jobs:
             - "node_modules"
 
       - restore_cache:
-          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Creating TypeScript declarations ...
@@ -175,9 +175,9 @@ jobs:
           command: ls -alR /tmp/typescript-declarations
 
       - save_cache:
-          key: cache-tmp-{{ .Branch }}-{{ .Revision }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}
           paths:
-            - ".tmp"
+            - "build"
 
 workflows:
   version: 2

@@ -1,27 +1,12 @@
-# nyc test coverage
-.nyc_output/
-
-# Google
-keyfile.json
-gcloud-credentials.json
-
-# Coverage directory used by tools like istanbul
-coverage
-
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
-# Bower dependency directory (https://bower.io/)
-bower_components
-
-# node-waf configuration
-.lock-wscript
-
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
-
 # Dependency directories
 node_modules/
+
+# TypeScript cache
+.tscache/
+
+# Google generic
+keyfile.json
+gcloud-credentials.json
 
 # Optional npm cache directory
 .npm
@@ -38,9 +23,6 @@ node_modules/
 # dotenv environment variables file
 .env
 
-# TypeScript cache
-.tscache/
-
 # ghostwriter backups
 *.md.backup
 
@@ -48,19 +30,5 @@ node_modules/
 dev-*
 
 # Project specific
-app/*
-bin/*
-src/app/routes.ts
-src/**/*.js
-src/**/*d.ts
-test/**/*.js
-test/**/*d.ts
-docs/report/*
-
+build/
 public/*
-
-# Exclude generated schema files
-docker-run-result
-
-.tmp/*
-/test.ts

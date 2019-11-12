@@ -3,14 +3,14 @@
     "target": "es2017",
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "./.tmp/js",
+    "outDir": "./build/js",
     "sourceMap": true,
     "removeComments": false,
     "preserveConstEnums": true,
     "declaration": true
   },
   "include": [
-    "./.tmp/ts/**/*"
+    "./build/ts/**/*"
   ],
   "exclude": [
     "node_modules",

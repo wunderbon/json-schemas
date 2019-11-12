@@ -10,7 +10,7 @@ echo "Dereferencing JSON-Schemas from \"${PATH_SOURCE_FILES}\""
 shopt -s globstar
 for file in ${PATH_SOURCE_FILES}; do
   # New filename and path for dereferenced schema
-  OUTPUTFILENAME=${file/schema\//.tmp/schema\/}
+  OUTPUTFILENAME=${file/schema\//build/schema\/}
   mkdir -p "`dirname $OUTPUTFILENAME`/"
   ./node_modules/.bin/json-dereference -s $file -o $OUTPUTFILENAME
 done
