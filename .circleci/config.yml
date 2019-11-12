@@ -48,7 +48,7 @@ jobs:
           command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
 
       - restore_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
 
       - run:
           name: Dereferencing JSON Schemas ...
@@ -59,7 +59,7 @@ jobs:
           command: ${HOME}/project/.circleci/create-fake-json-data.sh
 
       - save_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}
+          key: cache-build-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
           paths:
             - "~/project/build"
 
@@ -102,7 +102,7 @@ jobs:
             - "node_modules"
 
       - restore_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}
+          key: cache-test-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
 
       - run:
           name: Testing JSON Schemas validity ...
@@ -113,7 +113,7 @@ jobs:
           command: ${HOME}/project/.circleci/test-json-data.sh
 
       - save_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}
+          key: cache-test-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
           paths:
             - "build"
 
@@ -156,7 +156,7 @@ jobs:
             - "node_modules"
 
       - restore_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}
+          key: cache-deploy-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
 
       - run:
           name: Creating TypeScript declarations ...
@@ -175,7 +175,7 @@ jobs:
           command: ls -alR /tmp/typescript-declarations
 
       - save_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}
+          key: cache-deploy-{{ .Branch }}-{{ .Revision }}-{{ checksum "CACHE_KEY" }}
           paths:
             - "build"
 
