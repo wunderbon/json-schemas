@@ -28,7 +28,9 @@ git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-decl
 
 # Add credentials to remote
 git --git-dir /tmp/typescript-declarations/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
-#git --git-dir /tmp/typescript-declarations/.git branch -u origin/${CIRCLE_BRANCH}
+
+# Set upstream link
+git --git-dir /tmp/typescript-declarations/.git branch -u origin/${CIRCLE_BRANCH}
 
 # Local update
 git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations fetch && \
