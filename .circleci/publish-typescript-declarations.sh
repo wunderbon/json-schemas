@@ -30,10 +30,13 @@ git --git-dir /tmp/typescript-declarations/.git branch -u origin/${CIRCLE_BRANCH
 #git branch --set-upstream-to=origin/master master
 
 # Local update
+echo FETCHING & PULLING
 git --git-dir /tmp/typescript-declarations/.git fetch && \
   git --git-dir /tmp/typescript-declarations/.git pull
+
 # Push them to repository
-git push -u origin ${CIRCLE_BRANCH}
+echo PUSHING
+git --git-dir /tmp/typescript-declarations/.git push -u origin ${CIRCLE_BRANCH}
 
 # Return status
 if [ "$?" = "0" ]; then
