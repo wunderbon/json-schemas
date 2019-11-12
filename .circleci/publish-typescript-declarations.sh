@@ -6,19 +6,21 @@
 echo "Publishing typescript declarations ... "
 
 # Do it
-echo "Creating Feature Branch ..."
+echo "... to Bitbucket repository ..."
 # Change into (systems) temp directory
-cd /tmp/typescript-declarations/declarations || exit 0; # Exit in case that directory switch fails
+#cd /tmp/typescript-declarations/declarations || exit 0; # Exit in case that directory switch fails
 # Checkout new branch and switch to it (name is branch name from this repository)
-git checkout -b ${CIRCLE_BRANCH}
+git --git-dir /tmp/typescript-declarations/.git checkout -b ${CIRCLE_BRANCH}
 # Remove all existing files (soft reset)
 rm -rf /tmp/typescript-declarations/declarations/*
 # Copy all typescript declaration files from build to target repository
-cp -R ./build/ts/* /tmp/typescript-declarations/declarations
+cp -R ./build/ts/* /tmp/typescript-declarations/declarations || exit 0;
 # Add them
 git add --all
 # Commit changes
 git commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
+# Add credentials to remote
+git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
 # Push them to repository
 git push -u origin ${CIRCLE_BRANCH}
 
