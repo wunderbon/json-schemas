@@ -5,6 +5,10 @@
 # What we do
 echo "Publishing typescript declarations ... "
 
+# Setup git
+git config --global user.email "${GIT_USER_EMAIL}"
+git config --global user.name "CircleCI"
+
 # Do it
 echo "... to Bitbucket repository ..."
 # Change into (systems) temp directory
