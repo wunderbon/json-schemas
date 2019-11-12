@@ -20,8 +20,6 @@ rm -rf /tmp/typescript-declarations/declarations/*
 # Copy all typescript declaration files from build to target repository
 cp -R build/ts/* /tmp/typescript-declarations/declarations || exit 0;
 
-ls -alR /tmp/typescript-declarations
-
 # Add them
 git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations add --all
 
@@ -29,24 +27,22 @@ git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-decl
 git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
 
 # Add credentials to remote
-#git --git-dir /tmp/typescript-declarations/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
+git --git-dir /tmp/typescript-declarations/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
 #git --git-dir /tmp/typescript-declarations/.git branch -u origin/${CIRCLE_BRANCH}
 
 # Local update
-echo FETCHING & PULLING
 git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations fetch && \
   git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations pull
 
 # Push them to repository
-#echo PUSHING
-#git --git-dir /tmp/typescript-declarations/.git push -u origin ${CIRCLE_BRANCH}
+git --git-dir /tmp/typescript-declarations/.git push -u origin ${CIRCLE_BRANCH}
 
 # Return status
 if [ "$?" = "0" ]; then
   # exit with success - important for ci system
   exit 0
 else
-	echo "Error while cloning repository!" 1>&2
+	echo "Error while publishing typescript declarations!" 1>&2
 	# exit with error - important for ci system
 	exit 1
 fi
