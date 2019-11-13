@@ -198,9 +198,6 @@ workflows:
     jobs:
       - build:
           context: wunderbon-open-source-api
-          filters:
-            branches:
-              only: /^feature\/.+$/
       - test:
           context: wunderbon-open-source-api
           requires:
