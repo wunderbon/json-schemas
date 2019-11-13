@@ -202,14 +202,23 @@ workflows:
           context: wunderbon-open-source-api
           requires:
             - build
+          filters:
+            tags:
+              only: /^v.*/
   tagged-build:
     jobs:
       - build:
           context: wunderbon-open-source-api
+          filters:
+            tags:
+              only: /^v.*/
       - test:
           context: wunderbon-open-source-api
           requires:
             - build
+          filters:
+            tags:
+              only: /^v.*/
       - deploy:
           context: wunderbon-open-source-api
           requires:
