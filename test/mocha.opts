@@ -1,0 +1,6 @@
+--require test/helper
+--full-trace
+--bail
+--recursive
+--ui bdd
+-c
