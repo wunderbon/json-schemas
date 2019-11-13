@@ -3,29 +3,19 @@ module.exports = function (grunt) {
   'use strict';
 
   grunt.initConfig({
-    gruntPrepend: {
-      prepend : {
-        options: {
-          content: '#!/usr/bin/env node'
-        },
-        files: [{
-          src: './bin/www'
-        }]
-      }
-    },
     tslint: {
       options: {
         configuration: 'tslint.json',
         project: 'tsconfig.json',
-        fix: true
+        fix: true,
+        force: true,
+        quiet: true
       },
       development: {
         files: {
           src: [
-            './src/app/**/*.ts',
-            './src/bin/**/*.ts',
-            './src/test/**/*.ts',
-            '!./src/**/*.d.ts'
+            './build/ts/**/*',
+            '!./build/ts/**/*.d.ts'
           ]
         }
       },
@@ -37,11 +27,8 @@ module.exports = function (grunt) {
         },
         files: {
           src: [
-            './src/app/**/*.ts',
-            './src/bin/**/*.ts',
-            './src/test/**/*.ts',
-            '!./src/**/*.d.ts',
-            '!./src/app/template/tsoa/*.ts'
+            './build/ts/**/*',
+            '!./build/ts/**/*.d.ts'
           ]
         }
       }
@@ -51,32 +38,22 @@ module.exports = function (grunt) {
         'no-write': true,
       },
       production: [
-        './test/*',
-        '!./test/helper.js',
-        '!./test/mocha.opts',
-        '!./test/.env',
-        './app/*',
-        '!./app/swagger.json',
-        '!./app/.gitkeep',
-        './bin/*',
-        '!./bin/.gitkeep'
+        './build/js/*'
       ]
     },
     ts: {
       development: {
         tsconfig: 'tsconfig.json',
         options: {
-          rootDir: './src',
+          rootDir: './build',
           fast: 'always',
           removeComments: false,
           inlineSourceMap: true
         },
         src: [
-          './src/app/**/*.ts',
-          './src/bin/**/*.ts',
-          './src/test/**/*.ts',
+          './build/ts/**/*.ts'
         ],
-        outDir: '.'
+        outDir: './build/js'
       },
       build: {
         tsconfig: 'tsconfig.json',
@@ -85,21 +62,10 @@ module.exports = function (grunt) {
           fast: 'never'
         },
         src: [
-          './src/app/**/*.ts',
-          './src/bin/**/*.ts',
-          './src/test/**/*.ts',
+          './build/ts/**/*.ts'
         ],
         outDir: '.'
       }
-    },
-    move: {
-      www: {
-        options: {
-          ignoreMissing: true,
-        },
-        src: './bin/www.js',
-        dest: './bin/www'
-      },
     },
     copy: {
       env: {
@@ -111,7 +77,7 @@ module.exports = function (grunt) {
     },
     watch: {
       ts: {
-        files: ['src/\*\*/\*.ts', '!./src/**/*.d.ts'],
+        files: ['build/ts/**/*.ts', '!./build/**/*.d.ts'],
         tasks: ['tslint:development', 'ts:development', 'move']
       }
     }
@@ -128,14 +94,14 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-ts');
 
   grunt.registerTask('default', [
-    'tslint:production', 'clean:production', 'ts:build', 'move:www'
+    'tslint:production', 'clean:production', 'ts:build'
   ]);
 
   grunt.registerTask('development', [
-    'tslint:development', 'ts:development', 'move'
+    'tslint:development', 'ts:development'
   ]);
 
   grunt.registerTask('build', [
-    'tslint:production', 'clean:production', 'ts:build', 'move:www'
+    'tslint:production', 'clean:production', 'ts:build'
   ]);
 };

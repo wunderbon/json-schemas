@@ -5,18 +5,27 @@
       true,
       140
     ],
+    "object-shorthand-properties-first": false,
+    "object-literal-sort-key": false,
+    "no-increment-decrement": false,
+    "restrict-plus-operands": false,
+    "no-parameter-reassignment": false,
+    "ter-arrow-parens": false,
+    "object-literal-sort-keys": false,
+    "object-literal-shorthand": true,
     "no-boolean-literal-compare": true,
-    "no-unused-variable": false,
+    "function-name": [
+      false
+    ],
     "variable-name": [
       true,
       "ban-keywords",
       "check-format",
       "allow-leading-underscore"
     ],
+    "align": false,
     "import-name": false,
-    "ter-indent": [
-      true,
-      2
-    ]
+    "ter-indent": false,
+    "indent": false
   }
 }

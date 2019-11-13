@@ -11,31 +11,23 @@ git config --global user.name "CircleCI"
 
 # Do it
 echo "... to Bitbucket repository ..."
-# Change into (systems) temp directory
-#cd /tmp/typescript-declarations/declarations || exit 0; # Exit in case that directory switch fails
 # Checkout new branch and switch to it (name is branch name from this repository)
 git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations checkout -b ${CIRCLE_BRANCH}
 # Remove all existing files (soft reset)
 rm -rf /tmp/typescript-declarations/declarations/*
 # Copy all typescript declaration files from build to target repository
 cp -R build/ts/* /tmp/typescript-declarations/declarations || exit 0;
-
 # Add them
 git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations add --all
-
 # Add credentials to remote
 git --git-dir /tmp/typescript-declarations/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
-
 # Set upstream link
 git --git-dir /tmp/typescript-declarations/.git branch -u origin/${CIRCLE_BRANCH}
-
 # Local update
 git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations fetch && \
   git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations pull
-
 # Commit changes
 git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
-
 # Push them to repository
 git --git-dir /tmp/typescript-declarations/.git push -u origin ${CIRCLE_BRANCH}
 

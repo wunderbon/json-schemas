@@ -187,10 +187,6 @@ jobs:
           name: Publishing typescript-decelarations ...
           command: ${HOME}/project/.circleci/publish-typescript-declarations.sh
 
-      - run:
-          name: DEBUG
-          command: ls -alR /tmp/typescript-declarations
-
       - save_cache:
           key: cache-deploy-{{ .Branch }}-{{ .Revision }}
           paths:
