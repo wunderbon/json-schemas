@@ -28,8 +28,12 @@ git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-decl
   git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations pull
 # Commit changes
 git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
+# Tag this version with tag from current build
+git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations tag ${CIRCLE_TAG}
+git --git-dir /tmp/typescript-declarations/.git --work-tree=/tmp/typescript-declarations tag -l
 # Push them to repository
 git --git-dir /tmp/typescript-declarations/.git push -u origin ${CIRCLE_BRANCH}
+git --git-dir /tmp/typescript-declarations/.git push origin --tags
 
 # Return status
 if [ "$?" = "0" ]; then
