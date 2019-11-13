@@ -198,14 +198,13 @@ workflows:
     jobs:
       - build:
           context: wunderbon-open-source-api
-          branches:
-            only: /^master$/
       - test:
           context: wunderbon-open-source-api
           requires:
             - build
-          branches:
-            only: /^master$/
+          filters:
+            branches:
+              only: master
   tagged-build:
     jobs:
       - build:
@@ -213,8 +212,8 @@ workflows:
           filters:
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
-          branches:
-            only: /^master$/
+            branches:
+              only: master
       - test:
           context: wunderbon-open-source-api
           requires:
@@ -222,8 +221,8 @@ workflows:
           filters:
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
-          branches:
-            only: /^master$/
+            branches:
+              only: master
       - deploy:
           context: wunderbon-open-source-api
           requires:
@@ -231,5 +230,5 @@ workflows:
           filters:
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
-          branches:
-            only: /^master$/
+            branches:
+              only: master
