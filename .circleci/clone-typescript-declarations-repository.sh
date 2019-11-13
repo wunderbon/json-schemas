@@ -3,7 +3,7 @@
 # Environment configuration
 # Repository access data (configured at https://circleci.com/bb/organizations/wunderbon/settings#contexts)
 TARGETPATH="/tmp"
-GIT_REPOSITORY_BRANCH="develop"
+GIT_REPOSITORY_BRANCH="master"
 GIT_REPOSITORY_URL="https://${GIT_REPOSITORY_USERNAME}@bitbucket.org/wunderbon/typescript-declarations.git"
 
 # What we do

@@ -15,6 +15,9 @@ for file in ${PATH_SOURCE_FILES}; do
   mkdir -p "`dirname $OUTPUTFILENAME`/"
   ./node_modules/.bin/quicktype --src-lang schema --lang ts --acronym-style pascal ${file} -o ${OUTPUTFILENAME}
 
+  # Add document header to file
+  echo -e "$(cat .circleci/doc-header.tpl)\n\n$(cat ${OUTPUTFILENAME})" > ${OUTPUTFILENAME}
+
   DTSFILENAME="`basename $OUTPUTFILENAME`"
   DTSFILENAME=${DTSFILENAME/.ts/}
   DTSFILENAME=build/ts/${DTSFILENAME}.d.ts
@@ -22,7 +25,7 @@ for file in ${PATH_SOURCE_FILES}; do
   ./node_modules/.bin/dts-bundle-generator -o ${DTSFILENAME} ${OUTPUTFILENAME}
 
   # Add document header to file
-  echo -e "$(cat .circleci/doc-header.tpl)\n\n$(cat ${OUTPUTFILENAME})" > ${OUTPUTFILENAME}
+  echo -e "$(cat .circleci/doc-header.tpl)\n\n$(cat ${DTSFILENAME})" > ${DTSFILENAME}
 
   if [ "$?" = "1" ]; then
     echo "Error while creating typescript declarations!" 1>&2
