@@ -21,6 +21,9 @@ for file in ${PATH_SOURCE_FILES}; do
   mkdir -p "`dirname $DTSFILENAME`/"
   ./node_modules/.bin/dts-bundle-generator -o ${DTSFILENAME} ${OUTPUTFILENAME}
 
+  # Add document header to file
+  echo -e "$(cat .circleci/doc-header.tpl)\n\n$(cat ${OUTPUTFILENAME})" > ${OUTPUTFILENAME}
+
   if [ "$?" = "1" ]; then
     echo "Error while creating typescript declarations!" 1>&2
 	  # exit with error - important for ci system
