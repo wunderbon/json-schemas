@@ -212,8 +212,6 @@ workflows:
           filters:
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
-            branches:
-              only: master
       - test:
           context: wunderbon-open-source-api
           requires:
@@ -221,8 +219,6 @@ workflows:
           filters:
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
-            branches:
-              only: master
       - deploy:
           context: wunderbon-open-source-api
           requires:
@@ -230,5 +226,3 @@ workflows:
           filters:
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
-            branches:
-              only: master
