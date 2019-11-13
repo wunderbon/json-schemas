@@ -210,6 +210,8 @@ workflows:
       - build:
           context: wunderbon-open-source-api
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
       - test:
@@ -217,6 +219,8 @@ workflows:
           requires:
             - build
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
       - deploy:
@@ -224,5 +228,7 @@ workflows:
           requires:
             - test
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
