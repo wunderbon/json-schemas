@@ -198,13 +198,15 @@ workflows:
     jobs:
       - build:
           context: wunderbon-open-source-api
+          filters:
+            branches:
+              only:
+                - /^feature\/.+$/
+                - develop
       - test:
           context: wunderbon-open-source-api
           requires:
             - build
-          filters:
-            branches:
-              only: master
   tagged-build:
     jobs:
       - build:
