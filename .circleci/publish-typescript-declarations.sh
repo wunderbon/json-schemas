@@ -32,7 +32,7 @@ PACKAGE_VERSION=$(cat ${TARGETPATH}/typescript-declarations/package.json \
   | sed 's/[",]//g' \
   | tr -d '[[:space:]]')
 
-sed -i 's/${PACKAGE_VERSION}/${CIRCLE_TAG}/g' ${TARGETPATH}/typescript-declarations/package.json
+sed -i "s/${PACKAGE_VERSION}/${CIRCLE_TAG}/g" ${TARGETPATH}/typescript-declarations/package.json
 
 # Add them
 git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPATH}/typescript-declarations add --all
