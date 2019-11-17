@@ -43,10 +43,6 @@ jobs:
           paths:
             - "node_modules"
 
-      - run:
-          name: Generating build cache key ...
-          command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1) >> CACHE_KEY
-
       - restore_cache:
           key: cache-build-{{ .Branch }}-{{ .Revision }}
 
@@ -101,10 +97,6 @@ jobs:
           paths:
             - "node_modules"
 
-      - run:
-          name: Generating build cache key ...
-          command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
-
       - restore_cache:
           key: cache-build-{{ .Branch }}-{{ .Revision }}
 
@@ -124,7 +116,7 @@ jobs:
           paths:
             - "~/project/build"
 
-  deploy:
+  publish:
     <<: *defaults
     steps:
       - restore_cache:
@@ -162,10 +154,6 @@ jobs:
           paths:
             - "node_modules"
 
-      - run:
-          name: Generating build cache key ...
-          command: echo $(find ${HOME}/project/.circleci/ -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1)  >> CACHE_KEY
-
       - restore_cache:
           key: cache-build-{{ .Branch }}-{{ .Revision }}
 
@@ -173,7 +161,7 @@ jobs:
           key: cache-test-{{ .Branch }}-{{ .Revision }}
 
       - restore_cache:
-          key: cache-deploy-{{ .Branch }}-{{ .Revision }}
+          key: cache-publish-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Creating TypeScript declarations ...
@@ -188,49 +176,49 @@ jobs:
           command: ${HOME}/project/.circleci/publish-typescript-declarations.sh
 
       - save_cache:
-          key: cache-deploy-{{ .Branch }}-{{ .Revision }}
+          key: cache-publish-{{ .Branch }}-{{ .Revision }}
           paths:
             - "~/project/build"
 
-workflows:
-  version: 2
-  build:
-    jobs:
-      - build:
-          context: wunderbon-open-source-api
-          filters:
-            branches:
-              only:
-                - /^feature\/.+$/
-                - develop
-      - test:
-          context: wunderbon-open-source-api
-          requires:
-            - build
-  tagged-build:
-    jobs:
-      - build:
-          context: wunderbon-open-source-api
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
-      - test:
-          context: wunderbon-open-source-api
-          requires:
-            - build
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
-      - deploy:
-          context: wunderbon-open-source-api
-          requires:
-            - test
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+  workflows:
+    version: 2
+    build:
+      jobs:
+        - build:
+            context: wunderbon-open-source-api
+            filters:
+              branches:
+                only:
+                  - /^feature\/.+$/
+                  - develop
+        - test:
+            context: wunderbon-open-source-api
+            requires:
+              - build
+    tagged-build:
+      jobs:
+        - build:
+            context: wunderbon-open-source-api
+            filters:
+              branches:
+                ignore: /.*/
+              tags:
+                only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+        - test:
+            context: wunderbon-open-source-api
+            requires:
+              - build
+            filters:
+              branches:
+                ignore: /.*/
+              tags:
+                only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+        - publish:
+            context: wunderbon-open-source-api
+            requires:
+              - test
+            filters:
+              branches:
+                ignore: /.*/
+              tags:
+                only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
