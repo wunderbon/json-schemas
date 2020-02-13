@@ -1,7 +1,7 @@
 {
   "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/location/location.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "contact": {
     "name": "wunderbon support",
     "url": "https://wunderbon.io/support",

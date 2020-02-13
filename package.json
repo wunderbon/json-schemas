@@ -30,12 +30,12 @@
     "wunderbon",
     "model"
   ],
-  "author": "Benjamin Carl",
+  "author": "wunderbon Holding B.V.",
   "maintainers": [
     {
       "name": "Benjamin Carl",
       "email": "benjamin.carl@wunderbon.io",
-      "web": "https://developer.wunderbon.io"
+      "web": "https://developers.wunderbon.io"
     }
   ],
   "nyc": {
