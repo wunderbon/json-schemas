@@ -91,7 +91,7 @@ If you encounter a (potential) security issue don't hesitate to get in contact w
 
 ---
 
-###### Copyright
+## Copyright & Licensing
 
 - Icons made by:
   - [Chanut](https://www.flaticon.com/authors/chanut) from [www.flaticon.com](www.flaticon.com)
