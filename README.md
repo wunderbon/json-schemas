@@ -2,21 +2,21 @@
 
 ## Documentation JSON-Schemas
 
-This document links to documentation for project **wunderbon** `JSON-Schemas`.
+wunderbon **JSON-Schemas**  as blueprints for `data structures` and `contracts` like `interfaces`, `models` and `helpers`. Always up to date with the latest API specification.
 
 ## Classification
 
-`Unrestricted`
+`Open-Source`
 
-![Unrestricted](docs/unrestricted.png){ width="128px" }
+![Open-Source](docs/open-source-128x128.png)
 
 ---
 
-![Logo of data-structure-models](https://bitbucket.org/wunderbon/json-schemas/raw/master/docs/logo-large.png)
+## Info & Status
+[![wunderbon Projects](https://img.shields.io/badge/wunderbon-Projects-green.svg?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/license-MIT-green?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/wunderbon-Open_Standard-orange?style=flat)](https://wunderbon.io/) [![CircleCI](https://circleci.com/bb/wunderbon/json-schemas/tree/master.svg?style=svg)](https://circleci.com/bb/wunderbon/json-schemas/tree/master)
 
-wunderbon **JSON-schemas** representing models of our provided `REST APIs`.
 
-[![wunderbon Projects](https://img.shields.io/badge/wunderbon-Projects-green.svg?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/license-MIT-green?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/wunderbon-Open_Standard-orange?style=flat)](https://wunderbon.io/) ![CircleCI](https://img.shields.io/circleci/build/bitbucket/wunderbon/json-schemas)
+![JSON-Schemas](docs/logo-64x64.png)
 
 ---
 
@@ -36,7 +36,7 @@ wunderbon **JSON-schemas** representing models of our provided `REST APIs`.
 
 ## Features
 
- - Easy browsable `JSON-schemas` with implemented webserver (Node.JS)
+ - Easy browsable `JSON-Schemas` with implemented webserver (Node.JS)
  - Blueprints of data I/O for our REST APIs (standard >= [JSON Schema Draft 7](http://json-schema.org/ "JSON Schema Draft")).
  - Clean & well documented
 
@@ -44,8 +44,8 @@ wunderbon **JSON-schemas** representing models of our provided `REST APIs`.
 
 ## Requirements
 
- - `Node.js >= 9.3.0` *
- - `npm >= 5.6.0`
+ - `Node.JS >= 10.0.0` 
+ - `npm >= 6.0.0`
 
 ---
 
@@ -92,4 +92,7 @@ If you encounter a (potential) security issue don't hesitate to get in contact w
 ---
 
 ###### Copyright
-<div>Icons made by <a href="https://www.flaticon.com/authors/chanut" title="Chanut">Chanut</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+- Icons made by:
+  - [Chanut](https://www.flaticon.com/authors/chanut) from [www.flaticon.com](www.flaticon.com)
+  - [Pixel perfect](https://www.flaticon.com/de/autoren/pixel-perfect) from [www.flaticon.com](www.flaticon.com)
