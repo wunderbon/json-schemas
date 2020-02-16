@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 defaults: &defaults
   docker:
@@ -180,45 +180,46 @@ jobs:
           paths:
             - "~/project/build"
 
-  workflows:
-    version: 2
-    build:
-      jobs:
-        - build:
-            context: wunderbon-open-source-api
-            filters:
-              branches:
-                only:
-                  - /^feature\/.+$/
-                  - develop
-        - test:
-            context: wunderbon-open-source-api
-            requires:
-              - build
-    tagged-build:
-      jobs:
-        - build:
-            context: wunderbon-open-source-api
-            filters:
-              branches:
-                ignore: /.*/
-              tags:
-                only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
-        - test:
-            context: wunderbon-open-source-api
-            requires:
-              - build
-            filters:
-              branches:
-                ignore: /.*/
-              tags:
-                only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
-        - publish:
-            context: wunderbon-open-source-api
-            requires:
-              - test
-            filters:
-              branches:
-                ignore: /.*/
-              tags:
-                only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          context: wunderbon-open-source
+          filters:
+            branches:
+              only:
+                - /^feature\/.+$/
+                - develop
+      - test:
+          context: wunderbon-open-source
+          requires:
+            - build
+
+  tagged-build:
+    jobs:
+      - build:
+          context: wunderbon-open-source
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+      - test:
+          context: wunderbon-open-source
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+      - publish:
+          context: wunderbon-open-source
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/

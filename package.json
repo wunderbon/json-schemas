@@ -1,6 +1,6 @@
 {
   "name": "@wunderbon/json-schemas",
-  "description": "JSON schemas definitions for models used by wunderbon applications.",
+  "description": "wunderbon JSON-Schemas as blueprints for data structures and contracts like interfaces, models and helpers. Always up to date with the latest API specification.",
   "homepage": "https://bitbucket.org/wunderbon/json-schemas#readme",
   "repository": {
     "type": "git",
@@ -9,10 +9,10 @@
   "bugs": {
     "url": "https://bitbucket.org/wunderbon/json-schemas/issues"
   },
-  "version": "0.1.1",
+  "version": "0.2.0",
   "license": "MIT",
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   },
   "main": "./server.js",
   "scripts": {
