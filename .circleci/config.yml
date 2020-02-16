@@ -185,28 +185,28 @@ workflows:
   build:
     jobs:
       - build:
-          context: wunderbon-open-source
+          context: wunderbon-open-source-api
           filters:
             branches:
               only:
                 - /^feature\/.+$/
                 - develop
       - test:
-          context: wunderbon-open-source
+          context: wunderbon-open-source-api
           requires:
             - build
 
   tagged-build:
     jobs:
       - build:
-          context: wunderbon-open-source
+          context: wunderbon-open-source-api
           filters:
             branches:
               ignore: /.*/
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
       - test:
-          context: wunderbon-open-source
+          context: wunderbon-open-source-api
           requires:
             - build
           filters:
@@ -215,7 +215,7 @@ workflows:
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
       - publish:
-          context: wunderbon-open-source
+          context: wunderbon-open-source-api
           requires:
             - test
           filters:
