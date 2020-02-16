@@ -45,7 +45,7 @@ git --git-dir ${TARGETPATH}/typescript-declarations/.git branch -u origin/${GIT_
 
 # Local update
 git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPATH}/typescript-declarations fetch && \
-  git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPATH}/typescript-declarations pull
+ git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPATH}/typescript-declarations pull
 
 # Commit changes
 git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPATH}/typescript-declarations commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
@@ -68,4 +68,4 @@ else
 	exit 1
 fi
 
-# B) PUBLISH TO DEFINITELY TYPED
+# B) @todo: PUBLISH TO DEFINITELY TYPED
