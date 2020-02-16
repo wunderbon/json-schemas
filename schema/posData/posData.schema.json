@@ -3,9 +3,9 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "version": "0.2.0",
   "contact": {
-    "name": "wunderbon support",
+    "name": "wunderbon Holding B.V.",
     "url": "https://wunderbon.io/support",
-    "email": "api-support@wunderbon.io"
+    "email": "open-source@wunderbon.io"
   },
   "title": "POS-Data",
   "description": "POS-Data representation within the wunderbon domain.",
