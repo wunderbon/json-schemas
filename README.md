@@ -43,7 +43,7 @@ wunderbon **JSON-Schemas**  as blueprints for `data structures` and `contracts` 
 
 ## Requirements
 
- - `Node.JS >= 10.0.0` 
+ - `Node.JS >= 12.0.0` 
  - `npm >= 6.0.0`
 
 ---
