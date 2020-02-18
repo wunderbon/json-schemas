@@ -18,6 +18,7 @@ for file in ${PATH_SOURCE_FILES}; do
   # Add document header to file
   echo -e "$(cat .circleci/doc-header.tpl)\n\n$(cat ${OUTPUTFILENAME})" > ${OUTPUTFILENAME}
 
+  # Generate .d.ts file
   DTSFILENAME="`basename $OUTPUTFILENAME`"
   DTSFILENAME=${DTSFILENAME/.ts/}
   DTSFILENAME=build/ts/${DTSFILENAME}.d.ts
@@ -31,6 +32,20 @@ for file in ${PATH_SOURCE_FILES}; do
   fi
 done
 
+# Generate single (ALL) index.d.ts file from .d.ts files
+./node_modules/.bin/npm-dts generate
+ALLDTSFILENAME=./index.d.ts
+
+if [ -f "$ALLDTSFILENAME" ]; then
+  echo -e "\e[0mMoving: \e[5m$ALLDTSFILENAME\e[0m"
+  mv $ALLDTSFILENAME ./build/index.d.ts 1>&2
+
+  if [ "$?" = "1" ]; then
+    # exit with error - important for ci system
+    echo "Error while moving index.dt.s file!" 1>&2
+    exit 1
+  fi
+fi
 
 if [ "$?" = "0" ]; then
   # exit with success - important for ci system

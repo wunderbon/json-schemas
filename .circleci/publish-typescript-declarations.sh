@@ -13,7 +13,7 @@ git config --global user.email "${GIT_USER_EMAIL}"
 git config --global user.name "CircleCI"
 
 # Do it
-echo "... to Bitbucket repository ..."
+echo "1) to Bitbucket repository ..."
 
 # Checkout new branch and switch to it (name is branch name from this repository)
 git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPATH}/typescript-declarations checkout -b ${GIT_REPOSITORY_BRANCH}
@@ -23,6 +23,9 @@ rm -rf ${TARGETPATH}/typescript-declarations/declarations/*
 
 # Copy all typescript declaration files from build to target repository
 cp -R build/ts/* ${TARGETPATH}/typescript-declarations/declarations || exit 0;
+
+# Copy index.d.ts files from build to target repository
+cp build/index.d.ts ${TARGETPATH}/typescript-declarations || exit 0;
 
 # Retrieve tag from package.json
 PACKAGE_VERSION=$(cat ${TARGETPATH}/typescript-declarations/package.json \

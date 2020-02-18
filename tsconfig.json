@@ -3,17 +3,44 @@
     "target": "es2017",
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "./build/js",
+    "rootDir": "./build/ts",
+    "outDir": "./build/ts",
     "sourceMap": true,
     "removeComments": false,
-    "preserveConstEnums": true,
-    "declaration": true
+    "newLine": "LF",
+    "declaration": true,
+    "noImplicitAny": false,
+    "noResolve": false,
+    "noLib": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "listFiles": false,
+    "listEmittedFiles": false,
+    "allowUnusedLabels": true,
+    "alwaysStrict": true,
+    "charset": "utf8",
+    "diagnostics": false,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSourceMap": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "pretty": true,
+    "preserveConstEnums": true
   },
   "include": [
     "./build/ts/**/*"
   ],
   "exclude": [
-    "node_modules",
+    ".circleci/",
+    "data/",
+    "docs/",
+    "public/",
+    "schema/",
+    "template/",
+    "node_modules/",
     "**/*.spec.ts"
   ]
 }
