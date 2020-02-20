@@ -36,9 +36,18 @@ done
 ./node_modules/.bin/npm-dts generate
 ALLDTSFILENAME=./index.d.ts
 
-if [ -f "$ALLDTSFILENAME" ]; then
-  echo -e "\e[0mMoving: \e[5m$ALLDTSFILENAME\e[0m"
-  mv $ALLDTSFILENAME ./build/index.d.ts 1>&2
+if [ -f "${ALLDTSFILENAME}" ]; then
+  echo -e "\e[0mMoving: \e[5m${ALLDTSFILENAME}\e[0m"
+
+  PACKAGE_VERSION="{{VERSION}}"
+
+  # Insert version tag
+  sed -i "s/${PACKAGE_VERSION}/${CIRCLE_TAG}/g" .circleci/type-definitions.tpl
+
+  # Add document header to file
+  echo -e "$(cat .circleci/type-definitions.tpl)\n\n$(cat ${ALLDTSFILENAME})" > ${ALLDTSFILENAME}
+
+  mv ${ALLDTSFILENAME} ./build/index.d.ts 1>&2
 
   if [ "$?" = "1" ]; then
     # exit with error - important for ci system
