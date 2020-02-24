@@ -3,7 +3,9 @@
 # Environment configuration
 # Repository access data (configured at https://circleci.com/bb/organizations/wunderbon/settings#contexts)
 TARGETPATH="/tmp"
-GIT_REPOSITORY_BRANCH="master"
+# We work primarly on master here
+GIT_REPOSITORY_BRANCH_MASTER="master"
+GIT_REPOSITORY_BRANCH_DEVELOP="develop"
 
 # What we do
 echo "Publishing typescript declarations ... "
@@ -16,7 +18,7 @@ git config --global user.name "CircleCI"
 echo "1) to Bitbucket repository ..."
 
 # Checkout new branch and switch to it (name is branch name from this repository)
-git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPATH}/typescript-declarations checkout -b ${GIT_REPOSITORY_BRANCH}
+git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPATH}/typescript-declarations checkout -b ${GIT_REPOSITORY_BRANCH_MASTER}
 
 # Remove all existing files (soft reset)
 rm -rf ${TARGETPATH}/typescript-declarations/declarations/*
@@ -44,7 +46,7 @@ git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPAT
 git --git-dir ${TARGETPATH}/typescript-declarations/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/typescript-declarations.git
 
 # Set upstream link
-git --git-dir ${TARGETPATH}/typescript-declarations/.git branch -u origin/${GIT_REPOSITORY_BRANCH}
+git --git-dir ${TARGETPATH}/typescript-declarations/.git branch -u origin/${GIT_REPOSITORY_BRANCH_MASTER}
 
 # Local update
 git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPATH}/typescript-declarations fetch && \
@@ -58,7 +60,7 @@ git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPAT
 git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPATH}/typescript-declarations tag -l
 
 # Push them to repository
-git --git-dir ${TARGETPATH}/typescript-declarations/.git push -u origin ${GIT_REPOSITORY_BRANCH}
+git --git-dir ${TARGETPATH}/typescript-declarations/.git push -u origin ${GIT_REPOSITORY_BRANCH_MASTER}
 git --git-dir ${TARGETPATH}/typescript-declarations/.git push origin --tags
 
 # Return status
