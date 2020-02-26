@@ -13,9 +13,13 @@ wunderbon **JSON-Schemas**  as blueprints for `data structures` and `contracts` 
 ---
 
 ## Info & Status
-[![wunderbon Projects](https://img.shields.io/badge/wunderbon-Projects-green.svg?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/license-MIT-green?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/wunderbon-Open_Standard-orange?style=flat)](https://wunderbon.io/) ![CircleCI](https://img.shields.io/circleci/build/bitbucket/wunderbon/json-schemas/master)
+[![wunderbon Projects](https://img.shields.io/badge/wunderbon-Projects-green.svg?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/license-MIT-green?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/wunderbon-Open_Standard-orange?style=flat)](https://wunderbon.io/) ![CircleCI](https://img.shields.io/circleci/build/bitbucket/wunderbon/json-schemas/develop) 
 
 ![JSON-Schemas](docs/logo-64x64.png)
+
+---
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bbitbucket.org%2Fwunderbon%2Fjson-schemas.svg?type=large)](https://app.fossa.com/projects/git%2Bbitbucket.org%2Fwunderbon%2Fjson-schemas?ref=badge_large)
 
 ---
 
