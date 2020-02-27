@@ -191,6 +191,7 @@ workflows:
               only:
                 - /^feature\/.+$/
                 - develop
+                - master
       - test:
           context: wunderbon-open-source-api
           requires:
