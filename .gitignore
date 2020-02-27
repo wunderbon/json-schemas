@@ -30,5 +30,5 @@ gcloud-credentials.json
 dev-*
 
 # Project specific
-build/
+build/*
 public/*
