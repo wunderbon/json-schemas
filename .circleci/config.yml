@@ -164,6 +164,10 @@ jobs:
           key: cache-publish-{{ .Branch }}-{{ .Revision }}
 
       - run:
+          name: Authenticating with NPM registry ...
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ${HOME}/.npmrc
+
+      - run:
           name: Creating TypeScript declarations ...
           command: ${HOME}/project/.circleci/create-typescript-declarations.sh
 

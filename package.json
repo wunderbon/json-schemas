@@ -1,7 +1,7 @@
 {
   "name": "@wunderbon/json-schemas",
   "description": "wunderbon JSON-Schemas as blueprints for data structures and contracts like interfaces, models and helpers. Always up to date with the latest API specification.",
-  "homepage": "https://bitbucket.org/wunderbon/json-schemas#readme",
+  "homepage": "https://wunderbon.app",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/wunderbon/json-schemas.git"
