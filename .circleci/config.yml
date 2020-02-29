@@ -165,7 +165,7 @@ jobs:
 
       - run:
           name: Authenticating with NPM registry ...
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ${HOME}/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ${HOME}/.npmrc 2>&1
 
       - run:
           name: Creating TypeScript declarations ...
