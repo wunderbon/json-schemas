@@ -1,7 +1,7 @@
 {
   "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/country/country.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.3.1",
+  "version": "v0.3.2",
   "contact": {
     "name": "wunderbon International B.V.",
     "url": "https://developers.wunderbon.io",
