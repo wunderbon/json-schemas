@@ -13,7 +13,7 @@ wunderbon **JSON-Schemas**  as blueprints for `data structures` and `contracts` 
 ---
 
 ## Info & Status
-[![wunderbon Projects](https://img.shields.io/badge/wunderbon-Projects-green.svg?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/license-MIT-green?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/wunderbon-Open_Standard-orange?style=flat)](https://wunderbon.io/) [![CircleCI](https://img.shields.io/circleci/build/bitbucket/wunderbon/json-schemas/master)](https://circleci.com/bb/wunderbon/json-schemas) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@wunderbon/json-schemas)
+[![wunderbon Projects](https://img.shields.io/badge/wunderbon-Projects-green.svg?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/license-MIT-green?style=flat)](https://wunderbon.io/) [![wunderbon Projects](https://img.shields.io/badge/wunderbon-Open_Standard-orange?style=flat)](https://wunderbon.io/) [![CircleCI](https://img.shields.io/circleci/build/bitbucket/wunderbon/json-schemas/master)](https://circleci.com/bb/wunderbon/json-schemas) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@wunderbon/json-schemas) [![npm version](https://badge.fury.io/js/%40wunderbon%2Fjson-schemas.svg)](https://badge.fury.io/js/%40wunderbon%2Fjson-schemas)
 
 ![JSON-Schemas](https://bitbucket.org/wunderbon/json-schemas/raw/master/docs/logo-64x64.png)
 
@@ -73,7 +73,7 @@ If you are already running a service on port *8080* you will need to define a `E
 
 ## Philosophy
 
-A lot of ♥ for code, documentation & quality. Try it, run it ... ♥ it ;)
+A lot of ❤️ for code, documentation & quality!
 
 ---
 
