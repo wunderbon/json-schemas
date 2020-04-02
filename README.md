@@ -2,7 +2,7 @@
 
 ## Documentation JSON-Schemas
 
-wunderbon **JSON-Schemas**  as blueprints for `data structures` and `contracts` like `interfaces`, `models` and `helpers`. Always up to date with the latest API specification.
+wunderbon **json-schemas** as blueprints for data structures and contracts like interfaces, models and helpers. Always up to date with the latest API specification.
 
 ## Classification
 
@@ -27,7 +27,10 @@ wunderbon **JSON-Schemas**  as blueprints for `data structures` and `contracts` 
 
 - [Features](#features)
 - [Requirements](#requirements)
+- [Build](#build)
+- [Configure](#configure)
 - [Install](#install)
+- [Deploy](#deploy)
 - [Run](#run)
 - [Philosophy](#philosophy)
 - [Versioning](#versioning)
@@ -47,7 +50,7 @@ wunderbon **JSON-Schemas**  as blueprints for `data structures` and `contracts` 
 
 ## Requirements
 
- - `Node.JS >= 12.0.0` 
+ - `Node.JS >= 12.0.0`
  - `npm >= 6.0.0`
 
 ---

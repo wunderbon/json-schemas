@@ -17,7 +17,7 @@
   "main": "./server.js",
   "scripts": {
     "build": "grunt build",
-    "test": "echo \"Error: n.a.\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "set NODE_ENV=production && node ./server.js",
     "development": "set NODE_ENV=development && nodemon -L ./server.js"
   },

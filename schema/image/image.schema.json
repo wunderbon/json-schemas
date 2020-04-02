@@ -1,0 +1,27 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/image/image.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.3.2",
+  "contact": {
+    "name": "wunderbon International B.V.",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Image",
+  "description": "An image representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "description": "The URL of the image."
+    },
+    "ratio": {
+      "type": "string",
+      "description": "The ratio of width to height (e.g. 1:1 or 16:10 or ...)."
+    }
+  },
+  "required": [
+    "url"
+  ],
+  "additionalProperties": false
+}

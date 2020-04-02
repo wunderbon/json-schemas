@@ -1,0 +1,28 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tax/tax.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.3.2",
+  "contact": {
+    "name": "wunderbon International B.V.",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Tax",
+  "description": "A tax representation within the wunderbon domain. ",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type of tax e.g. 'vat'"
+    },
+    "percentage": {
+      "type": "number",
+      "description": "Percentage of tax."
+    }
+  },
+  "required": [
+    "type",
+    "percentage"
+  ],
+  "additionalProperties": false
+}

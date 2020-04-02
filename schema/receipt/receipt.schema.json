@@ -1,0 +1,79 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/receipt/receipt.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.3.2",
+  "contact": {
+    "name": "wunderbon International B.V.",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Receipt",
+  "description": "A receipt representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "merchant": {
+      "description": "The Id of the issuer (Merchant). Each Merchant will recive an unique User-Id.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "location": {
+      "description": "The Id of the location. Each location (branch) of a Merchant has its own Id.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "pos": {
+      "description": "The Id of the PoS. Each PoS within at the location (branch) has its own Id.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "header": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 42
+      },
+      "minItems": 0,
+      "maxItems": 10
+    },
+    "cart": {
+      "description": "The cart contains a collection of cartItems (representation of a product, merchant added information and the pricing).",
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/cartItem/cartItem.schema.json"
+          }
+        }
+      }
+    },
+    "payment": {
+      "description": "Payment part of the receipt. This node contains information on how the amount of the cart was settled.",
+      "type": "object",
+      "properties": {
+        "amount": {
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
+        }
+      }
+    },
+    "footer": {
+      "description": "Footer lines to be printed on bottom of receipt. Often used to print information about special deals or a new website.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 42
+      },
+      "minItems": 0,
+      "maxItems": 10
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "merchant",
+    "location",
+    "cart"
+  ]
+}
