@@ -15,7 +15,6 @@
       "description": "The value of the amount.",
       "type": "number",
       "minimum": 0,
-      "multipleOf": 0.01,
       "examples": [
         "0",
         "0.00",
@@ -206,6 +205,11 @@
         "ZAR",
         "ZMW",
         "ZWL"
+      ],
+      "examples": [
+        "EUR",
+        "USD",
+        "THB"
       ]
     }
   }

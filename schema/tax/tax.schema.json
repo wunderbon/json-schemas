@@ -8,16 +8,31 @@
     "email": "open-source@wunderbon.io"
   },
   "title": "Tax",
-  "description": "A tax representation within the wunderbon domain. ",
+  "description": "A tax representation within the wunderbon domain.",
   "type": "object",
   "properties": {
+    "amount": {
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
+    },
     "type": {
       "type": "string",
-      "description": "Type of tax e.g. 'vat'"
+      "description": "Type of tax e.g. 'VAT'",
+      "enum": [
+        "VAT",
+        "GST"
+      ],
+      "examples": [
+        "VAT",
+        "GST"
+      ]
     },
     "percentage": {
       "type": "number",
-      "description": "Percentage of tax."
+      "description": "Percentage of tax.",
+      "examples": [
+        "7",
+        "19"
+      ]
     }
   },
   "required": [

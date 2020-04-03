@@ -78,6 +78,12 @@
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/cartItem/pricing/pricing.schema.json"
     }
   },
+  "required": [
+    "uid",
+    "quantifier",
+    "name",
+    "pricing"
+  ],
   "additionalProperties": false
 }
 

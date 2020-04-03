@@ -12,14 +12,15 @@
   "type": "object",
   "properties": {
     "net": {
-      "type": "number",
-      "description": "Price excluding tax (VAT = Value Added Tax)."
+      "description": "Price EXCLUDING tax (e.g. VAT = Value Added Tax or others).",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
     },
     "gross": {
-      "type": "number",
-      "description": "Price including tax (VAT = Value Added Tax)."
+      "description": "Price INCLUDING tax (e.g. VAT = Value Added Tax or others).",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
     },
     "tax": {
+      "description": "Taxes applied on this item (e.g. VAT = Value Added Tax or others).",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tax/tax.schema.json"
     }
   },
