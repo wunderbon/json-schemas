@@ -48,7 +48,7 @@
     },
     "payment": {
       "description": "Payment part of the receipt. This node contains information on how the amount of the cart was settled.",
-      "anyOf": [
+      "oneOf": [
         {
           "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashPayment.schema.json"
         },

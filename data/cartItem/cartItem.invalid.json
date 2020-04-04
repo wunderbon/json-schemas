@@ -1,10 +1,25 @@
 {
-  "id": "12345",
-  "name": "Babybel Scheiben 100g",
-  "description": "Babybel Scheiben 50% Fett i.Tr.100g\nLaktosefrei\nohne Zusatz von Konservierungsstoffen\nreif\nUnter Schutzatmosphäre verpackt",
-  "ean13": "3073780855358",
-  "quantifier": {
-    "quantity": 1,
-    "unit": "pcs"
+  "product": {
+    "data": {
+      "code": "0720263170"
+    },
+    "quantifier": {
+      "quantity": 1,
+      "unit": "pcs"
+    },
+    "price": {
+      "net": {
+        "value": 1.85981,
+        "currency": "EUR"
+      },
+      "gross": {
+        "value": 1.99,
+        "currency": "EUR"
+      },
+      "tax": {
+        "type": "VAT",
+        "percentage": 7.00
+      }
+    }
   }
 }

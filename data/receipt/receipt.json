@@ -15,6 +15,10 @@
           "data": {
             "code": "0720260063170"
           },
+          "quantifier": {
+            "quantity": 1,
+            "unit": "pcs"
+          },
           "price": {
             "net": {
               "value": 1.85981,
@@ -28,17 +32,24 @@
               "type": "VAT",
               "percentage": 7.00
             }
-          },
-          "quantifier": {
-            "quantity": 1,
-            "unit": "pcs"
           }
         }
       }
     ]
   },
   "payment": {
-
+    "total": {
+      "value": 1.99,
+      "currency": "EUR"
+    },
+    "given": {
+      "value": 10.00,
+      "currency": "EUR"
+    },
+    "change": {
+      "value": 8.01,
+      "currency": "EUR"
+    }
   },
   "footer": [
     "Thank you for shopping at",

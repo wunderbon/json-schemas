@@ -22,12 +22,25 @@
     "change": {
       "description": "Change for customer.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
+    },
+    "meta": {
+      "description": "Meta data of transaction from terminal.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "giro"
+          ]
+        }
+      }
     }
   },
   "required": [
     "total",
     "given",
-    "change"
+    "change",
+    "meta"
   ],
   "additionalProperties": false
 }
