@@ -1,0 +1,19 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/gtin8/gtin8.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.3.2",
+  "contact": {
+    "name": "wunderbon International B.V.",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "GTIN 8",
+  "description": "A GTIN 8 representation within the wunderbon domain.",
+  "type": "string",
+  "minLength": 8,
+  "maxLength": 8,
+  "pattern": "\\b(?:\\d{8})\\b",
+  "examples": [
+    "40170725"
+  ]
+}

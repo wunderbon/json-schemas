@@ -1,0 +1,77 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/product/eanProduct.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.3.2",
+  "contact": {
+    "name": "wunderbon International B.V.",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "EAN-Product",
+  "description": "An EAN product representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "code": {
+      "description": "EAN (GTIN) 8||13 product code.",
+      "anyOf": [
+        {
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/gtin8/gtin8.schema.json"
+        },
+        {
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/gtin13/gtin13.schema.json"
+        }
+      ]
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "short": {
+          "description": "Short product name.",
+          "examples": [
+            "Sun Screen"
+          ],
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "long": {
+          "description": "Full product name.",
+          "examples": [
+            "Sol Feliz LSF 30 Dermatologic Sunscreen"
+          ],
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "short"
+      ]
+    },
+    "description": {
+      "description": "Product description.",
+      "type": "string",
+      "minLength": 12,
+      "maxLength": 1024,
+      "examples": [
+        "100 ml / 133 g brutto\n\n- ohne Parfüm\n- hypoallergen\n- täglich für Gesicht und Körper\n- für sensible Haut\n- vom Dermatologen entwickelt\n\nWas Sol Feliz besonders auszeichnet:\n- 5-Sterne UVA Schutz gegen lichtbedingte Alterung, Falten und Zellschädigung (Boots-Standard)\n- vom europäischen Experten für Sonnenschutz entwickelt (unabhängige Entwicklung)\n- zieht schnell ein\n- ultraleichte Textur\n- wasserfest\n- reine, matt-seidige Haut\n- deutsche Dermakosmetik\n- langzeit-UV-Breitbandfilter mit hohem Schutz gegen UVB- und UVA-Strahlen\n- ideale Basis für Make-Up"
+      ]
+    },
+    "supplier": {
+      "description": "Supplier or manufacturer of the product.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
+      "examples": [
+        "ZELEBO GmbH"
+      ]
+    },
+    "origin": {
+      "description": "Origin of the product in ISO representation.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/country/country.schema.json"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "code"
+  ]
+}

@@ -13,18 +13,15 @@
   "properties": {
     "merchant": {
       "description": "The Id of the issuer (Merchant). Each Merchant will recive an unique User-Id.",
-      "type": "integer",
-      "minimum": 1
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
     },
     "location": {
       "description": "The Id of the location. Each location (branch) of a Merchant has its own Id.",
-      "type": "integer",
-      "minimum": 1
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
     },
     "pos": {
       "description": "The Id of the PoS. Each PoS within at the location (branch) has its own Id.",
-      "type": "integer",
-      "minimum": 1
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
     },
     "header": {
       "type": "array",
@@ -74,6 +71,7 @@
   "required": [
     "merchant",
     "location",
-    "cart"
+    "cart",
+    "payment"
   ]
 }

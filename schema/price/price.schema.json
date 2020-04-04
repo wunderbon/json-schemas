@@ -1,5 +1,5 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/cartItem/pricing/pricing.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/price/price.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "version": "v0.3.2",
   "contact": {
@@ -8,7 +8,7 @@
     "email": "open-source@wunderbon.io"
   },
   "title": "Cart-Item Pricing",
-  "description": "A cart item pricing representation within the wunderbon domain. This structure describes the price of an item. This includes gross and net price as well as tax (VAT = Value Added Tax).",
+  "description": "A price representation within the wunderbon domain. This structure describes the price of an item. This includes gross and net price as well as tax (VAT = Value Added Tax).",
   "type": "object",
   "properties": {
     "net": {

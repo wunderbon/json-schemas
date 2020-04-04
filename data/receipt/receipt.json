@@ -1,0 +1,33 @@
+{
+  "header": [
+    "***************",
+    "*   New Job?  *",
+    "* www.job.com *",
+    "***************"
+  ],
+  "merchant": "9a037d60-424a-4669-97de-db219da1c284",
+  "location": "de9aab99-c419-42df-9a95-7f13df545295",
+  "pos": "6c1ef643-e116-4eb4-abb7-1df23a027898",
+  "cart": {
+    "items": [
+      {
+        "product": {
+
+        }
+      }
+    ]
+  },
+  "payment": {
+    "type": "",
+    "amount": {
+      "value": 1.99,
+      "currency": "EUR"
+    }
+  },
+  "footer": [
+    "Thank you for shopping at",
+    "your favorite supermarket!",
+    "Check our online delivery",
+    "online-delivery-supermarket.com"
+  ]
+}

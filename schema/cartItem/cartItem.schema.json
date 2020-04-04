@@ -11,78 +11,69 @@
   "description": "A cart item representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-    "uid": {
-      "type": "string",
-      "description": "Unique Id of the item (e.g. retailers product number).",
-      "minLength": 1,
-      "maxLength": 255
-    },
-    "quantifier": {
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/cartItem/quantifier/quantifier.schema.json"
-    },
-    "name": {
-      "type": "string",
-      "description": "Name of this item.",
-      "minLength": 3,
-      "maxLength": 255
-    },
-    "share": {
+    "product": {
+      "description": "Product node either a real EAN/GTIN product or alternatively a generic one.",
       "type": "object",
-      "description": "Share configuration for sharing item on social networks & others.",
+      "data": {
+        "oneOf": [
+          {
+            "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/product/genericProduct.schema.json"
+          },
+          {
+            "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/product/eanProduct.schema.json"
+          }
+        ]
+      },
       "properties": {
-        "text": {
+        "quantifier": {
+          "description": "Quantifier of this cart item (e.g. 1 pcs. or 200 g).",
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/quantifier/quantifier.schema.json"
+        },
+        "price": {
+          "description": "Price of this cart item.",
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/price/price.schema.json"
+        }
+      },
+      "required": [
+        "data",
+        "quantifier",
+        "price"
+      ]
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "description": "Category of this item.",
           "type": "string",
-          "description": "Text used when sharing item.",
-          "maxLength": 255
+          "enum": [
+            "food",
+            "non-food"
+          ]
         },
-        "image": {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/image/image.schema.json"
-        }
-      },
-      "required": [
-        "text"
-      ]
-    },
-    "rating": {
-      "type": "object",
-      "description": "Rating of item.",
-      "properties": {
-        "votes": {
+        "position": {
+          "description": "Position of this item in cart.",
           "type": "integer",
-          "description": "Count of votes."
+          "minimum": 1
         },
-        "sum": {
-          "type": "number",
-          "description": "Sum of single ratings."
+        "group": {
+          "description": "Group this item belongs to.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255,
+          "pattern": "^[\\S]+$"
+        },
+        "groupPosition": {
+          "description": "Position of this item within its group.",
+          "type": "integer",
+          "minimum": 1
         }
       },
-      "required": [
-        "votes",
-        "sum"
-      ]
-    },
-    "description": {
-      "type": "string",
-      "description": "Description of this item.",
-      "minLength": 3,
-      "maxLength": 1024
-    },
-    "ean13": {
-      "type": "string",
-      "description": "EAN13 code of this item.",
-      "pattern": "^[0-9]{13}$",
-      "minLength": 13,
-      "maxLength": 13
-    },
-    "pricing": {
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/cartItem/pricing/pricing.schema.json"
+      "additionalProperties": false
     }
   },
   "required": [
-    "uid",
-    "quantifier",
-    "name",
-    "pricing"
+    "product"
   ],
   "additionalProperties": false
 }
