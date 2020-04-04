@@ -1,0 +1,10 @@
+{
+  "total": {
+    "value": 1.99,
+    "currency": "EUR"
+  },
+  "given": {
+    "value": 10.00,
+    "currency": "EUR"
+  }
+}

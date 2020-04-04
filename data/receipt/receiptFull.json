@@ -33,12 +33,53 @@
             "quantity": 1,
             "unit": "pcs"
           }
+        },
+        "meta": {
+          "category": "non-food",
+          "position": 1,
+          "group": "Drugs",
+          "groupPosition": 1
+        }
+      },
+      {
+        "product": {
+          "data": {
+            "code": "0720260063170"
+          },
+          "price": {
+            "net": {
+              "value": 1.85981,
+              "currency": "EUR"
+            },
+            "gross": {
+              "value": 1.99,
+              "currency": "EUR"
+            },
+            "tax": {
+              "type": "VAT",
+              "percentage": 7.00
+            }
+          },
+          "quantifier": {
+            "quantity": 1,
+            "unit": "pcs"
+          }
+        },
+        "meta": {
+          "category": "food",
+          "position": 2,
+          "group": "Food",
+          "groupPosition": 1
         }
       }
     ]
   },
   "payment": {
-
+    "type": "",
+    "amount": {
+      "value": 1.99,
+      "currency": "EUR"
+    }
   },
   "footer": [
     "Thank you for shopping at",

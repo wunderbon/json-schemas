@@ -14,17 +14,17 @@
     "product": {
       "description": "Product node either a real EAN/GTIN product or alternatively a generic one.",
       "type": "object",
-      "data": {
-        "oneOf": [
-          {
-            "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/product/genericProduct.schema.json"
-          },
-          {
-            "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/product/eanProduct.schema.json"
-          }
-        ]
-      },
       "properties": {
+        "data": {
+          "oneOf": [
+            {
+              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/product/genericProduct.schema.json"
+            },
+            {
+              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/product/eanProduct.schema.json"
+            }
+          ]
+        },
         "quantifier": {
           "description": "Quantifier of this cart item (e.g. 1 pcs. or 200 g).",
           "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/quantifier/quantifier.schema.json"
