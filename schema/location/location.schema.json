@@ -12,6 +12,7 @@
   "type": "object",
   "properties": {
     "name": {
+      "description": "Name of the location.",
       "type": "object",
       "oneOf": [
         {
@@ -23,12 +24,15 @@
       ]
     },
     "address": {
+      "description": "Address of the location.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/address/address.schema.json"
     },
     "communication": {
+      "description": "Communication setup of the location.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/communication/communication.schema.json"
     },
     "taxId": {
+      "description": "Tax-Id of this location (only required if for example every location acts on their own behalf e.g. own registered company). If not passed the Tax-Id of Merchant is used.",
       "type": "string",
       "oneOf": [
         {
@@ -37,6 +41,7 @@
       ]
     },
     "serviceTime": {
+      "description": "Service times of this location",
       "type": "array",
       "items": [
         {
@@ -48,13 +53,13 @@
       "uniqueItems": true
     },
     "posData": {
+      "description": "Information about the POS' of this location.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/posData/posData.schema.json"
     }
   },
   "additionalProperties": false,
   "required": [
     "address",
-    "serviceTime",
     "posData"
   ]
 }

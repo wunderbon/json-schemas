@@ -12,6 +12,7 @@
   "type": "object",
   "properties": {
     "name": {
+      "description": "Name of the merchant.",
       "type": "object",
       "oneOf": [
         {
@@ -23,12 +24,15 @@
       ]
     },
     "address": {
+      "description": "Address of the merchant.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/address/address.schema.json"
     },
     "communication": {
+      "description": "Communication setup of the merchant.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/communication/communication.schema.json"
     },
     "taxId": {
+      "description": "Tax-Id of the merchant.",
       "type": "string",
       "oneOf": [
         {

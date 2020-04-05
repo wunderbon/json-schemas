@@ -24,7 +24,7 @@
       ]
     },
     "currency": {
-      "description": "The currency of the amount in ISO .",
+      "description": "The currency of the amount in ISO 4217.",
       "type": "string",
       "enum": [
         "AED",

@@ -12,12 +12,14 @@
   "type": "object",
   "properties": {
     "url": {
+      "description": "The URL of the image.",
       "type": "string",
-      "description": "The URL of the image."
+      "pattern": "^(https:|http:|www\\.)\\S*"
     },
     "ratio": {
+      "description": "The ratio of width to height (e.g. 1:1 or 16:10 or ...).",
       "type": "string",
-      "description": "The ratio of width to height (e.g. 1:1 or 16:10 or ...)."
+      "maxLength": 255
     }
   },
   "required": [

@@ -28,12 +28,17 @@
       "type": "object",
       "properties": {
         "type": {
+          "description": "The cashless payment type. Aligned to w3 (@see https://www.w3.org/TR/payment-method-id/#registry).",
           "type": "string",
           "enum": [
-            "giro"
+            "basic-card"
           ]
         }
-      }
+      },
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false
     }
   },
   "required": [

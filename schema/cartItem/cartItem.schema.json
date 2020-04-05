@@ -16,6 +16,7 @@
       "type": "object",
       "properties": {
         "data": {
+          "description": "A generic or EAN/GTIN data based product.",
           "oneOf": [
             {
               "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/product/genericProduct.schema.json"
@@ -38,7 +39,8 @@
         "data",
         "quantifier",
         "price"
-      ]
+      ],
+      "additionalProperties": false
     },
     "meta": {
       "type": "object",
@@ -54,19 +56,34 @@
         "position": {
           "description": "Position of this item in cart.",
           "type": "integer",
-          "minimum": 1
+          "minimum": 1,
+          "examples": [
+            1,
+            2,
+            999
+          ]
         },
         "group": {
           "description": "Group this item belongs to.",
           "type": "string",
           "minLength": 1,
           "maxLength": 255,
-          "pattern": "^[\\S]+$"
+          "pattern": "^[\\S]+$",
+          "examples": [
+            "Freezer",
+            "Fruits",
+            "Vegetables"
+          ]
         },
         "groupPosition": {
           "description": "Position of this item within its group.",
           "type": "integer",
-          "minimum": 1
+          "minimum": 1,
+          "examples": [
+            1,
+            2,
+            999
+          ]
         }
       },
       "additionalProperties": false

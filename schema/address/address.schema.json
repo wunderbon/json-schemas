@@ -12,6 +12,7 @@
   "type": "object",
   "properties": {
     "name": {
+      "description": "Private or Legal Entity name.",
       "type": "object",
       "oneOf": [
         {
@@ -23,22 +24,37 @@
       ]
     },
     "street": {
+      "description": "Street and Number as well as address additions.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/street/street.schema.json"
     },
     "zip": {
+      "description": "ZIP/Postal code of the address.",
       "type": "string",
       "minLength": 3,
-      "maxLength": 255
+      "maxLength": 255,
+      "examples": [
+        "12345",
+        "AB 523",
+        "SK 991"
+      ]
     },
     "city": {
+      "description": "City of the address.",
       "type": "string",
       "minLength": 3,
-      "maxLength": 255
+      "maxLength": 255,
+      "examples": [
+        "Dusseldorf",
+        "Rome",
+        "New York"
+      ]
     },
     "country": {
+      "description": "Country of the address.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/country/country.schema.json"
     },
     "gps": {
+      "description": "GPS coordinates of the address.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/gps/gps.schema.json"
     }
   },
@@ -48,7 +64,6 @@
     "street",
     "zip",
     "city",
-    "country",
-    "gps"
+    "country"
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "total": {
+    "value": 1.99,
+    "currency": "EUR"
+  },
+  "given": {
+    "value": 10.00,
+    "currency": "EUR"
+  },
+  "change": {
+    "value": 8.01,
+    "currency": "EUR"
+  },
+  "meta": {
+    "type": ""
+  }
+}

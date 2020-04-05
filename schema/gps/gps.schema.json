@@ -12,17 +12,25 @@
   "type": "object",
   "properties": {
     "latitude": {
-      "type": "number"
+      "description": "Latitude of the GPS coordinate.",
+      "type": "number",
+      "examples": [
+        37.426473
+      ]
     },
     "longitude": {
-      "type": "number"
+      "description": "Longitude of the GPS coordinate.",
+      "type": "number",
+      "examples": [
+        -122.193146
+      ]
     }
   },
-  "additionalProperties": false,
   "required": [
     "latitude",
     "longitude"
-  ]
+  ],
+  "additionalProperties": false
 }
 
 
