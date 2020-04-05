@@ -12,6 +12,6 @@
     "currency": "EUR"
   },
   "meta": {
-    "type": ""
+    "type": "basic-card"
   }
 }
