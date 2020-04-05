@@ -1,0 +1,47 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/pos/pos.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.3.2",
+  "contact": {
+    "name": "wunderbon International B.V.",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "POS",
+  "description": "POS representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Id of the PoS. Each PoS within at the location (branch) has its own Id.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+    },
+    "building": {
+      "description": "Building the POS is located in.",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255
+    },
+    "floor": {
+      "description": "Floor the POS is located at.",
+      "type": "integer",
+      "minimum": -999,
+      "maximum": 999
+    },
+    "room": {
+      "description": "Room the POS is located in.",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255
+    },
+    "number": {
+      "description": "Numer of the POS in a row (e.g. 1 or 3 or ...).",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 999
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id"
+  ]
+}
