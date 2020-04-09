@@ -7,11 +7,10 @@
     "value": 10.00,
     "currency": "EUR"
   },
-  "change": {
-    "value": 8.01,
-    "currency": "EUR"
-  },
   "meta": {
-    "type": "basic-card"
+    "type": "basic-card",
+    "data": {
+
+    }
   }
 }

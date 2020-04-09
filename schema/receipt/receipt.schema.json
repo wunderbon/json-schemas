@@ -43,19 +43,52 @@
           "items": {
             "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/cartItem/cartItem.schema.json"
           }
+        },
+        "total": {
+          "description": "The sum of all items in items.",
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
+        },
+        "taxes": {
+          "description": "Taxes overview of items in cart.",
+          "type": "array",
+          "items": {
+            "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tax/taxOverview.schema.json"
+          },
+          "minItems": 0,
+          "maxItems": 5
+        }
+      },
+      "required": [
+        "items",
+        "total",
+        "taxes"
+      ],
+      "additionalProperties": false
+    },
+    "clearing": {
+      "description": "Payment part of the receipt. This node contains information on how the amount of the cart was settled.",
+      "type": "object",
+      "properties": {
+        "payments": {
+          "description": "Collection of payments applied. Must contain at least one payment.",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashPayment.schema.json"
+              },
+              {
+                "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashlessPayment.schema.json"
+              }
+            ]
+          },
+          "minItems": 1
+        },
+        "total": {
+          "description": "The sum of all payments cleared.",
+          "type": "number"
         }
       }
-    },
-    "payment": {
-      "description": "Payment part of the receipt. This node contains information on how the amount of the cart was settled.",
-      "oneOf": [
-        {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashPayment.schema.json"
-        },
-        {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashlessPayment.schema.json"
-        }
-      ]
     },
     "footer": {
       "description": "Footer lines to be printed on bottom of receipt. Often used to print information about special deals or a new website.",
@@ -69,12 +102,12 @@
       "maxItems": 10
     }
   },
-  "additionalProperties": false,
   "required": [
     "merchant",
     "location",
     "pos",
     "cart",
-    "payment"
-  ]
+    "clearing"
+  ],
+  "additionalProperties": false
 }

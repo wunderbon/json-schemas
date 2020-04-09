@@ -13,6 +13,7 @@
   "properties": {
     "code": {
       "description": "EAN (GTIN) 8||13 product code.",
+      "type": "object",
       "anyOf": [
         {
           "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/gtin8/gtin8.schema.json"

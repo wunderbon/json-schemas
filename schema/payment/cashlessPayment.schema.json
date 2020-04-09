@@ -19,10 +19,6 @@
       "description": "Amount handed over for settling.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
     },
-    "change": {
-      "description": "Change for customer.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
-    },
     "meta": {
       "description": "Meta data of transaction from terminal.",
       "type": "object",
@@ -33,10 +29,22 @@
           "enum": [
             "basic-card"
           ]
+        },
+        "data": {
+          "description": "Transaction data from terminal.",
+          "anyOf": [
+            {
+              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/terminal/terminalBuffered.schema.json"
+            },
+            {
+              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/terminal/terminalStructured.schema.json"
+            }
+          ]
         }
       },
       "required": [
-        "type"
+        "type",
+        "data"
       ],
       "additionalProperties": false
     }
@@ -44,7 +52,6 @@
   "required": [
     "total",
     "given",
-    "change",
     "meta"
   ],
   "additionalProperties": false

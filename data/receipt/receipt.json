@@ -13,7 +13,8 @@
       {
         "product": {
           "data": {
-            "code": "0720260063170"
+            "code": "0720260063170",
+            "name": "Some Article"
           },
           "quantifier": {
             "quantity": 1,
@@ -29,27 +30,50 @@
               "currency": "EUR"
             },
             "tax": {
+              "amount": {
+                "value": 0.13019,
+                "currency": "EUR"
+              },
               "type": "VAT",
               "percentage": 7.00
             }
           }
         }
       }
-    ]
+    ],
+    "total": 1.99
   },
-  "payment": {
-    "total": {
-      "value": 1.99,
-      "currency": "EUR"
-    },
-    "given": {
-      "value": 10.00,
-      "currency": "EUR"
-    },
-    "change": {
-      "value": 8.01,
-      "currency": "EUR"
-    }
+  "taxes": "see above",
+  "clearing": {
+    "payments": [{
+      "total": {
+        "value": 1.00,
+        "currency": "EUR"
+      },
+      "given": {
+        "value": 1.00,
+        "currency": "EUR"
+      },
+      "change": {
+        "value": 0.00,
+        "currency": "EUR"
+      }
+    },{
+      "total": {
+        "value": 0.99,
+        "currency": "EUR"
+      },
+      "given": {
+        "value": 0.99,
+        "currency": "EUR"
+      },
+      "meta": {
+        "type": "basic-card",
+        "datetime": "2007-08-31T16:47+00:00",
+        ""
+      }
+    }],
+    "total": 1.99
   },
   "footer": [
     "Thank you for shopping at",
