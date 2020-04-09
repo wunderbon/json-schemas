@@ -1,4 +1,8 @@
 {
   "type": "VAT",
-  "percentage": 7
+  "percentage": 7,
+  "amount": {
+    "value": 0.01,
+    "currency": "EUR"
+  }
 }

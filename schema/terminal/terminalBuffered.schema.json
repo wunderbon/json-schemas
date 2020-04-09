@@ -11,5 +11,6 @@
   "description": "A buffered terminal response representation within the wunderbon domain.",
   "type": "object",
   "properties": {
+
   }
 }

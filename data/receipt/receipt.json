@@ -22,7 +22,7 @@
           },
           "price": {
             "net": {
-              "value": 1.85981,
+              "value": 1.86,
               "currency": "EUR"
             },
             "gross": {
@@ -30,8 +30,9 @@
               "currency": "EUR"
             },
             "tax": {
+              "symbol": "A",
               "amount": {
-                "value": 0.13019,
+                "value": 0.13,
                 "currency": "EUR"
               },
               "type": "VAT",
@@ -39,11 +40,84 @@
             }
           }
         }
+      },
+      {
+        "product": {
+          "data": {
+            "code": "0720260063170",
+            "name": "Some Article"
+          },
+          "quantifier": {
+            "quantity": 1,
+            "unit": "pcs"
+          },
+          "price": {
+            "net": {
+              "value": 1.08,
+              "currency": "EUR"
+            },
+            "gross": {
+              "value": 1.29,
+              "currency": "EUR"
+            },
+            "tax": {
+              "symbol": "B",
+              "amount": {
+                "value": 0.21,
+                "currency": "EUR"
+              },
+              "type": "VAT",
+              "percentage": 19.00
+            }
+          }
+        }
       }
     ],
-    "total": 1.99
+    "total": {
+      "value": 3.28,
+      "currency": "EUR"
+    },
+    "taxes": [
+      {
+        "symbol": "A",
+        "tax": {
+          "amount": {
+            "value": 0.13,
+            "currency": "EUR"
+          },
+          "type": "VAT",
+          "percentage": 7
+        },
+        "gross": {
+          "value": 1.99,
+          "currency": "EUR"
+        },
+        "net": {
+          "value": 1.86,
+          "currency": "EUR"
+        }
+      },
+      {
+        "symbol": "B",
+        "tax": {
+          "amount": {
+            "value": 0.21,
+            "currency": "EUR"
+          },
+          "type": "VAT",
+          "percentage": 19
+        },
+        "gross": {
+          "value": 1.29,
+          "currency": "EUR"
+        },
+        "net": {
+          "value": 1.08,
+          "currency": "EUR"
+        }
+      }
+    ]
   },
-  "taxes": "see above",
   "clearing": {
     "payments": [{
       "total": {
@@ -60,17 +134,16 @@
       }
     },{
       "total": {
-        "value": 0.99,
+        "value": 2.28,
         "currency": "EUR"
       },
       "given": {
-        "value": 0.99,
+        "value": 2.28,
         "currency": "EUR"
       },
       "meta": {
         "type": "basic-card",
-        "datetime": "2007-08-31T16:47+00:00",
-        ""
+        "datetime": "2007-08-31T16:47+00:00"
       }
     }],
     "total": 1.99

@@ -212,5 +212,10 @@
         "THB"
       ]
     }
-  }
+  },
+  "required": [
+    "value",
+    "currency"
+  ],
+  "additionalProperties": false
 }

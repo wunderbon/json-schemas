@@ -15,8 +15,8 @@
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
     },
     "type": {
-      "type": "string",
       "description": "Type of tax e.g. 'VAT'",
+      "type": "string",
       "enum": [
         "VAT",
         "GST"
@@ -27,12 +27,18 @@
       ]
     },
     "percentage": {
-      "type": "number",
       "description": "Percentage of tax.",
+      "type": "number",
       "examples": [
         "7",
         "19"
       ]
+    },
+    "symbol": {
+      "description": "A symbol as abbreviation in overview.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1
     }
   },
   "required": [

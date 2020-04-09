@@ -9,7 +9,7 @@
     },
     "price": {
       "net": {
-        "value": 1.85981,
+        "value": 1.86,
         "currency": "EUR"
       },
       "gross": {
@@ -18,7 +18,11 @@
       },
       "tax": {
         "type": "VAT",
-        "percentage": 7.00
+        "percentage": 7,
+        "amount": {
+          "value": 0.13,
+          "currency": "EUR"
+        }
       }
     }
   },
