@@ -13,4 +13,4 @@
 # Clone typescript declarations repository
 ./.circleci/clone-typescript-declarations-repository.sh && \
 # Publish typescript declarations
-./.circleci/publish-typescript-declarations.sh
+#./.circleci/publish-typescript-declarations.sh
