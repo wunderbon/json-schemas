@@ -1,0 +1,27 @@
+{
+  "terminalId": "65110006",
+  "receiptNumber": "0371",
+  "transactionNumber": "000904",
+  "date": "2007-08-31",
+  "time": "16:47:00",
+  "total": {
+    "value": 1.50,
+    "currency": "EUR"
+  },
+  "title": "-K-U-N-D-E-N-B-E-L-E-G-",
+  "contractingCompanyNumber": "0511110006",
+  "cardType": "Debit Mastercard",
+  "contactless": true,
+  "truncatedPan": {
+    "pan": "############0328",
+    "asterisks": "#"
+  },
+  "cardSequenceNumber": "1",
+  "emvApplicationIdentifier": "A0000000041010",
+  "emvDataBuffer": [
+    "0020008001/A800/3F0002//",
+    "",
+    "00 GENEHMIGUNG KARTE",
+    "GEPRUEFT"
+  ]
+}

@@ -77,8 +77,26 @@
     },
     "truncatedPan": {
       "description": "The PAN of the card used for transaction (https://de.wikipedia.org/wiki/ISO/IEC_7810#Track_#_2).",
-      "type": "string",
-      "maxLength": 19
+      "type": "object",
+      "properties": {
+        "pan": {
+          "description": "The Primary Account Number.",
+          "type": "string",
+          "maxLength": 19,
+          "minLength": 16
+        },
+        "asterisks": {
+          "description": "The symbol used as asterisk.",
+          "minLength": 1,
+          "maxLength": 1,
+          "default": "#"
+        }
+      },
+      "required": [
+        "pan",
+        "asterisks"
+      ],
+      "additionalProperties": false
     },
     "cardSequenceNumber": {
       "description": "The card sequence number.",
@@ -125,7 +143,7 @@
           {
             "description": "A line with max length of characters.",
             "type": "string",
-            "minLength": 1,
+            "minLength": 0,
             "maxLength": 50
           }
         ]

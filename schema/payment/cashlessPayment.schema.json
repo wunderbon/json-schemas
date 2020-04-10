@@ -11,6 +11,12 @@
   "description": "A cashless payment representation within the wunderbon domain.",
   "type": "object",
   "properties": {
+    "description": {
+      "description": "A description of the payment. Can be used for example for persisting a voucher code.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50
+    },
     "total": {
       "description": "Sum of prices of all products in cart.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
@@ -28,7 +34,8 @@
           "type": "string",
           "enum": [
             "basic-card"
-          ]
+          ],
+          "default": "basic-card"
         },
         "data": {
           "description": "Transaction data from terminal.",
@@ -53,5 +60,6 @@
     "total",
     "given",
     "meta"
-  ]
+  ],
+  "additionalProperties": false
 }

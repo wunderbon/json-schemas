@@ -72,16 +72,14 @@
         "payments": {
           "description": "Collection of payments applied. Must contain at least one payment.",
           "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashPayment.schema.json"
-              },
-              {
-                "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashlessPayment.schema.json"
-              }
-            ]
-          },
+          "items": [
+            {
+              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashPayment.schema.json"
+            },
+            {
+              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashlessPayment.schema.json"
+            }
+          ],
           "minItems": 1
         },
         "total": {
