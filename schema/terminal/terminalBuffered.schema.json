@@ -11,6 +11,18 @@
   "description": "A buffered terminal response representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-
-  }
+    "buffer": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 50
+      },
+      "minItems": 1,
+      "maxItems": 25
+    }
+  },
+  "required": [
+    "buffer"
+  ],
+  "additionalProperties": false
 }

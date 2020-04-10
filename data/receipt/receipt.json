@@ -143,10 +143,14 @@
       },
       "meta": {
         "type": "basic-card",
-        "datetime": "2007-08-31T16:47+00:00"
+        "date": "2007-08-31",
+        "time": "16:47+00:00"
       }
     }],
-    "total": 1.99
+    "total": {
+      "value": 3.28,
+      "currency": "EUR"
+    }
   },
   "footer": [
     "Thank you for shopping at",

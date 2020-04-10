@@ -7,8 +7,8 @@
     "url": "https://developers.wunderbon.io",
     "email": "open-source@wunderbon.io"
   },
-  "title": "Terminal-Detailed",
-  "description": "A detailed terminal response representation within the wunderbon domain.",
+  "title": "Terminal-Structured",
+  "description": "A structured terminal response representation within the wunderbon domain.",
   "type": "object",
   "properties": {
     "title": {
@@ -123,10 +123,10 @@
       "items": {
         "anyOf": [
           {
-            "description": "A line with max length of 42 characters.",
+            "description": "A line with max length of characters.",
             "type": "string",
             "minLength": 1,
-            "maxLength": 42
+            "maxLength": 50
           }
         ]
       }
