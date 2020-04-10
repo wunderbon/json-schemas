@@ -28,6 +28,5 @@
     "total",
     "given",
     "change"
-  ],
-  "additionalProperties": false
+  ]
 }

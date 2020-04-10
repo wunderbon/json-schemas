@@ -53,6 +53,5 @@
     "total",
     "given",
     "meta"
-  ],
-  "additionalProperties": false
+  ]
 }

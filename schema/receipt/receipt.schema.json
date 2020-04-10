@@ -92,7 +92,8 @@
       "required": [
         "payments",
         "total"
-      ]
+      ],
+      "additionalProperties": false
     },
     "footer": {
       "description": "Footer lines to be printed on bottom of receipt. Often used to print information about special deals or a new website.",
