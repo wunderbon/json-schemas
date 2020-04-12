@@ -1,0 +1,103 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/loyalty/loyaltyStructured.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.3.2",
+  "contact": {
+    "name": "wunderbon International B.V.",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Loyalty-Structured",
+  "description": "A structured loyalty representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the loyalty program (e.g. PAYBACK or DeutschlandCard).",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "examples": [
+        "PAYBACK",
+        "DeutschlandCard",
+        "My Loyalty"
+      ]
+    },
+    "identifier": {
+      "description": "The identifier (e.g. Customer-Nr.) within this program.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/truncatedNumber/truncatedNumber.schema.json"
+    },
+    "currency": {
+      "description": "The 'currency' of the program.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The name of the currency (e.g. PAYBACK Punkte).",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32,
+          "examples": [
+            "PAYBACK Punkte",
+            "DeutschlandCard Punkte",
+            "My Loyalty Points"
+          ]
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "balance": {
+      "description": "The current balance before and after current transaction.",
+      "type": "object",
+      "properties": {
+        "was": {
+          "description": "The balance before the current transaction.",
+          "type": "string",
+          "minLength": 1
+        },
+        "is": {
+          "description": "The balance after the current transaction.",
+          "type": "string",
+          "minLength": 1
+        },
+        "exchange": {
+          "description": "Exchange rate description.",
+          "type": "object",
+          "properties": {
+            "rates": {
+              "description": "Exchange rates.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "currency": {
+                    "description": "Currency of exchange rate.",
+                    "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/currency/currency.schema.json"
+                  },
+                  "rate": {
+                    "description": "Rate for exchange.",
+                    "type": "number",
+                    "default": 1.0
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "was",
+        "is"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "name",
+    "identifier",
+    "currency",
+    "balance"
+  ],
+  "additionalProperties": false
+}

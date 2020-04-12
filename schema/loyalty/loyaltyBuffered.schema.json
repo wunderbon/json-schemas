@@ -1,0 +1,28 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/loyalty/loyaltyBuffered.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.3.2",
+  "contact": {
+    "name": "wunderbon International B.V.",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Loyalty-Buffered",
+  "description": "A buffered loyalty representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "buffer": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 50
+      },
+      "minItems": 1,
+      "maxItems": 25
+    }
+  },
+  "required": [
+    "buffer"
+  ],
+  "additionalProperties": false
+}

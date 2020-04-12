@@ -1,0 +1,20 @@
+{
+  "name": "PAYBACK",
+  "identifier": {
+    "number": "XXXXXXXXX1410",
+    "asterisks": "X"
+  },
+  "currency": {
+    "name": "PAYBACK Punkte"
+  },
+  "balance": {
+    "was": "489",
+    "is": "784",
+    "exchange": {
+      "rates": [{
+        "currency": "EUR",
+        "rate": 0.01
+      }]
+    }
+  }
+}

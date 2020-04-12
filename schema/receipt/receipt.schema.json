@@ -24,6 +24,8 @@
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
     },
     "header": {
+      "description": "All header lines above the regular merchant and cart information.",
+      "deprecationMessage": "Should not be used any longer. Will be removed in next major release.",
       "type": "array",
       "items": {
         "type": "string",
@@ -93,8 +95,29 @@
       ],
       "additionalProperties": false
     },
+    "loyalty": {
+      "description": "Loyalty part of the receipt. Here the user will see e.g. how many 'points' he has earned or how much money he has saved.",
+      "type": "object",
+      "properties": {
+        "data": {
+          "description": "The loyalty information",
+          "oneOf": [
+            {
+              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/loyalty/loyaltyBuffered.schema.json"
+            },
+            {
+              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/loyalty/loyaltyStructured.schema.json"
+            }
+          ]
+        }
+      },
+      "required": [
+        "data"
+      ]
+    },
     "footer": {
       "description": "Footer lines to be printed on bottom of receipt. Often used to print information about special deals or a new website.",
+      "deprecationMessage": "Should not be used any longer. Will be removed in next major release.",
       "type": "array",
       "items": {
         "type": "string",

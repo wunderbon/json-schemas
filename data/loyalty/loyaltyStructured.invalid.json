@@ -1,0 +1,10 @@
+{
+  "name": "PAYBACK",
+  "identifier": {
+    "number": "XXXXXXXXX1410",
+    "asterisks": "X"
+  },
+  "currency": {
+    "name": "PAYBACK Punkte"
+  }
+}

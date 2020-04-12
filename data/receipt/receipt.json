@@ -159,7 +159,7 @@
           "cardType": "Debit Mastercard",
           "contactless": true,
           "truncatedPan": {
-            "pan": "############0328",
+            "number": "############0527",
             "asterisks": "#"
           },
           "cardSequenceNumber": "1",

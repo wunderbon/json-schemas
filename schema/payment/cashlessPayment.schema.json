@@ -39,7 +39,7 @@
         },
         "data": {
           "description": "Transaction data from terminal.",
-          "anyOf": [
+          "oneOf": [
             {
               "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/terminal/terminalBuffered.schema.json"
             },
