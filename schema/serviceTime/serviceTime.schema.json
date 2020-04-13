@@ -1,7 +1,7 @@
 {
   "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/serviceTime/serviceTime.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.3.2",
+  "version": "v0.4.0",
   "contact": {
     "name": "wunderbon International B.V.",
     "url": "https://developers.wunderbon.io",
@@ -12,6 +12,7 @@
   "type": "object",
   "properties": {
     "weekday": {
+      "description": "Day of the week.",
       "type": "string",
       "enum": [
         "Monday",
@@ -24,14 +25,17 @@
       ]
     },
     "from": {
+      "description": "Time window begin.",
       "type": "object",
       "properties": {
         "hour": {
+          "description": "The hour where the time window begins.",
           "type": "integer",
           "minimum": 0,
           "maximum": 23
         },
         "minute": {
+          "description": "The minute where the time window ends.",
           "type": "integer",
           "minimum": 0,
           "maximum": 59
@@ -44,14 +48,17 @@
       ]
     },
     "to": {
+      "description": "Time window end.",
       "type": "object",
       "properties": {
         "hour": {
+          "description": "The hour where the tme window ends.",
           "type": "integer",
           "minimum": 0,
           "maximum": 23
         },
         "minute": {
+          "description": "The minute where the time window ends.",
           "type": "integer",
           "minimum": 0,
           "maximum": 59

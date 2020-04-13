@@ -24,6 +24,7 @@ for file in ${PATH_SOURCE_FILES}; do
 
   else
     echo -e "\e[0m\e[31mERROR: Required data file \"$DATAFILE\" does not exist!\e[0m"
+    exit 1
   fi
 done
 

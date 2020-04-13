@@ -178,6 +178,28 @@
       "currency": "EUR"
     }
   },
+  "loyalty": {
+    "data": {
+      "name": "PAYBACK",
+      "identifier": {
+        "number": "XXXXXXXXX1410",
+        "asterisks": "X"
+      },
+      "currency": {
+        "name": "PAYBACK Punkte"
+      },
+      "balance": {
+        "was": "489",
+        "is": "490",
+        "exchange": {
+          "rates": [{
+            "currency": "EUR",
+            "rate": 0.01
+          }]
+        }
+      }
+    }
+  },
   "footer": [
     "Thank you for shopping at",
     "your favorite supermarket!",

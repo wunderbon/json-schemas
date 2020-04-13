@@ -1,7 +1,7 @@
 {
   "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/identifier/identifier.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.3.2",
+  "version": "v0.4.0",
   "contact": {
     "name": "wunderbon International B.V.",
     "url": "https://developers.wunderbon.io",
@@ -12,11 +12,13 @@
   "type": "object",
   "properties": {
     "name": {
+      "description": "Identifier within the wunderbon network.",
       "type": "string",
       "minLength": 3,
       "maxLength": 255
     },
     "network": {
+      "description": "Target network.",
       "type": "integer",
       "minimum": 1,
       "maximum": 999999,
