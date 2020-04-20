@@ -4,10 +4,6 @@
     "displayName": "SUPERMarket"
   },
   "address": {
-    "name": {
-      "entityName": "Supermarket Germany GmbH",
-      "displayName": "SUPERMarket DE"
-    },
     "street": {
       "name": "Burgstraße",
       "number": 37

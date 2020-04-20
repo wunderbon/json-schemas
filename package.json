@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://bitbucket.org/wunderbon/json-schemas/issues"
   },
-  "version": "v0.3.2",
+  "version": "v0.4.0",
   "license": "MIT",
   "engines": {
     "node": "12.x"
@@ -40,24 +40,24 @@
   ],
   "devDependencies": {
     "@types/grunt": "^0.4.25",
-    "ajv": "^6.12.0",
+    "ajv": "^6.12.1",
     "ajv-cli": "^3.1.0",
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
-    "dts-bundle-generator": "^4.1.0",
+    "dts-bundle-generator": "^4.2.0",
     "dts-generator": "^3.0.0",
     "express": "^4.17.1",
     "grunt": "^1.1.0",
     "grunt-cli": "^1.3.2",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-run": "^0.8.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "json-dereference-cli": "^0.1.2",
     "json-schema-faker": "^0.5.0-rcv.25",
     "json-schema-faker-cli": "^2.0.9",
     "json-schema-ref-parser": "^8.0.0",
     "json-schema-to-typescript": "^8.2.0",
-    "node-docson": "^0.4.6",
+    "node-docson": "git+ssh://git@bitbucket.org/wunderbon/node-docson.git#v0.4.8",
     "nodemon": "^2.0.3",
     "npm-dts": "^1.2.1",
     "quicktype": "^15.0.223",

@@ -43,8 +43,10 @@ wunderbon **json-schemas** as blueprints for data structures and contracts like 
 ## Features
 
  - Easy browsable `JSON-Schemas` with implemented webserver (Node.JS)
- - Blueprints of data I/O for our REST APIs (standard >= [JSON Schema Draft 7](http://json-schema.org/ "JSON Schema Draft")).
+ - Blueprints of data I/O for our REST APIs (standard >= [JSON Schema Draft 4](http://json-schema.org/ "JSON Schema Draft")).
  - Clean & well documented
+
+![JSON-Schemas Preview Video](docs/video.gif "JSON-Schemas Preview Video")
 
 ---
 

@@ -7,7 +7,7 @@
     "url": "https://developers.wunderbon.io",
     "email": "open-source@wunderbon.io"
   },
-  "title": "Legal Entity",
+  "title": "Legal-Name",
   "description": "A schema for legal entity name representation within the wunderbon domain.",
   "type": "object",
   "properties": {

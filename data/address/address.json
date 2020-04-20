@@ -1,8 +1,4 @@
 {
-  "name": {
-    "entityName": "Supermarket GmbH",
-    "displayName": "SUPERMarket"
-  },
   "street": {
     "name": "Burgstraße",
     "number": 37

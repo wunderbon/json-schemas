@@ -7,7 +7,7 @@
     "url": "https://developers.wunderbon.io",
     "email": "open-source@wunderbon.io"
   },
-  "title": "Receipt",
+  "title": "Amount",
   "description": "An amount representation within the wunderbon domain.",
   "type": "object",
   "properties": {

@@ -7,7 +7,7 @@
     "url": "https://developers.wunderbon.io",
     "email": "open-source@wunderbon.io"
   },
-  "title": "Cart-Item Pricing",
+  "title": "Price",
   "description": "A price representation within the wunderbon domain. This structure describes the price of an item. This includes gross and net price as well as tax (VAT = Value Added Tax).",
   "type": "object",
   "properties": {

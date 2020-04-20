@@ -13,15 +13,7 @@
   "properties": {
     "name": {
       "description": "Name of the merchant.",
-      "type": "object",
-      "oneOf": [
-        {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/legalName.schema.json"
-        },
-        {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/privateName.schema.json"
-        }
-      ]
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/legalName.schema.json"
     },
     "address": {
       "description": "Address of the merchant.",

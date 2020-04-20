@@ -115,6 +115,10 @@
         "data"
       ]
     },
+    "cashier": {
+      "description": "Information about the cashier at the POS.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/cashier/cashier.schema.json"
+    },
     "footer": {
       "description": "Footer lines to be printed on bottom of receipt. Often used to print information about special deals or a new website.",
       "deprecationMessage": "Should not be used any longer. Will be removed in next major release.",
