@@ -28,7 +28,7 @@
       "type": "string",
       "oneOf": [
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tax/id/eu/id.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tax/taxIdEu.schema.json"
         }
       ]
     }

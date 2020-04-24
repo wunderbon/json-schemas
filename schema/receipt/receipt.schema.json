@@ -130,6 +130,10 @@
       },
       "minItems": 0,
       "maxItems": 10
+    },
+    "barcode": {
+      "description": "Barcode",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/barcode/barcode.schema.json"
     }
   },
   "required": [

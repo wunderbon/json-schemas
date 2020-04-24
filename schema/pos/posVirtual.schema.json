@@ -1,0 +1,29 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/pos/posVirtual.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.4.0",
+  "contact": {
+    "name": "wunderbon International B.V.",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "POS-Virtual",
+  "description": "POS virtual representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "url": {
+      "description": "Internet address (URL) of the virtual POS (best link is into carts checkout).",
+      "type": "string",
+      "pattern": "(https?)://(-\\.)?([^\\s/?\\.#-]+\\.?)+(/[^\\s]*)?$",
+      "maxLength": 1024,
+      "examples": [
+        "https://www.supermarket-germany.com",
+        "https://www.example.com"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "url"
+  ]
+}

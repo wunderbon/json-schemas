@@ -73,6 +73,7 @@
         "Debit Mastercard",
         "Girocard",
         "SEPA-Lastschrift",
+        "SEPA ELV",
         "EuroELV"
       ]
     },

@@ -12,7 +12,7 @@ var docson      = require('node-docson');
 var showdown    = require('showdown');
 var info        = require('./package.json');
 var template;
-
+var rendered    = false;
 var webserverPort = process.env.WUNDERBON_JSON_SCHEMAS_PORT || 8080;
 
 /**
@@ -21,7 +21,7 @@ var webserverPort = process.env.WUNDERBON_JSON_SCHEMAS_PORT || 8080;
 app.use(
   function (req, res, next) {
 
-    if (req.originalUrl === '/' || req.originalUrl.indexOf('index.html') >= 0) {
+    if ((req.originalUrl === '/' || req.originalUrl.indexOf('index.html') >= 0) && false === rendered) {
       // Find schemas
       var files = fromDir('./schema', '.schema.json');
 
@@ -47,6 +47,8 @@ app.use(
 
         fs.writeFileSync('./public/navigation.html', template.replace('<noscript>navigation</noscript>', navigationHtml));
       }
+
+      rendered = true;
 
       next(); // Continue on to the next middleware/route handler
 
