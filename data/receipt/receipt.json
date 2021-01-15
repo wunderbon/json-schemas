@@ -1,9 +1,9 @@
 {
   "header": [
-    "***************",
-    "*   New Job?  *",
-    "* www.job.com *",
-    "***************"
+    "**************************************************",
+    "*                                                *",
+    "*                                                *",
+    "**************************************************"
   ],
   "merchant": "9a037d60-424a-4669-97de-db219da1c284",
   "location": "de9aab99-c419-42df-9a95-7f13df545295",
@@ -13,8 +13,43 @@
       {
         "product": {
           "data": {
-            "code": "0720260063170",
-            "name": "Some Article"
+            "code": "4001686720028",
+            "name": {
+              "short": "Haribo Mini Color-Rado, 10er Pack (10 x 175 g)"
+            }
+          },
+          "quantifier": {
+            "quantity": 2,
+            "unit": "pcs"
+          },
+          "price": {
+            "net": {
+              "value": 0.99,
+              "currency": "EUR"
+            },
+            "gross": {
+              "value": 0.93,
+              "currency": "EUR"
+            },
+            "tax": {
+              "symbol": "A",
+              "amount": {
+                "value": 0.06,
+                "currency": "EUR"
+              },
+              "type": "VAT",
+              "percentage": 7.00
+            }
+          }
+        }
+      },
+      {
+        "product": {
+          "data": {
+            "code": "5000159475358",
+            "name": {
+              "short": "Celebrations - Mars - 190 g"
+            }
           },
           "quantifier": {
             "quantity": 1,
@@ -22,11 +57,44 @@
           },
           "price": {
             "net": {
-              "value": 1.86,
+              "value": 2.89,
               "currency": "EUR"
             },
             "gross": {
+              "value": 2.70,
+              "currency": "EUR"
+            },
+            "tax": {
+              "symbol": "A",
+              "amount": {
+                "value": 0.19,
+                "currency": "EUR"
+              },
+              "type": "VAT",
+              "percentage": 7.00
+            }
+          }
+        }
+      },
+      {
+        "product": {
+          "data": {
+            "code": "4035800410724",
+            "name": {
+              "short": "Dickmann's Schoko Strolche"
+            }
+          },
+          "quantifier": {
+            "quantity": 1,
+            "unit": "pcs"
+          },
+          "price": {
+            "net": {
               "value": 1.99,
+              "currency": "EUR"
+            },
+            "gross": {
+              "value": 1.86,
               "currency": "EUR"
             },
             "tax": {
@@ -44,8 +112,10 @@
       {
         "product": {
           "data": {
-            "code": "0720260063170",
-            "name": "Some Article"
+            "code": "4002671135537",
+            "name": {
+              "short": "Almette Kräuter 7% Fett"
+            }
           },
           "quantifier": {
             "quantity": 1,
@@ -53,17 +123,149 @@
           },
           "price": {
             "net": {
-              "value": 1.08,
+              "value": 0.88,
               "currency": "EUR"
             },
             "gross": {
-              "value": 1.29,
+              "value": 0.82,
+              "currency": "EUR"
+            },
+            "tax": {
+              "symbol": "A",
+              "amount": {
+                "value": 0.06,
+                "currency": "EUR"
+              },
+              "type": "VAT",
+              "percentage": 7.00
+            }
+          }
+        }
+      },
+      {
+        "product": {
+          "data": {
+            "code": "4008258291016",
+            "name": {
+              "short": "SOFT PFLAUMEN"
+            }
+          },
+          "quantifier": {
+            "quantity": 2,
+            "unit": "pcs"
+          },
+          "price": {
+            "net": {
+              "value": 2.99,
+              "currency": "EUR"
+            },
+            "gross": {
+              "value": 2.79,
+              "currency": "EUR"
+            },
+            "tax": {
+              "symbol": "A",
+              "amount": {
+                "value": 0.20,
+                "currency": "EUR"
+              },
+              "type": "VAT",
+              "percentage": 7.00
+            }
+          }
+        }
+      },
+      {
+        "product": {
+          "data": {
+            "code": "4006544307007",
+            "name": {
+              "short": "Südzucker Puder Zucker 250g"
+            }
+          },
+          "quantifier": {
+            "quantity": 1,
+            "unit": "pcs"
+          },
+          "price": {
+            "net": {
+              "value": 0.78,
+              "currency": "EUR"
+            },
+            "gross": {
+              "value": 0.73,
+              "currency": "EUR"
+            },
+            "tax": {
+              "symbol": "A",
+              "amount": {
+                "value": 0.05,
+                "currency": "EUR"
+              },
+              "type": "VAT",
+              "percentage": 7.00
+            }
+          }
+        }
+      },
+      {
+        "product": {
+          "data": {
+            "code": "4008400204727",
+            "name": {
+              "short": "Kinder Schokolade"
+            }
+          },
+          "quantifier": {
+            "quantity": 3,
+            "unit": "pcs"
+          },
+          "price": {
+            "net": {
+              "value": 1.49,
+              "currency": "EUR"
+            },
+            "gross": {
+              "value": 1.39,
+              "currency": "EUR"
+            },
+            "tax": {
+              "symbol": "A",
+              "amount": {
+                "value": 0.10,
+                "currency": "EUR"
+              },
+              "type": "VAT",
+              "percentage": 7.00
+            }
+          }
+        }
+      },
+      {
+        "product": {
+          "data": {
+            "code": "0000090376016",
+            "name": {
+              "short": "Red Bull Simply Cola"
+            }
+          },
+          "quantifier": {
+            "quantity": 1,
+            "unit": "pcs"
+          },
+          "price": {
+            "net": {
+              "value": 1.79,
+              "currency": "EUR"
+            },
+            "gross": {
+              "value": 1.50,
               "currency": "EUR"
             },
             "tax": {
               "symbol": "B",
               "amount": {
-                "value": 0.21,
+                "value": 0.29,
                 "currency": "EUR"
               },
               "type": "VAT",
@@ -71,10 +273,43 @@
             }
           }
         }
+      },
+      {
+        "product": {
+          "data": {
+            "code": "4037400433684",
+            "name": {
+              "short": "Katjes Jogger Gums"
+            }
+          },
+          "quantifier": {
+            "quantity": 1,
+            "unit": "pcs"
+          },
+          "price": {
+            "net": {
+              "value": 0.64,
+              "currency": "EUR"
+            },
+            "gross": {
+              "value": 0.60,
+              "currency": "EUR"
+            },
+            "tax": {
+              "symbol": "A",
+              "amount": {
+                "value": 0.04,
+                "currency": "EUR"
+              },
+              "type": "VAT",
+              "percentage": 7.00
+            }
+          }
+        }
       }
     ],
     "total": {
-      "value": 3.28,
+      "value": 21.40,
       "currency": "EUR"
     },
     "taxes": [
@@ -82,18 +317,18 @@
         "symbol": "A",
         "tax": {
           "amount": {
-            "value": 0.13,
+            "value": 1.29,
             "currency": "EUR"
           },
           "type": "VAT",
           "percentage": 7
         },
         "gross": {
-          "value": 1.99,
+          "value": 19.61,
           "currency": "EUR"
         },
         "net": {
-          "value": 1.86,
+          "value": 18.32,
           "currency": "EUR"
         }
       },
@@ -101,18 +336,18 @@
         "symbol": "B",
         "tax": {
           "amount": {
-            "value": 0.21,
+            "value": 0.29,
             "currency": "EUR"
           },
           "type": "VAT",
           "percentage": 19
         },
         "gross": {
-          "value": 1.29,
+          "value": 1.79,
           "currency": "EUR"
         },
         "net": {
-          "value": 1.08,
+          "value": 1.50,
           "currency": "EUR"
         }
       }
@@ -174,7 +409,7 @@
       }
     }],
     "total": {
-      "value": 3.28,
+      "value": 20.40,
       "currency": "EUR"
     }
   },
@@ -190,7 +425,7 @@
       },
       "balance": {
         "was": "489",
-        "is": "490",
+        "is": "499",
         "exchange": {
           "rates": [{
             "currency": "EUR",
