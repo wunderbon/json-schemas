@@ -7,8 +7,7 @@ apk update && \
   openssl-dev \
   libffi-dev \
   build-base \
-  py-pip \
-  py2-pip \
+  py3-pip \
   python2-dev \
   git \
   openssh-client \
