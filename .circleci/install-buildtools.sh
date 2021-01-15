@@ -7,6 +7,7 @@ apk update && \
   openssl-dev \
   libffi-dev \
   build-base \
+  py-pip \
   py2-pip \
   python2-dev \
   git \
@@ -28,3 +29,6 @@ else
 	# exit with error - important for ci system
 	exit 1
 fi
+
+
+apk add --update py-pip
