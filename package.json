@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://bitbucket.org/wunderbon/json-schemas/issues"
   },
-  "version": "v0.4.2",
+  "version": "v0.4.3",
   "license": "MIT",
   "engines": {
     "node": "12.x"
@@ -30,10 +30,10 @@
     "wunderbon",
     "model"
   ],
-  "author": "wunderbon International B.V.",
+  "author": "wunderbon Operation GmbH & Co. KG",
   "maintainers": [
     {
-      "name": "wunderbon International B.V.",
+      "name": "wunderbon Operation GmbH & Co. KG",
       "email": "open-source@wunderbon.io",
       "web": "https://developers.wunderbon.io"
     }

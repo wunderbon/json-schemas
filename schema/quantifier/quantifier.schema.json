@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "version": "v0.4.0",
   "contact": {
-    "name": "wunderbon International B.V.",
+    "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
     "email": "open-source@wunderbon.io"
   },
