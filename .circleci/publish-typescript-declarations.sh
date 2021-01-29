@@ -29,6 +29,8 @@ cp -R build/ts/* ${TARGETPATH}/typescript-declarations/declarations || exit 0;
 # Copy index.d.ts files from build to target repository
 cp build/index.d.ts ${TARGETPATH}/typescript-declarations || exit 0;
 
+sed -i "s/json-schemas/typescript-declarations/g" ${TARGETPATH}/typescript-declarations/index.d.ts
+
 # Retrieve tag from package.json
 PACKAGE_VERSION=$(cat ${TARGETPATH}/typescript-declarations/package.json \
   | grep version \
@@ -38,6 +40,10 @@ PACKAGE_VERSION=$(cat ${TARGETPATH}/typescript-declarations/package.json \
   | tr -d '[[:space:]]')
 
 sed -i "s/${PACKAGE_VERSION}/${CIRCLE_TAG}/g" ${TARGETPATH}/typescript-declarations/package.json
+
+# Create a fresh shrinkwrap with new release version
+echo "Create new NPM shrinkwrap ..."
+npm shrinkwrap
 
 # Add them
 git --git-dir ${TARGETPATH}/typescript-declarations/.git --work-tree=${TARGETPATH}/typescript-declarations add --all

@@ -29,6 +29,8 @@ cp -R build/ts/* ${TARGETPATH}/data-models-typescript/src/model || exit 0;
 # Copy index.d.ts files from build to target repository
 cp build/index.d.ts ${TARGETPATH}/data-models-typescript || exit 0;
 
+sed -i "s/json-schemas/data-models-typescript/g" ${TARGETPATH}/data-models-typescript/index.d.ts
+
 # Retrieve tag from package.json
 PACKAGE_VERSION=$(cat ${TARGETPATH}/data-models-typescript/package.json \
   | grep version \
@@ -38,6 +40,10 @@ PACKAGE_VERSION=$(cat ${TARGETPATH}/data-models-typescript/package.json \
   | tr -d '[[:space:]]')
 
 sed -i "s/${PACKAGE_VERSION}/${CIRCLE_TAG}/g" ${TARGETPATH}/data-models-typescript/package.json
+
+# Create a fresh shrinkwrap with new release version
+echo "Create new NPM shrinkwrap ..."
+npm shrinkwrap
 
 # Add them
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript add --all
