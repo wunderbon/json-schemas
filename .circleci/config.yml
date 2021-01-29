@@ -32,14 +32,14 @@ jobs:
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
       - restore_cache:
-          key: cache-dependencies-{{ checksum "package-lock.json" }}
+          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
 
       - run:
           name: Installing packages ...
           command: npm install
 
       - save_cache:
-          key: cache-dependencies-{{ checksum "package-lock.json" }}
+          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
           paths:
             - "node_modules"
 
@@ -86,14 +86,14 @@ jobs:
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
       - restore_cache:
-          key: cache-dependencies-{{ checksum "package-lock.json" }}
+          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
 
       - run:
           name: Installing packages ...
           command: npm install
 
       - save_cache:
-          key: cache-dependencies-{{ checksum "package-lock.json" }}
+          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
           paths:
             - "node_modules"
 
@@ -143,14 +143,14 @@ jobs:
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
       - restore_cache:
-          key: cache-dependencies-{{ checksum "package-lock.json" }}
+          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
 
       - run:
           name: Installing packages ...
           command: npm install
 
       - save_cache:
-          key: cache-dependencies-{{ checksum "package-lock.json" }}
+          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
           paths:
             - "node_modules"
 
