@@ -15,3 +15,6 @@
 #&& \
 # Publish typescript declarations
 #./.circleci/publish-typescript-declarations.sh
+#&& \
+# Publish data models typescript
+#./.circleci/publish-data-models-typescript.sh
