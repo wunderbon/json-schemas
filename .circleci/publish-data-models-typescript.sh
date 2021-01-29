@@ -63,10 +63,6 @@ git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH
 git --git-dir ${TARGETPATH}/data-models-typescript/.git push -u origin ${GIT_REPOSITORY_BRANCH_MASTER}
 git --git-dir ${TARGETPATH}/data-models-typescript/.git push origin --tags
 
-# Publishing to NPM
-echo "2) to NPM registry ..."
-npm publish --access private
-
 # Return status
 if [ "$?" = "0" ]; then
   # exit with success - important for ci system
