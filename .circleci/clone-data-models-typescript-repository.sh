@@ -4,7 +4,7 @@
 # Repository access data (configured at https://circleci.com/bb/organizations/wunderbon/settings#contexts)
 TARGETPATH="/tmp"
 GIT_REPOSITORY_BRANCH="master"
-GIT_REPOSITORY_URL="https://${GIT_REPOSITORY_USERNAME}@bitbucket.org/wunderbon/data-models-typescript.git"
+GIT_REPOSITORY_URL="https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/data-models-typescript.git"
 
 # What we do
 echo "Cloning typescript declarations repository from \"${GIT_REPOSITORY_URL}\""
