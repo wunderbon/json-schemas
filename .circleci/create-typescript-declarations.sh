@@ -15,9 +15,6 @@ mkdir -p ./build/ts
 # Add document header to file
 echo -e "$(cat ./.circleci/doc-header-unlicensed.tpl)\n\n$(cat ./build/ts/index.ts)" > ./build/ts/index.ts
 
-# MIT License -> UNLICENSED
-sed -i "s/${PACKAGE_VERSION}/${CIRCLE_TAG}/g" ${TARGETPATH}/data-models-typescript/package.json
-
 if [ "$?" = "0" ]; then
   # exit with success - important for ci system
   exit 0
