@@ -10,7 +10,7 @@ echo "Creating typescript declarations from JSON-Schemas from \"${PATH_SOURCE_FI
 mkdir -p ./build/ts
 
 # One call due to namespace trouble on single file conversion
-./node_modules/.bin/quicktype --src-lang schema --lang ts --acronym-style pascal --src ./schema --out ./build/ts/index.ts
+./node_modules/.bin/quicktype --src-lang schema --lang ts --acronym-style pascal --src ./build/schema --out ./build/ts/index.ts
 
 # Add document header to file
 echo -e "$(cat ./.circleci/doc-header-unlicensed.tpl)\n\n$(cat ./build/ts/index.ts)" > ./build/ts/index.ts
