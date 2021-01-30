@@ -9,11 +9,8 @@
   "bugs": {
     "url": "https://bitbucket.org/wunderbon/json-schemas/issues"
   },
-  "version": "v0.4.5",
+  "version": "v0.4.6",
   "license": "MIT",
-  "engines": {
-    "node": "12.x"
-  },
   "main": "./server.js",
   "scripts": {
     "build": "grunt build",

@@ -21,15 +21,10 @@ echo "1) to Bitbucket repository ..."
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript checkout -b ${GIT_REPOSITORY_BRANCH_MASTER}
 
 # Remove all existing files (soft reset)
-rm -rf ${TARGETPATH}/data-models-typescript/src/model/*
+rm -rf ${TARGETPATH}/data-models-typescript/src/*
 
 # Copy all typescript declaration files from build to target repository
-cp -R build/ts/* ${TARGETPATH}/data-models-typescript/src/model || exit 0;
-
-# Copy index.d.ts files from build to target repository
-cp build/index.d.ts ${TARGETPATH}/data-models-typescript || exit 0;
-
-sed -i "s/json-schemas/data-models-typescript/g" ${TARGETPATH}/data-models-typescript/index.d.ts
+cp -R build/ts/* ${TARGETPATH}/data-models-typescript/src || exit 0;
 
 # Retrieve tag from package.json
 PACKAGE_VERSION=$(cat ${TARGETPATH}/data-models-typescript/package.json \

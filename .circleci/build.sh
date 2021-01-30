@@ -16,5 +16,8 @@
 # Publish typescript declarations
 #./.circleci/publish-typescript-declarations.sh
 #&& \
+# Clone typescript declarations repository
+#./.circleci/clone-data-models-typescript.sh
+#&& \
 # Publish data models typescript
 #./.circleci/publish-data-models-typescript.sh
