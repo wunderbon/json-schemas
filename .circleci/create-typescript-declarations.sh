@@ -13,7 +13,10 @@ mkdir -p ./build/ts
 ./node_modules/.bin/quicktype --src-lang schema --lang ts --acronym-style pascal --src ./schema --out ./build/ts/index.ts
 
 # Add document header to file
-echo -e "$(cat ./.circleci/doc-header.tpl)\n\n$(cat ./build/ts/index.ts)" > ./build/ts/index.ts
+echo -e "$(cat ./.circleci/doc-header-unlicensed.tpl)\n\n$(cat ./build/ts/index.ts)" > ./build/ts/index.ts
+
+# MIT License -> UNLICENSED
+sed -i "s/${PACKAGE_VERSION}/${CIRCLE_TAG}/g" ${TARGETPATH}/data-models-typescript/package.json
 
 if [ "$?" = "0" ]; then
   # exit with success - important for ci system
