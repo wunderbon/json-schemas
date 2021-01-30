@@ -24,7 +24,7 @@ git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH
 rm -rf ${TARGETPATH}/data-models-typescript/src/*
 
 # Copy all typescript declaration files from build to target repository
-cp -R build/ts/* ${TARGETPATH}/data-models-typescript/src || exit 0;
+cp -R ./build/ts/* ${TARGETPATH}/data-models-typescript/src || exit 0;
 
 # Retrieve tag from package.json
 PACKAGE_VERSION=$(cat ${TARGETPATH}/data-models-typescript/package.json \

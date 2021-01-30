@@ -7,13 +7,13 @@ PATH_SOURCE_FILES="./build/schema/**/*.schema.json"
 echo "Creating typescript declarations from JSON-Schemas from \"${PATH_SOURCE_FILES}\""
 
 # Create directory first
-mkdir -p ./build/build/ts
+mkdir -p ./build/ts
 
 # One call due to namespace trouble on single file conversion
-quicktype --src-lang schema --lang ts --acronym-style pascal --src ./build/schema --out ./build/build/ts/index.ts
+./node_modules/.bin/quicktype --src-lang schema --lang ts --acronym-style pascal --src ./schema --out ./build/ts/index.ts
 
 # Add document header to file
-echo -e "$(cat ./build/.circleci/doc-header.tpl)\n\n$(cat ./build/build/ts/index.ts)" > ./build/build/ts/index.ts
+echo -e "$(cat ./.circleci/doc-header.tpl)\n\n$(cat ./build/ts/index.ts)" > ./build/ts/index.ts
 
 if [ "$?" = "0" ]; then
   # exit with success - important for ci system
