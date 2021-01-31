@@ -20,11 +20,20 @@ echo "1) to Bitbucket repository ..."
 # Checkout new branch and switch to it (name is branch name from this repository)
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript checkout -b ${GIT_REPOSITORY_BRANCH_MASTER}
 
+# Debug listing
+ls -R ${TARGETPATH}/data-models-typescript/src
+
 # Remove all existing files (soft reset)
 rm -rf ${TARGETPATH}/data-models-typescript/src/*
 
+# Debug listing
+ls -R ${TARGETPATH}/data-models-typescript/src
+
 # Copy all typescript declaration files from build to target repository
 cp -R ./build/ts/* ${TARGETPATH}/data-models-typescript/src || exit 0;
+
+# Debug listing
+ls -R ${TARGETPATH}/data-models-typescript/src
 
 # Retrieve tag from package.json
 PACKAGE_VERSION=$(cat ${TARGETPATH}/data-models-typescript/package.json \
@@ -40,9 +49,6 @@ sed -i "s/${PACKAGE_VERSION}/${CIRCLE_TAG}/g" ${TARGETPATH}/data-models-typescri
 echo "Create new NPM shrinkwrap ..."
 npm shrinkwrap
 
-# Add them
-git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript add --all
-
 # Add credentials to remote
 git --git-dir ${TARGETPATH}/data-models-typescript/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/data-models-typescript.git
 
@@ -52,6 +58,9 @@ git --git-dir ${TARGETPATH}/data-models-typescript/.git branch -u origin/${GIT_R
 # Local update
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript fetch && \
  git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript pull
+
+# Add them
+git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript add --all
 
 # Commit changes
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
