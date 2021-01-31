@@ -12,6 +12,9 @@ mkdir -p ./build/ts
 # Create an index.ts file
 touch ./build/ts/index.ts
 
+# Add document header to file
+echo -e "$(cat ./.circleci/doc-header-unlicensed.tpl)\n\n$(cat ./build/ts/index.ts)" > ./build/ts/index.ts
+
 # Do it
 shopt -s globstar
 for file in ${PATH_SOURCE_FILES}; do
@@ -24,6 +27,10 @@ for file in ${PATH_SOURCE_FILES}; do
 
   # Add document header to file
   echo -e "$(cat .circleci/doc-header-unlicensed.tpl)\n\n$(cat ${OUTPUTFILENAME})" > ${OUTPUTFILENAME}
+
+  # Append ts file created to index
+  PASCALCONVERTNAME=$(echo "$TSMODELNAME" | sed 's/.*/\u&/')
+  echo "export { ${PASCALCONVERTNAME} } from './${TSMODELNAME}';" >> ./build/ts/index.ts
 
   if [ "$?" = "1" ]; then
     echo "Error while creating typescript declarations!" 1>&2
