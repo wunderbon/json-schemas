@@ -1,7 +1,7 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/terminal/terminalStructured.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/terminal/terminalStructured.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.4.0",
+  "version": "v0.4.15",
   "contact": {
     "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
@@ -79,7 +79,7 @@
     },
     "truncatedPan": {
       "description": "The PAN of the card used for transaction (https://de.wikipedia.org/wiki/ISO/IEC_7810#Track_#_2).",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/truncatedNumber/truncatedNumber.schema.json"
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/truncatedNumber/truncatedNumber.schema.json"
     },
     "cardSequenceNumber": {
       "description": "The card sequence number.",
@@ -134,7 +134,7 @@
     },
     "total": {
       "description": "Total amount of transaction.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/amount/amount.schema.json"
     }
   },
   "required": [

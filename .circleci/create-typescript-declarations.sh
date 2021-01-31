@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Environment configuration
-PATH_SOURCE_FILES="./build/schema/**/*.schema.json"
+PATH_SOURCE_FILES="./schema/**/*.schema.json"
+
+# Debug listing
+ls -R schema
 
 # What we do
 echo "Creating typescript declarations by JSON-Schemas from \"${PATH_SOURCE_FILES}\""
@@ -14,8 +17,6 @@ touch ./build/ts/index.ts
 
 # Add document header to file
 echo -e "$(cat ./.circleci/doc-header-unlicensed.tpl)\n$(cat ./build/ts/index.ts)" > ./build/ts/index.ts
-
-sed --version
 
 # Do it
 shopt -s globstar
@@ -40,6 +41,9 @@ for file in ${PATH_SOURCE_FILES}; do
 	  exit 1
   fi
 done
+
+# Debug listing
+ls -R build/ts
 
 if [ "$?" = "0" ]; then
   # exit with success - important for ci system

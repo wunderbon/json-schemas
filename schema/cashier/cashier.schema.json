@@ -1,7 +1,7 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/cashier/cashier.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/cashier/cashier.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.4.0",
+  "version": "v0.4.15",
   "contact": {
     "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
@@ -15,7 +15,7 @@
       "description": "Name of the cashier.",
       "oneOf": [
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/peopleName.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/name/peopleName.schema.json"
         },
         {
           "description": "Some Id for example.",

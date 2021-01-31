@@ -1,7 +1,7 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashPayment.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/payment/cashPayment.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.4.0",
+  "version": "v0.4.15",
   "contact": {
     "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
@@ -19,15 +19,15 @@
     },
     "total": {
       "description": "Sum of prices of all products in cart.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/amount/amount.schema.json"
     },
     "given": {
       "description": "Amount handed over for settling.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/amount/amount.schema.json"
     },
     "change": {
       "description": "Change for customer.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/amount/amount.schema.json"
     }
   },
   "required": [

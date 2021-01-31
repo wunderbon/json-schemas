@@ -1,7 +1,7 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/pos/posInside.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/pos/posInside.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.4.0",
+  "version": "v0.4.15",
   "contact": {
     "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
@@ -37,7 +37,7 @@
     },
     "gps": {
       "description": "GPS coordinates of the POS.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/gps/gps.schema.json"
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/gps/gps.schema.json"
     }
   },
   "additionalProperties": false,

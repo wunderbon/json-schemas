@@ -1,7 +1,7 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/merchant/merchant.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/merchant/merchant.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.4.0",
+  "version": "v0.4.15",
   "contact": {
     "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
@@ -13,22 +13,22 @@
   "properties": {
     "name": {
       "description": "Name of the merchant.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/name/legalName.schema.json"
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/name/legalName.schema.json"
     },
     "address": {
       "description": "Address of the merchant.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/address/address.schema.json"
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/address/address.schema.json"
     },
     "communication": {
       "description": "Communication setup of the merchant.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/communication/communication.schema.json"
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/communication/communication.schema.json"
     },
     "taxId": {
       "description": "Tax-Id of the merchant.",
       "type": "string",
       "oneOf": [
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tax/taxIdEu.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/tax/taxIdEu.schema.json"
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/posData/posData.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/posData/posData.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.4.0",
+  "version": "v0.4.15",
   "contact": {
     "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
@@ -15,7 +15,7 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/pos/pos.schema.json"
+        "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/pos/pos.schema.json"
       }
     }
   },

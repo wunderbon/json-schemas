@@ -1,7 +1,7 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/pos/pos.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/pos/pos.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.4.0",
+  "version": "v0.4.15",
   "contact": {
     "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
@@ -13,7 +13,7 @@
   "properties": {
     "id": {
       "description": "The Id of the PoS. Each PoS within at the location (branch) has its own Id.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/uuid/uuid.schema.json"
     },
     "type": {
       "description": "Type of the POS.",
@@ -28,13 +28,13 @@
       "description": "Data of the POS.",
       "oneOf": [
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/pos/posInside.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/pos/posInside.schema.json"
         },
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/pos/posOutside.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/pos/posOutside.schema.json"
         },
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/pos/posVirtual.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/pos/posVirtual.schema.json"
         }
       ]
     }
