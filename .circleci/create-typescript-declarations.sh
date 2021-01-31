@@ -15,6 +15,8 @@ touch ./build/ts/index.ts
 # Add document header to file
 echo -e "$(cat ./.circleci/doc-header-unlicensed.tpl)\n$(cat ./build/ts/index.ts)" > ./build/ts/index.ts
 
+sed --version
+
 # Do it
 shopt -s globstar
 for file in ${PATH_SOURCE_FILES}; do
