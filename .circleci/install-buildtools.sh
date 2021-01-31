@@ -15,7 +15,8 @@ apk update && \
   nodejs \
   npm \
   curl \
-  gettext
+  gettext \
+  sed
 
 # Upgrade pip
 pip install --upgrade pip
