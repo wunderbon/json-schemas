@@ -4,7 +4,7 @@
 PATH_SOURCE_FILES="./build/schema/**/*.schema.json"
 
 # What we do
-echo "Creating typescript declarations from JSON-Schemas from \"${PATH_SOURCE_FILES}\""
+echo "Creating typescript declarations by JSON-Schemas from \"${PATH_SOURCE_FILES}\""
 
 # Create directory first
 mkdir -p ./build/ts
@@ -29,8 +29,8 @@ for file in ${PATH_SOURCE_FILES}; do
   echo -e "$(cat .circleci/doc-header-unlicensed.tpl)\n\n$(cat ${OUTPUTFILENAME})" > ${OUTPUTFILENAME}
 
   # Append ts file created to index
-  PASCALCONVERTNAME=$(echo "$TSMODELNAME" | sed 's/.*/\u&/')
-  echo "export { ${PASCALCONVERTNAME} } from './${TSMODELNAME}';" >> ./build/ts/index.ts
+  PASCALCONVERTNAME=$(echo "${TSMODELNAME}" | sed -e "s/\b\(.\)/\u\1/g")
+  echo "export { ${PASCALCONVERTNAME}, Convert as ${PASCALCONVERTNAME}Convert } from './${TSMODELNAME}';" >> ./build/ts/index.ts
 
   if [ "$?" = "1" ]; then
     echo "Error while creating typescript declarations!" 1>&2
