@@ -1,7 +1,7 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/cartItem/cartItem.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/cartItem/cartItem.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.4.15",
+  "version": "v0.4.19",
   "contact": {
     "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
@@ -20,20 +20,20 @@
           "type": "object",
           "anyOf": [
             {
-              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/product/genericProduct.schema.json"
+              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/product/genericProduct.schema.json"
             },
             {
-              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/product/eanProduct.schema.json"
+              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/product/eanProduct.schema.json"
             }
           ]
         },
         "quantifier": {
           "description": "Quantifier of this cart item (e.g. 1 pcs. or 200 g).",
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/quantifier/quantifier.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/quantifier/quantifier.schema.json"
         },
         "price": {
           "description": "Price of this cart item.",
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/price/price.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/price/price.schema.json"
         }
       },
       "required": [

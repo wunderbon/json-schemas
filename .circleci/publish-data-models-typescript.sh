@@ -20,20 +20,11 @@ echo "1) to Bitbucket repository ..."
 # Checkout new branch and switch to it (name is branch name from this repository)
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript checkout ${GIT_REPOSITORY_BRANCH_MASTER}
 
-# Debug listing
-ls -R ${TARGETPATH}/data-models-typescript/src
-
 # Remove all existing files (soft reset)
 rm -rf ${TARGETPATH}/data-models-typescript/src/*
 
-# Debug listing
-ls -R ${TARGETPATH}/data-models-typescript/src
-
 # Copy all typescript declaration files from build to target repository
 cp -R ./build/ts/* ${TARGETPATH}/data-models-typescript/src || exit 0;
-
-# Debug listing
-ls -R ${TARGETPATH}/data-models-typescript/src
 
 # Retrieve tag from package.json
 PACKAGE_VERSION=$(cat ${TARGETPATH}/data-models-typescript/package.json \
@@ -44,6 +35,9 @@ PACKAGE_VERSION=$(cat ${TARGETPATH}/data-models-typescript/package.json \
   | tr -d '[[:space:]]')
 
 sed -i "s/${PACKAGE_VERSION}/${CIRCLE_TAG}/g" ${TARGETPATH}/data-models-typescript/package.json
+
+# Update shrinkwrap to match current version
+npm shrinkwrap
 
 # Add credentials to remote
 git --git-dir ${TARGETPATH}/data-models-typescript/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/data-models-typescript.git
@@ -56,11 +50,9 @@ git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH
  git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript pull
 
 # Add them
-git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript add .
+git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript add --all
 
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript status .
-
-ls -R ${TARGETPATH}/data-models-typescript/src
 
 # Commit changes
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"

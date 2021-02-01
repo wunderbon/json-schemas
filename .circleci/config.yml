@@ -168,6 +168,10 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ${HOME}/.npmrc 2>&1
 
       - run:
+          name: Updating version reference and Id URL of schemas ...
+          command: ${HOME}/project/.circleci/update-version-reference.sh
+
+      - run:
           name: Creating TypeScript declarations ...
           command: ${HOME}/project/.circleci/create-typescript-declarations.sh
 

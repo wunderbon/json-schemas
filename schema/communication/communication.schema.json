@@ -1,7 +1,7 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/communication/communication.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/communication/communication.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.4.15",
+  "version": "v0.4.19",
   "contact": {
     "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
@@ -16,7 +16,7 @@
       "type": "array",
       "items": [
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/phoneNumber/phoneNumber.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/phoneNumber/phoneNumber.schema.json"
         }
       ],
       "minItems": 1,
@@ -28,7 +28,7 @@
       "type": "array",
       "items": [
         {
-          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/phoneNumber/phoneNumber.schema.json"
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/phoneNumber/phoneNumber.schema.json"
         }
       ],
       "minItems": 1,

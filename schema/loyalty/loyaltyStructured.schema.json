@@ -1,7 +1,7 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/loyalty/loyaltyStructured.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/loyalty/loyaltyStructured.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.4.15",
+  "version": "v0.4.19",
   "contact": {
     "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
@@ -24,7 +24,7 @@
     },
     "identifier": {
       "description": "The identifier (e.g. Customer-Nr.) within this program.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/truncatedNumber/truncatedNumber.schema.json"
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/truncatedNumber/truncatedNumber.schema.json"
     },
     "currency": {
       "description": "The 'currency' of the program.",
@@ -73,7 +73,7 @@
                 "properties": {
                   "currency": {
                     "description": "Currency of exchange rate.",
-                    "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/v0.4.15/schema/currency/currency.schema.json"
+                    "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/currency/currency.schema.json"
                   },
                   "rate": {
                     "description": "Rate for exchange.",

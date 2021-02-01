@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Environment configuration
-PATH_SOURCE_FILES="./schema/**/*.schema.json"
+PATH_SOURCE_FILES="build/schema/**/*.schema.json"
 
 # What we do
 echo "Updating version of JSON-Schemas to \"${CIRCLE_TAG}\""
@@ -17,8 +17,12 @@ for file in ${PATH_SOURCE_FILES}; do
     | sed 's/[",]//g' \
     | tr -d '[[:space:]]')
 
-  # sed -i "s/${VERSION}/${CIRCLE_TAG}/g" ${file}
-  echo "Version found: \"${VERSION}\""
+  # Update version field of schema
+  echo "Replacing version found: \"${VERSION}\" with new version: \"${CIRCLE_TAG}\""
+  sed -i "s/${VERSION}/${CIRCLE_TAG}/g" ${file}
+
+  # Update URL to match concrete version on later resolving
+  sed -i "s/json-schemas\/raw\/master\//json-schemas\/raw\/${CIRCLE_TAG}\//g" ${file}
 
   if [ "$?" = "1" ]; then
     echo "Error while creating typescript declarations!" 1>&2
