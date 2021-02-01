@@ -1,6 +1,7 @@
 {
   "product": {
     "data": {
+      "name": "Dummy Product",
       "code": "0720260063170"
     },
     "quantifier": {
