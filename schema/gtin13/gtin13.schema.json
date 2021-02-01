@@ -9,21 +9,11 @@
   },
   "title": "GTIN 13",
   "description": "A GTIN 13 representation within the wunderbon domain.",
-  "type": "object",
-  "properties": {
-    "number": {
-      "description": "The GTIN 13 formatted product number.",
-      "type": "string",
-      "minLength": 13,
-      "maxLength": 13,
-      "pattern": "\\b(?:\\d{13})\\b",
-      "examples": [
-        "0720260063170"
-      ]
-    }
-  },
-  "required": [
-    "number"
-  ],
-  "additionalProperties": false
+  "type": "string",
+  "minLength": 13,
+  "maxLength": 13,
+  "pattern": "\\b(?:\\d{13})\\b",
+  "examples": [
+    "0720260063170"
+  ]
 }
