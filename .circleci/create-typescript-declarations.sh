@@ -13,7 +13,7 @@ mkdir -p ./build/ts
 touch ./build/ts/index.ts
 
 # Add document header to file
-echo -e "$(cat ./.circleci/doc-header-unlicensed.tpl)\n$(cat ./build/ts/index.ts)" > ./build/ts/index.ts
+echo -e "$(cat ./.circleci/doc-header-unlicensed.tpl)\n\n$(cat ./build/ts/index.ts)" > ./build/ts/index.ts
 
 # Do it
 shopt -s globstar
@@ -26,7 +26,7 @@ for file in ${PATH_SOURCE_FILES}; do
   ./node_modules/.bin/quicktype --src-lang schema --lang ts --acronym-style pascal ${file} -o ${OUTPUTFILENAME}
 
   # Add document header to file
-  echo -e "$(cat .circleci/doc-header-unlicensed.tpl)\n$(cat ${OUTPUTFILENAME})" > ${OUTPUTFILENAME}
+  echo -e "$(cat .circleci/doc-header-unlicensed.tpl)\n\n$(cat ${OUTPUTFILENAME})" > ${OUTPUTFILENAME}
 
   # Append ts file created to index
   PASCALCONVERTNAME=$(echo "${TSMODELNAME}" | sed -e "s/\b\(.\)/\u\1/")
