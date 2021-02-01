@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Environment configuration
-PATH_SOURCE_FILES="./schema/**/*.schema.json"
+PATH_SOURCE_FILES="./build/schema/**/*.schema.json"
 
 # Debug listing
 ls -R schema

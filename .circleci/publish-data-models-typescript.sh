@@ -18,7 +18,7 @@ git config --global user.name "CircleCI"
 echo "1) to Bitbucket repository ..."
 
 # Checkout new branch and switch to it (name is branch name from this repository)
-git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript checkout -b ${GIT_REPOSITORY_BRANCH_MASTER}
+git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript checkout ${GIT_REPOSITORY_BRANCH_MASTER}
 
 # Debug listing
 ls -R ${TARGETPATH}/data-models-typescript/src
@@ -45,10 +45,6 @@ PACKAGE_VERSION=$(cat ${TARGETPATH}/data-models-typescript/package.json \
 
 sed -i "s/${PACKAGE_VERSION}/${CIRCLE_TAG}/g" ${TARGETPATH}/data-models-typescript/package.json
 
-# Create a fresh shrinkwrap with new release version
-echo "Create new NPM shrinkwrap ..."
-npm shrinkwrap
-
 # Add credentials to remote
 git --git-dir ${TARGETPATH}/data-models-typescript/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/data-models-typescript.git
 
@@ -60,7 +56,11 @@ git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH
  git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript pull
 
 # Add them
-git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript add --all
+git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript add .
+
+git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript status .
+
+ls -R ${TARGETPATH}/data-models-typescript/src
 
 # Commit changes
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
