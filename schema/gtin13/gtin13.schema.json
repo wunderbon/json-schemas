@@ -11,7 +11,7 @@
   "description": "A GTIN 13 representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-    "number": {
+    "id": {
       "description": "The GTIN 13 formatted product number.",
       "type": "string",
       "minLength": 13,
