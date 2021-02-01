@@ -9,11 +9,21 @@
   },
   "title": "GTIN 8",
   "description": "A GTIN 8 representation within the wunderbon domain.",
-  "type": "string",
-  "minLength": 8,
-  "maxLength": 8,
-  "pattern": "\\b(?:\\d{8})\\b",
-  "examples": [
-    "40170725"
-  ]
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The GTIN 8 formatted product number.",
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 8,
+      "pattern": "\\b(?:\\d{8})\\b",
+      "examples": [
+        "40170725"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
 }
