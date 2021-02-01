@@ -9,8 +9,21 @@
   },
   "title": "UUID",
   "description": "A UUID (v4) representation within the wunderbon domain.",
-  "type": "string",
-  "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$",
-  "minLength": 36,
-  "maxLength": 36
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "A UUID (v4) representation within the wunderbon domain.",
+      "type": "string",
+      "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$",
+      "minLength": 36,
+      "maxLength": 36,
+      "examples": [
+        "eba4dab5-699f-45e7-82e9-4e4ab0121292"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
 }
