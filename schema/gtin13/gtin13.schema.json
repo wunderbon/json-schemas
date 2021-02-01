@@ -23,7 +23,7 @@
     }
   },
   "required": [
-    "number"
+    "id"
   ],
   "additionalProperties": false
 }
