@@ -28,9 +28,24 @@ for file in ${PATH_SOURCE_FILES}; do
   # Add document header to file
   echo -e "$(cat .circleci/doc-header-unlicensed.tpl)\n\n$(cat ${OUTPUTFILENAME})" > ${OUTPUTFILENAME}
 
-  # Append ts file created to index
+  # Check for export and if exist -> Append ts file created to index
   PASCALCONVERTNAME=$(echo "${TSMODELNAME}" | sed -e "s/\b\(.\)/\u\1/")
-  echo "export { ${PASCALCONVERTNAME}, Convert as ${PASCALCONVERTNAME}Convert } from './${TSMODELNAME}';" >> ./build/ts/index.ts
+
+  # Check for export
+  case `grep -R "export interface ${PASCALCONVERTNAME}" ${OUTPUTFILENAME} >/dev/null; echo $?` in
+  0)
+    # found
+    echo "export { ${PASCALCONVERTNAME}, Convert as ${PASCALCONVERTNAME}Convert } from './${TSMODELNAME}';" >> ./build/ts/index.ts
+    ;;
+  1)
+    # not found
+    echo "export { Convert as ${PASCALCONVERTNAME}Convert } from './${TSMODELNAME}';" >> ./build/ts/index.ts
+    ;;
+  *)
+    # code if an error occurred
+    echo "Error on grep export for file \"${OUTPUTFILENAME}\""
+    ;;
+  esac
 
   if [ "$?" = "1" ]; then
     echo "Error while creating typescript declarations!" 1>&2
