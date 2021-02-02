@@ -26,24 +26,25 @@ for file in ${PATH_SOURCE_FILES}; do
   ./node_modules/.bin/quicktype --src-lang schema --lang ts --acronym-style pascal ${file} -o ${OUTPUTFILENAME}
 
   # Add document header to file
-  echo -e "$(cat .circleci/doc-header-unlicensed.tpl)\n\n$(cat ${OUTPUTFILENAME})" > ${OUTPUTFILENAME}
+  echo -e "$(cat .circleci/doc-header-unlicensed.tpl)\n$(cat ${OUTPUTFILENAME})" > ${OUTPUTFILENAME}
 
   # Check for export and if exist -> Append ts file created to index
   PASCALCONVERTNAME=$(echo "${TSMODELNAME}" | sed -e "s/\b\(.\)/\u\1/")
 
-  # Check for export
-  case `grep -R "export interface ${PASCALCONVERTNAME}" ${OUTPUTFILENAME} >/dev/null; echo $?` in
+  # Check for import just contains Convert() (e.g. for direct referenced values)
+  case `grep -R "import { Convert }" ${OUTPUTFILENAME} >/dev/null; echo $?` in
   0)
     # found
-    echo "export { ${PASCALCONVERTNAME}, Convert as ${PASCALCONVERTNAME}Convert } from './${TSMODELNAME}';" >> ./build/ts/index.ts
+    echo "export { Convert as ${PASCALCONVERTNAME}Convert } from './${TSMODELNAME}';" >> ./build/ts/index.ts
     ;;
   1)
     # not found
-    echo "export { Convert as ${PASCALCONVERTNAME}Convert } from './${TSMODELNAME}';" >> ./build/ts/index.ts
+    echo "export { ${PASCALCONVERTNAME}, Convert as ${PASCALCONVERTNAME}Convert } from './${TSMODELNAME}';" >> ./build/ts/index.ts
     ;;
   *)
     # code if an error occurred
     echo "Error on grep export for file \"${OUTPUTFILENAME}\""
+    exit 1
     ;;
   esac
 
