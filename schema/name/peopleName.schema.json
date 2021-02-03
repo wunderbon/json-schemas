@@ -14,9 +14,8 @@
     "salutation": {
       "type": "string",
       "enum": [
-        "Mrs",
-        "Mr",
-        "Ms"
+        "Mr.",
+        "Mrs."
       ]
     },
     "firstName": {

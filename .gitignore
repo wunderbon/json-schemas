@@ -33,3 +33,5 @@ dev-*
 # Project specific
 build/*
 public/*
+.nyc_output/*
+docs/report/*

@@ -5,7 +5,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     clean: {
       options: {
-        'no-write': false,
+        'no-write': true
       },
       generic: [
         './build/**/*'

@@ -1,0 +1,8 @@
+{
+  "require": "test/helper",
+  "full-trace": true,
+  "bail": true,
+  "recursive": true,
+  "color": true,
+  "ui": "bdd"
+}
