@@ -104,6 +104,10 @@ jobs:
           key: cache-test-{{ .Branch }}-{{ .Revision }}
 
       - run:
+          name: Running tests ...
+          command: ${HOME}/project/.circleci/test-software.sh
+
+      - run:
           name: Testing JSON Schemas validity ...
           command: ${HOME}/project/.circleci/test-json-schemas.sh
 
