@@ -195,6 +195,10 @@ jobs:
           name: Publishing data-models-typescript ...
           command: ${HOME}/project/.circleci/publish-data-models-typescript.sh
 
+      - run:
+          name: Publishing JSON SChemas ...
+          command: ${HOME}/project/.circleci/publish.sh
+
       - save_cache:
           key: cache-publish-{{ .Branch }}-{{ .Revision }}
           paths:
