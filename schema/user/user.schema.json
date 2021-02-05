@@ -74,34 +74,6 @@
         "john.doe@example.com",
         "jane@example.com"
       ]
-    },
-    "roles": {
-      "description": "Role(s) of the User.",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "description": "List of valid roles.",
-        "type": "string",
-        "minLength": 4,
-        "maxLength": 13,
-        "enum": [
-          "User",
-          "Administrator",
-          "Supplier",
-          "Merchant"
-        ]
-      }
-    },
-    "scopes": {
-      "description": "Scope(s) of the User.",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "description": "List of valid scopes.",
-        "type": "string",
-        "minLength": 5,
-        "maxLength": 255,
-      }
     }
   },
   "additionalProperties": false,

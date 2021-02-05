@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://bitbucket.org/wunderbon/json-schemas/issues"
   },
-  "version": "v0.4.23",
+  "version": "v0.4.24",
   "license": "MIT",
   "main": "./server.js",
   "scripts": {

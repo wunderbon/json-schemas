@@ -4,6 +4,5 @@
   "salutation": "Mrs.",
   "firstName": "Jane",
   "lastName": "Doe",
-  "email": "jane.doe@example.com",
-  "roles": ["User"]
+  "email": "jane.doe@example.com"
 }
