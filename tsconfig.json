@@ -35,6 +35,7 @@
   ],
   "exclude": [
     ".circleci/",
+    "./.nyc_output",
     "data/",
     "docs/",
     "public/",
