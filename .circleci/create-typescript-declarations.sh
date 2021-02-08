@@ -30,23 +30,31 @@ for file in ${PATH_SOURCE_FILES}; do
 
   # Check for export and if exist -> Append ts file created to index
   PASCALCONVERTNAME=$(echo "${TSMODELNAME}" | sed -e "s/\b\(.\)/\u\1/")
+  COLLECTION=$(grep -Eo 'export (enum|interface|class) ([a-zA-Z0-9]+)' ${OUTPUTFILENAME})
+  EXPORTLINE=""
 
-  # Check for import just contains Convert() (e.g. for direct referenced values)
-  case `grep -R "import { Convert }" ${OUTPUTFILENAME} >/dev/null; echo $?` in
-  0)
-    # found
-    echo "export { Convert as ${PASCALCONVERTNAME}Convert } from './${TSMODELNAME}';" >> ./build/ts/index.ts
-    ;;
-  1)
-    # not found
-    echo "export { ${PASCALCONVERTNAME}, Convert as ${PASCALCONVERTNAME}Convert } from './${TSMODELNAME}';" >> ./build/ts/index.ts
-    ;;
-  *)
-    # code if an error occurred
-    echo "Error on grep export for file \"${OUTPUTFILENAME}\""
-    exit 1
-    ;;
-  esac
+  main()
+  {
+      while IFS=" " read -r _export _type _name; do
+          if [ "${_name}" = "${PASCALCONVERTNAME}" ]; then
+            EXPORTNAME="${_name}"
+          else
+            EXPORTNAME="${_name} as ${PASCALCONVERTNAME}${_name}"
+          fi
+
+          if [ -n "${EXPORTLINE}" ]; then
+            EXPORTLINE="${EXPORTLINE}, ${EXPORTNAME}"
+          else
+            EXPORTLINE="${EXPORTNAME}"
+          fi
+      done <<-EOT
+      ${COLLECTION}
+EOT
+
+      echo "export { ${EXPORTLINE} } from './${TSMODELNAME}';" >> ./build/ts/index.ts
+  }
+
+  main "${@}"
 
   if [ "$?" = "1" ]; then
     echo "Error while creating typescript declarations!" 1>&2
