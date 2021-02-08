@@ -1,0 +1,17 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/scheme/scheme.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.4.19",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Scheme",
+  "description": "A HTTP Scheme representation within the wunderbon domain.",
+  "type": "string",
+  "enum": [
+    "http",
+    "https"
+  ]
+}
