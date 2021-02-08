@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://bitbucket.org/wunderbon/json-schemas/issues"
   },
-  "version": "v0.4.24",
+  "version": "v0.4.25",
   "license": "MIT",
   "main": "./server.js",
   "scripts": {
@@ -89,7 +89,7 @@
     "@types/mocha": "^8.2.0",
     "ajv": "^6.12.6",
     "ajv-cli": "^3.3.0",
-    "chai": "^4.2.0",
+    "chai": "^4.3.0",
     "chai-json-schema-ajv": "^1.0.0",
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
