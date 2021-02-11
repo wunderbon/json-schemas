@@ -262,7 +262,12 @@
     "ZW"
   ],
   "minLength": 2,
-  "maxLength": 2
+  "maxLength": 2,
+  "examples": [
+    "DE",
+    "TV",
+    "PE"
+  ]
 }
 
 
