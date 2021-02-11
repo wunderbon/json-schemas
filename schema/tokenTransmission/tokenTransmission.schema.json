@@ -1,0 +1,19 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tokenTransmission/tokenTransmission.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.4.19",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Token-Transmission",
+  "description": "Token transmission representation within the wunderbon domain.",
+  "type": "string",
+  "minLength": 6,
+  "maxLength": 6,
+  "pattern": "^[0-9]{6,6}$",
+  "examples": [
+    "123654"
+  ]
+}

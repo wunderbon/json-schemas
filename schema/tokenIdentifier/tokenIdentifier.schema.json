@@ -1,0 +1,19 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tokenIdentifier/tokenIdentifier.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.4.19",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Token-Identifier",
+  "description": "Token identifier representation within the wunderbon domain.",
+  "type": "string",
+  "minLength": 33,
+  "maxLength": 33,
+  "pattern": "^[0-9A-Za-z]{33,33}$",
+  "examples": [
+    "jGikR31tmswSrojw5MEMcw4tPkaNdUe8w"
+  ]
+}

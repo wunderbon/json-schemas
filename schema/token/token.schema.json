@@ -12,17 +12,27 @@
   "type": "object",
   "properties": {
     "value": {
-      "description": "Street and Number as well as token additions.",
-      "type": "string",
-      "minLength": 6,
-      "maxLength": 512,
-      "examples": [
-        "kMgncWoSSGY0je/b4WhW3WupFo4N83skfvT4kDm2uZigSlSzCfh0NT3tgRR2n5VAEhxxfJxQEhv/LA9VmwOirw6lzwYR7Ori4lr2+dj4Ox3L2aj8VytF13OvuY7dTonQ"
+      "description": "The token (value) itself.",
+      "oneOf": [
+        {
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tokenTransmission/tokenTransmission.schema.json"
+        },
+        {
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tokenIdentifier/tokenIdentifier.schema.json"
+        }
       ]
     },
     "type": {
       "description": "Type of the token.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/token/tokenType.schema.json"
+      "type": "string",
+      "enum": [
+        "transmission",
+        "identifier"
+      ],
+      "examples": [
+        "transmission",
+        "identifier"
+      ]
     }
   },
   "additionalProperties": false,
