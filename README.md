@@ -1,6 +1,6 @@
 # wunderbon | smart receipts
 
-## Documentation JSON-Schemas
+## Documentation `json-schemas`
 
 wunderbon **json-schemas** as blueprints for data structures and contracts like interfaces, models and helpers. Always up to date with the latest API specification.
 
