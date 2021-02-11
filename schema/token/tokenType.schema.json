@@ -1,0 +1,23 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/token/tokenType.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.4.19",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Token-Type",
+  "description": "Type of the token.",
+  "type": "string",
+  "enum": [
+    "transmission",
+    "identifier"
+  ],
+  "minLength": 10,
+  "maxLength": 12,
+  "examples": [
+    "transmission",
+    "identifier"
+  ]
+}
