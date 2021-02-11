@@ -10,9 +10,9 @@
   "title": "Token-Identifier",
   "description": "Token identifier representation within the wunderbon domain.",
   "type": "string",
-  "minLength": 33,
-  "maxLength": 33,
-  "pattern": "^[0-9A-Za-z]{33,33}$",
+  "minLength": 34,
+  "maxLength": 34,
+  "pattern": "^[0-9A-Za-z]{34,34}$",
   "examples": [
     "jGikR31tmswSrojw5MEMcw4tPkaNdUe8w"
   ]
