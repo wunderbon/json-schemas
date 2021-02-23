@@ -12,7 +12,8 @@ for file in ${PATH_SOURCE_FILES}; do
   # New filename and path for dereferenced schema
   OUTPUTFILENAME=${file/schema\//build/schema\/}
   mkdir -p "`dirname $OUTPUTFILENAME`/"
-  ./node_modules/.bin/json-dereference -s $file -o $OUTPUTFILENAME
+  # ./node_modules/.bin/json-dereference -s $file -o $OUTPUTFILENAME
+  cp $file $OUTPUTFILENAME
 done
 
 if [ "$?" = "0" ]; then
