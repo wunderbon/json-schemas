@@ -13,7 +13,7 @@ for file in ${PATH_SOURCE_FILES}; do
   OUTPUTFILENAME=${file/schema\//data\/}
   OUTPUTFILENAME=${OUTPUTFILENAME/.schema.json/.json}
   mkdir -p "`dirname $OUTPUTFILENAME`/"
-  ./node_modules/.bin/generate-json $file $OUTPUTFILENAME
+  # ./node_modules/.bin/generate-json $file $OUTPUTFILENAME
   # Check return value in loop for quick exit
   if [ "$?" = "1" ]; then
     # exit with success - important for ci system
