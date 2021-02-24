@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Environment configuration
-PATH_SOURCE_FILES="./build/schema/**/*.schema.json"
+PATH_SOURCE_FILES="./build/ts-schema/**/*.schema.json"
 
 # What we do
 echo "Creating typescript declarations by JSON-Schemas from \"${PATH_SOURCE_FILES}\""

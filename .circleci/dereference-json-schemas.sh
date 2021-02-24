@@ -12,8 +12,12 @@ for file in ${PATH_SOURCE_FILES}; do
   # New filename and path for dereferenced schema
   OUTPUTFILENAME=${file/schema\//build/schema\/}
   mkdir -p "`dirname $OUTPUTFILENAME`/"
-  # ./node_modules/.bin/json-dereference -s $file -o $OUTPUTFILENAME
-  cp $file $OUTPUTFILENAME
+  ./node_modules/.bin/json-dereference -s $file -o $OUTPUTFILENAME
+
+  # Do copy 1:1 to another directory for typescript generator (comes with working ref parser!)
+  OUTPUTFILENAMETS=${file/schema\//build/ts-schema\/}
+  mkdir -p "`dirname $OUTPUTFILENAMETS`/"
+  cp $file $OUTPUTFILENAMETS
 done
 
 if [ "$?" = "0" ]; then
