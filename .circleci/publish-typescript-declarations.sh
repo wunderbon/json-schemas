@@ -13,6 +13,7 @@ echo "Publishing typescript declarations ... "
 # Setup git
 git config --global user.email "${GIT_USER_EMAIL}"
 git config --global user.name "CircleCI"
+git config --global pull.ff only
 
 # Do it
 echo "1) to Bitbucket repository ..."

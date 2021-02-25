@@ -37,7 +37,8 @@ PACKAGE_VERSION=$(cat ${TARGETPATH}/data-models-typescript/package.json \
 
 sed -i "s/${PACKAGE_VERSION}/${CIRCLE_TAG}/g" ${TARGETPATH}/data-models-typescript/package.json
 
-# Update shrinkwrap to match current version
+# Create a fresh shrinkwrap with new release version
+echo "Create new NPM shrinkwrap ..."
 npm shrinkwrap
 
 # Add credentials to remote
