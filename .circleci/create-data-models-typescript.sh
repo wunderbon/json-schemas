@@ -4,7 +4,7 @@
 PATH_SOURCE_FILES="./build/ts-schema/**/*.schema.json"
 
 # What we do
-echo "Creating typescript declarations by JSON-Schemas from \"${PATH_SOURCE_FILES}\""
+echo "Creating typescript interfaces and factories by JSON-Schemas from \"${PATH_SOURCE_FILES}\""
 
 # Create directory first
 mkdir -p ./build/ts
@@ -57,7 +57,7 @@ EOT
   main "${@}"
 
   if [ "$?" = "1" ]; then
-    echo "Error while creating typescript declarations!" 1>&2
+    echo "Error while creating typescript interfaces and factories!" 1>&2
 	  # exit with error - important for ci system
 	  exit 1
   fi
@@ -67,7 +67,7 @@ if [ "$?" = "0" ]; then
   # exit with success - important for ci system
   exit 0
 else
-	echo "Error while creating typescript declarations!" 1>&2
+	echo "Error while creating typescript interfaces and factories!" 1>&2
 	# exit with error - important for ci system
 	exit 1
 fi
