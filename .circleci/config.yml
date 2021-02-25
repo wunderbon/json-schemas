@@ -184,10 +184,6 @@ jobs:
           command: ${HOME}/project/.circleci/clone-typescript-declarations-repository.sh
 
       - run:
-          name: Publishing typescript-decelarations ...
-          command: ${HOME}/project/.circleci/publish-typescript-declarations.sh
-
-      - run:
           name: Cloning data-models-typescript repository ...
           command: ${HOME}/project/.circleci/clone-data-models-typescript-repository.sh
 
