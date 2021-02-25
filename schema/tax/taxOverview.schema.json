@@ -1,7 +1,7 @@
 {
   "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tax/taxOverview.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "version": "v0.4.19",
+  "version": "v0.1.0",
   "contact": {
     "name": "wunderbon Operation GmbH & Co. KG",
     "url": "https://developers.wunderbon.io",
