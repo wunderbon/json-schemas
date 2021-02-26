@@ -39,7 +39,7 @@ sed -i "s/${PACKAGE_VERSION}/${CIRCLE_TAG}/g" ${TARGETPATH}/data-models-typescri
 
 # Create a fresh shrinkwrap with new release version
 echo "Create new NPM shrinkwrap ..."
-npm shrinkwrap
+npm shrinkwrap --prefix ${TARGETPATH}/data-models-typescript
 
 # Add credentials to remote
 git --git-dir ${TARGETPATH}/data-models-typescript/.git remote set-url origin https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/data-models-typescript.git
@@ -47,17 +47,17 @@ git --git-dir ${TARGETPATH}/data-models-typescript/.git remote set-url origin ht
 # Set upstream link
 git --git-dir ${TARGETPATH}/data-models-typescript/.git branch -u origin/${GIT_REPOSITORY_BRANCH_MASTER}
 
+# Add them
+git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript add --all
+
+# Commit changes
+git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
+
 # Local update
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript fetch && \
  git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript pull --rebase
 
-# Add them
-git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript add --all
-
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript status .
-
-# Commit changes
-git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript commit -m "CI Build #${CIRCLE_BUILD_NUM} @see ${CIRCLE_BUILD_URL}"
 
 # Tag this version with tag from current build
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript tag ${CIRCLE_TAG}
