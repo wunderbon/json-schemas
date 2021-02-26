@@ -123,8 +123,8 @@ jobs:
   publish:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: cache-git-{{ .Branch }}-{{ .Revision }}
+      #- restore_cache:
+      #    key: cache-git-{{ .Branch }}-{{ .Revision }}
 
       - checkout
 
@@ -136,36 +136,36 @@ jobs:
           name: Managing permissions ...
           command: chmod +x ${HOME}/project/.circleci/*.sh
 
-      - save_cache:
-          key: cache-git-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - ".git"
-            - "~/project"
+      #- save_cache:
+      #    key: cache-git-{{ .Branch }}-{{ .Revision }}
+      #    paths:
+      #      - ".git"
+      #      - "~/project"
 
       - run:
           name: Installing build tools ...
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
-      - restore_cache:
-          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
+      #- restore_cache:
+      #    key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
 
       - run:
           name: Installing packages ...
           command: npm install
 
-      - save_cache:
-          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
-          paths:
-            - "node_modules"
+      #- save_cache:
+      #    key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
+      #    paths:
+      #      - "node_modules"
 
       - restore_cache:
           key: cache-build-{{ .Branch }}-{{ .Revision }}
 
-      - restore_cache:
-          key: cache-test-{{ .Branch }}-{{ .Revision }}
+      #- restore_cache:
+      #    key: cache-test-{{ .Branch }}-{{ .Revision }}
 
-      - restore_cache:
-          key: cache-publish-{{ .Branch }}-{{ .Revision }}
+      #- restore_cache:
+      #    key: cache-publish-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Authenticating with NPM registry ...
@@ -187,10 +187,10 @@ jobs:
           name: Publishing JSON SChemas ...
           command: ${HOME}/project/.circleci/publish.sh
 
-      - save_cache:
-          key: cache-publish-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - "~/project/build"
+      #- save_cache:
+      #    key: cache-publish-{{ .Branch }}-{{ .Revision }}
+      #    paths:
+      #      - "~/project/build"
 
 workflows:
   version: 2
