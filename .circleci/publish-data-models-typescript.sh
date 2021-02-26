@@ -61,7 +61,7 @@ git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH
 
 # Tag this version with tag from current build
 git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript tag ${CIRCLE_TAG}
-git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript tag -l
+# git --git-dir ${TARGETPATH}/data-models-typescript/.git --work-tree=${TARGETPATH}/data-models-typescript tag -l
 
 # Push them to repository
 git --git-dir ${TARGETPATH}/data-models-typescript/.git push -u origin ${GIT_REPOSITORY_BRANCH_MASTER}

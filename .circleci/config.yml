@@ -181,6 +181,7 @@ jobs:
 
       - run:
           name: Publishing data-models-typescript ...
+          no_output_timeout: 3m
           command: ${HOME}/project/.circleci/publish-data-models-typescript.sh
 
       - run:
