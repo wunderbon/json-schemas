@@ -11,7 +11,7 @@
   "description": "A generic product representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-    "code": {
+    "productCode": {
       "type": "string",
       "minLength": 1,
       "maxLength": 255
@@ -28,7 +28,7 @@
   },
   "additionalProperties": false,
   "required": [
-    "code",
+    "productCode",
     "name"
   ]
 }

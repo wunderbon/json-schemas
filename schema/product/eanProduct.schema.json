@@ -11,7 +11,7 @@
   "description": "An EAN product representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-    "code": {
+    "productCode": {
       "description": "EAN (GTIN) 8||13 product code.",
       "oneOf": [
         {
@@ -72,6 +72,6 @@
   },
   "additionalProperties": false,
   "required": [
-    "code"
+    "productCode"
   ]
 }
