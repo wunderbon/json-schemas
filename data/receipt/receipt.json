@@ -13,7 +13,7 @@
       {
         "product": {
           "data": {
-            "code": "4001686720028",
+            "productCode": "4001686720028",
             "name": {
               "short": "Haribo Mini Color-Rado, 10er Pack (10 x 175 g)"
             }
@@ -46,7 +46,7 @@
       {
         "product": {
           "data": {
-            "code": "5000159475358",
+            "productCode": "5000159475358",
             "name": {
               "short": "Celebrations - Mars - 190 g"
             }
@@ -79,7 +79,7 @@
       {
         "product": {
           "data": {
-            "code": "4035800410724",
+            "productCode": "4035800410724",
             "name": {
               "short": "Dickmann's Schoko Strolche"
             }
@@ -112,7 +112,7 @@
       {
         "product": {
           "data": {
-            "code": "4002671135537",
+            "productCode": "4002671135537",
             "name": {
               "short": "Almette Kräuter 7% Fett"
             }
@@ -145,7 +145,7 @@
       {
         "product": {
           "data": {
-            "code": "4008258291016",
+            "productCode": "4008258291016",
             "name": {
               "short": "SOFT PFLAUMEN"
             }
@@ -178,7 +178,7 @@
       {
         "product": {
           "data": {
-            "code": "4006544307007",
+            "productCode": "4006544307007",
             "name": {
               "short": "Südzucker Puder Zucker 250g"
             }
@@ -211,7 +211,7 @@
       {
         "product": {
           "data": {
-            "code": "4008400204727",
+            "productCode": "4008400204727",
             "name": {
               "short": "Kinder Schokolade"
             }
@@ -244,7 +244,7 @@
       {
         "product": {
           "data": {
-            "code": "0000090376016",
+            "productCode": "0000090376016",
             "name": {
               "short": "Red Bull Simply Cola"
             }
@@ -277,7 +277,7 @@
       {
         "product": {
           "data": {
-            "code": "4037400433684",
+            "productCode": "4037400433684",
             "name": {
               "short": "Katjes Jogger Gums"
             }
