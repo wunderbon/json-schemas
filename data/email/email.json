@@ -1,0 +1,6 @@
+{
+  "to": "jane.doe@example.com",
+  "subject": "Test Email",
+  "bodyHtml": "Test Email Body HTML",
+  "bodyText": "Test Email Body Text"
+}

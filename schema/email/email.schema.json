@@ -1,0 +1,66 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/email/email.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.1.0",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Email",
+  "description": "An email representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "to": {
+      "description": "Recipient of the email.",
+      "type": "string",
+      "examples": [
+        "jane.doe@example.com"
+      ]
+    },
+    "cc": {
+      "description": "CC-Recipient of the email.",
+      "type": "string",
+      "examples": [
+        "cc-recipient@example.com"
+      ]
+    },
+    "bcc": {
+      "description": "BCC-Recipient of the email.",
+      "type": "string",
+      "examples": [
+        "bcc-recipient@example.com"
+      ]
+    },
+    "subject": {
+      "description": "Subject of the email.",
+      "type": "string",
+      "examples": [
+        "Test Subject"
+      ]
+    },
+    "bodyHtml": {
+      "description": "HTML body of the email.",
+      "type": "string",
+      "examples": [
+        "<html>...Some content...</html>"
+      ]
+    },
+    "bodyText": {
+      "description": "Text body of the email.",
+      "type": "string",
+      "examples": [
+        "Some content."
+      ]
+    }
+  },
+  "required": [
+    "to",
+    "subject",
+    "bodyText",
+    "bodyHtml"
+  ],
+  "additionalProperties": false
+}
+
+
