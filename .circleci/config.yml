@@ -32,14 +32,14 @@ jobs:
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
       - restore_cache:
-          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
+          key: cache-dependencies-{{ checksum "hash" }}
 
       - run:
           name: Installing packages ...
           command: npm install
 
       - save_cache:
-          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
+          key: cache-dependencies-{{ checksum "hash" }}
           paths:
             - "node_modules"
 
@@ -86,14 +86,14 @@ jobs:
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
       - restore_cache:
-          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
+          key: cache-dependencies-{{ checksum "hash" }}
 
       - run:
           name: Installing packages ...
           command: npm install
 
       - save_cache:
-          key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
+          key: cache-dependencies-{{ checksum "hash" }}
           paths:
             - "node_modules"
 
@@ -146,17 +146,17 @@ jobs:
           name: Installing build tools ...
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
-      #- restore_cache:
-      #    key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
+      - restore_cache:
+          key: cache-dependencies-{{ checksum "hash" }}
 
       - run:
           name: Installing packages ...
           command: npm install
 
-      #- save_cache:
-      #    key: cache-dependencies-{{ checksum "npm-shrinkwrap.json" }}
-      #    paths:
-      #      - "node_modules"
+      - save_cache:
+          key: cache-dependencies-{{ checksum "hash" }}
+          paths:
+            - "node_modules"
 
       - restore_cache:
           key: cache-build-{{ .Branch }}-{{ .Revision }}

@@ -1,6 +1,8 @@
 {
   "to": "jane.doe@example.com",
+  "toName": "Jane Doe",
   "subject": "Test Email",
   "bodyHtml": "Test Email Body HTML",
-  "bodyText": "Test Email Body Text"
+  "bodyText": "Test Email Body Text",
+  "cc": "cc@example.com"
 }

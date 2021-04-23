@@ -3,14 +3,6 @@ module.exports = function (grunt) {
   'use strict';
 
   grunt.initConfig({
-    clean: {
-      options: {
-        'no-write': true
-      },
-      generic: [
-        './build/**/*'
-      ]
-    },
     run: {
       generic: {
         cmd: './circleci/build.sh'
@@ -18,8 +10,7 @@ module.exports = function (grunt) {
     },
     ts: {
       options: {
-        // disable the grunt-ts fast feature
-        fast: 'never'
+        fast: 'always'
       },
       default: {
         // specifying tsconfig as an object allows detailed configuration overrides...
@@ -33,21 +24,30 @@ module.exports = function (grunt) {
       },
       development: {
         options: {
-          fast: 'always'
+          fast: 'never'
         }
       }
+    },
+    hashFileContents: {
+      algorithm: 'md5',
+      encoding: 'hex',
+      files: [
+        'npm-shrinkwrap.json',
+        '.circleci/config.yml'
+      ],
+      target: 'hash'
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-hash-file-contents');
   grunt.loadNpmTasks('grunt-run');
   grunt.loadNpmTasks('grunt-ts');
 
   grunt.registerTask('default', [
-    'clean', 'ts'
+    'ts'
   ]);
 
   grunt.registerTask('build', [
-    'clean', 'ts'
+    'ts', 'hashFileContents'
   ]);
 };

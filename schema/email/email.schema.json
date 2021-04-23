@@ -11,11 +11,32 @@
   "description": "An email representation within the wunderbon domain.",
   "type": "object",
   "properties": {
+    "from": {
+      "description": "Sender of the email.",
+      "type": "string",
+      "examples": [
+        "mail@example.com"
+      ]
+    },
+    "fromName": {
+      "description": "From name of the email.",
+      "type": "string",
+      "examples": [
+        "News Update"
+      ]
+    },
     "to": {
       "description": "Recipient of the email.",
       "type": "string",
       "examples": [
         "jane.doe@example.com"
+      ]
+    },
+    "toName": {
+      "description": "Recipient name of the email.",
+      "type": "string",
+      "examples": [
+        "Jane Doe"
       ]
     },
     "cc": {
