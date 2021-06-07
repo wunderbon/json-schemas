@@ -1,5 +1,4 @@
 {
-  "id": "0x01",
   "name": "eWAN",
   "description": "eWAN is the wunderbon account number. This network is the wunderbon native one.",
   "provider": {
@@ -7,5 +6,6 @@
       "entityName": "wunderbon Operation GmbH & Co. KG",
       "displayName": "wunderbon"
     }
-  }
+  },
+  "providerId": "0x01"
 }
