@@ -1,0 +1,35 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tag/tag.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.4.19",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Tag",
+  "description": "A tag representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "entity": {
+      "description": "Id of the entity the tag belongs to.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+    },
+    "value": {
+      "description": "The value of the tag.",
+      "type": "string",
+      "minlength": 3,
+      "maxLength": 255,
+      "examples": [
+        "foo",
+        "bar",
+        "baz"
+      ]
+    }
+  },
+  "required": [
+    "entity",
+    "value"
+  ],
+  "additionalProperties": false
+}

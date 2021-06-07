@@ -1,0 +1,19 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/email/email.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.4.19",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Email",
+  "description": "A schema for email representation within the wunderbon domain.",
+  "type": "string",
+  "pattern": "^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$",
+  "maxLength": 255,
+  "examples": [
+    "john.doe@example.com",
+    "jane@example.com"
+  ]
+}
