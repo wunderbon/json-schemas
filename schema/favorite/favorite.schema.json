@@ -1,0 +1,38 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/favorite/favorite.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.1.0",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Favorite",
+  "description": "A favorite representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "Favorite type.",
+      "enum": [
+        "merchant",
+        "network",
+        "location",
+        "product",
+        "receipt"
+      ],
+      "examples": [
+        "receipt",
+        "merchant"
+      ]
+    },
+    "entity": {
+      "description": "Id of the entity the favorite belongs to.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+    }
+  },
+  "required": [
+    "type",
+    "entity"
+  ],
+  "additionalProperties": false
+}

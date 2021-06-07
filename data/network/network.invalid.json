@@ -1,0 +1,10 @@
+{
+  "name": "Example",
+  "description": "Lorem ipsum dolor sit amet.",
+  "provider": {
+    "name": {
+      "entityName": "Example Inc.",
+      "displayName": "Example"
+    }
+  }
+}

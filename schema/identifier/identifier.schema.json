@@ -18,21 +18,17 @@
       "maxLength": 255
     },
     "network": {
-      "description": "Target network.",
-      "type": "integer",
-      "minimum": 1,
-      "maximum": 999999,
-      "default": 1
+      "description": "The Id of the network the identifier belongs to.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
     },
     "number": {
       "type": "string",
-      "minLength": 3,
-      "maxLength": 255
+      "minLength": 1,
+      "maxLength": 1024
     }
   },
   "additionalProperties": false,
   "required": [
-    "name",
     "network",
     "number"
   ]

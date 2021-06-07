@@ -1,0 +1,62 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/rating/rating.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.1.0",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Rating",
+  "description": "A rating representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "Rating type.",
+      "enum": [
+        "merchant",
+        "network",
+        "location",
+        "product",
+        "receipt"
+      ],
+      "examples": [
+        "receipt",
+        "merchant"
+      ]
+    },
+    "entity": {
+      "description": "Id of the entity the rating belongs to.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+    },
+    "description": {
+      "description": "Short text note regarding the rating.",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "examples": [
+        "Great service and great products!",
+        "I did not like how the cashier handled the food."
+      ]
+    },
+    "value": {
+      "description": "The value of the rating.",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "examples": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  },
+  "required": [
+    "type",
+    "entity",
+    "value"
+  ],
+  "additionalProperties": false
+}

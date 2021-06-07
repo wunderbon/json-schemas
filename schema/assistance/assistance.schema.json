@@ -1,0 +1,55 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/assistance/assistance.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.1.0",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Assistance",
+  "description": "Assistance representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "device": {
+      "description": "Device on which the assistance is available. Will become a matrix with medium.",
+      "type": "string",
+      "enum": [
+        "smartphone",
+        "tablet",
+        "computer"
+      ],
+      "examples": [
+        "smartphone"
+      ]
+    },
+    "medium": {
+      "description": "Medium on which the assistance is available. Will become a matrix with device.",
+      "type": "string",
+      "enum": [
+        "app",
+        "web-app"
+      ],
+      "examples": [
+        "app"
+      ]
+    },
+    "entity": {
+      "description": "Id of the entity the assistance belongs to.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+    },
+    "hint": {
+      "description": "Hint shown for further assistance.",
+      "type": "string",
+      "maxLength": 512,
+      "examples": [
+        "Hi and welcome to our Foo-Screen. Here you can manage your foo, bar and your baz as well."
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "entity",
+    "hint"
+  ]
+}
