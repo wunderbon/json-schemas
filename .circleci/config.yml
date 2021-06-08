@@ -104,6 +104,14 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ${HOME}/.npmrc 2>&1
 
       - run:
+          name: Configuring Git ...
+          command: ${HOME}/project/.circleci/configure-git.sh
+
+      - run:
+          name: Configuring SSH ...
+          command: ${HOME}/project/.circleci/configure-ssh.sh
+
+      - run:
           name: Creating data-models-typescript (Interfaces, Factories, ...) ...
           command: ${HOME}/project/.circleci/create-data-models-typescript.sh
 

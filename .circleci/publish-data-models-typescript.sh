@@ -10,11 +10,6 @@ GIT_REPOSITORY_BRANCH_DEVELOP="develop"
 # What we do
 echo "Publishing data models typescript ... "
 
-# Setup git
-git config --global user.email "${GIT_USER_EMAIL}"
-git config --global user.name "CircleCI"
-git config --global pull.ff only
-
 # Do it
 echo "1) to Bitbucket repository ..."
 
