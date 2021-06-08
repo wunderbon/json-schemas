@@ -8,9 +8,6 @@ jobs:
   build:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: cache-git-{{ .Branch }}-{{ .Revision }}
-
       - checkout
 
       - run:
@@ -21,27 +18,21 @@ jobs:
           name: Managing permissions ...
           command: chmod +x ${HOME}/project/.circleci/*.sh
 
-      - save_cache:
-          key: cache-git-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - ".git"
-            - "~/project"
-
       - run:
           name: Installing build tools ...
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
       - restore_cache:
-          key: cache-dependencies-{{ checksum "hash" }}
+          key: npm-cache-{{ checksum "hash" }}
 
       - run:
-          name: Installing packages ...
+          name: Installing dependencies ...
           command: npm install
 
       - save_cache:
-          key: cache-dependencies-{{ checksum "hash" }}
+          key: npm-cache-{{ checksum "hash" }}
           paths:
-            - "node_modules"
+            - node_modules/
 
       - restore_cache:
           key: cache-build-{{ .Branch }}-{{ .Revision }}
@@ -59,113 +50,54 @@ jobs:
           paths:
             - "~/project/build"
 
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory
+          root: /root
+          # Must be relative path from root
+          paths:
+            - project
+
   test:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: cache-git-{{ .Branch }}-{{ .Revision }}
-
-      - checkout
-
-      - run:
-          name: Tidy-Up git (git gc)
-          command: git gc
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: /root
 
       - run:
           name: Managing permissions ...
           command: chmod +x ${HOME}/project/.circleci/*.sh
 
-      - save_cache:
-          key: cache-git-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - ".git"
-            - "~/project"
-
       - run:
           name: Installing build tools ...
           command: ${HOME}/project/.circleci/install-buildtools.sh
 
-      - restore_cache:
-          key: cache-dependencies-{{ checksum "hash" }}
-
       - run:
-          name: Installing packages ...
-          command: npm install
-
-      - save_cache:
-          key: cache-dependencies-{{ checksum "hash" }}
-          paths:
-            - "node_modules"
-
-      - restore_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}
-
-      - restore_cache:
-          key: cache-test-{{ .Branch }}-{{ .Revision }}
-
-      - run:
-          name: Running tests ...
+          name: Testing JSON Schemas units (typescript code) ...
           command: ${HOME}/project/.circleci/test-software.sh
 
       - run:
-          name: Testing JSON Schemas validity ...
+          name: Testing JSON Schemas syntax validity (specification) ...
           command: ${HOME}/project/.circleci/test-json-schemas.sh
 
       - run:
-          name: Testing JSON Schema inplementations against blueprints ...
+          name: Testing JSON Schemas against blueprint data (valid & invalid) ...
           command: ${HOME}/project/.circleci/test-json-data.sh
-
-      - save_cache:
-          key: cache-test-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - "~/project/build"
 
   publish:
     <<: *defaults
     steps:
-      #- restore_cache:
-      #    key: cache-git-{{ .Branch }}-{{ .Revision }}
-
-      - checkout
-
-      - run:
-          name: Tidy-Up git (git gc)
-          command: git gc
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: /root
 
       - run:
           name: Managing permissions ...
           command: chmod +x ${HOME}/project/.circleci/*.sh
 
-      #- save_cache:
-      #    key: cache-git-{{ .Branch }}-{{ .Revision }}
-      #    paths:
-      #      - ".git"
-      #      - "~/project"
-
       - run:
           name: Installing build tools ...
           command: ${HOME}/project/.circleci/install-buildtools.sh
-
-      - restore_cache:
-          key: cache-dependencies-{{ checksum "hash" }}
-
-      - run:
-          name: Installing packages ...
-          command: npm install
-
-      - save_cache:
-          key: cache-dependencies-{{ checksum "hash" }}
-          paths:
-            - "node_modules"
-
-      - restore_cache:
-          key: cache-build-{{ .Branch }}-{{ .Revision }}
-
-      #- restore_cache:
-      #    key: cache-test-{{ .Branch }}-{{ .Revision }}
-
-      #- restore_cache:
-      #    key: cache-publish-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Authenticating with NPM registry ...
@@ -185,17 +117,12 @@ jobs:
           command: ${HOME}/project/.circleci/publish-data-models-typescript.sh
 
       - run:
-          name: Publishing JSON SChemas ...
+          name: Publishing JSON Schemas ...
           command: ${HOME}/project/.circleci/publish.sh
-
-      #- save_cache:
-      #    key: cache-publish-{{ .Branch }}-{{ .Revision }}
-      #    paths:
-      #      - "~/project/build"
 
 workflows:
   version: 2
-  build:
+  build-test:
     jobs:
       - build:
           context: wunderbon-open-source-api
@@ -210,30 +137,30 @@ workflows:
           requires:
             - build
 
-  tagged-build:
+  build-test-publish:
     jobs:
       - build:
           context: wunderbon-open-source-api
           filters:
-            branches:
-              ignore: /.*/
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+            branches:
+              ignore: /.*/
       - test:
           context: wunderbon-open-source-api
           requires:
             - build
           filters:
-            branches:
-              ignore: /.*/
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+            branches:
+              ignore: /.*/
       - publish:
           context: wunderbon-open-source-api
           requires:
             - test
           filters:
-            branches:
-              ignore: /.*/
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+            branches:
+              ignore: /.*/
