@@ -11,6 +11,10 @@
   "description": "Assistance representation within the wunderbon domain.",
   "type": "object",
   "properties": {
+    "locale": {
+      "description": "Valid locale: Language and territory are represented by two- or three-character ISO-639 or two-character ISO-3166 codes (e.g. de-DE for German/Germany, de-AT for German/Austria or gsw-CH for Swiss German/Switzerland).",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/locale/locale.schema.json"
+    },
     "device": {
       "description": "Device on which the assistance is available. Will become a matrix with medium.",
       "type": "string",
@@ -50,6 +54,7 @@
   "additionalProperties": false,
   "required": [
     "entity",
-    "hint"
+    "hint",
+    "locale"
   ]
 }
