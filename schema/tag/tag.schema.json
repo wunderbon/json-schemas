@@ -11,6 +11,10 @@
   "description": "A tag representation within the wunderbon domain.",
   "type": "object",
   "properties": {
+    "owner": {
+      "description": "Owner of the tag.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+    },
     "entity": {
       "description": "Id of the entity the tag belongs to.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
@@ -28,6 +32,7 @@
     }
   },
   "required": [
+    "owner",
     "entity",
     "value"
   ],

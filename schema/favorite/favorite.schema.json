@@ -11,6 +11,10 @@
   "description": "A favorite representation within the wunderbon domain.",
   "type": "object",
   "properties": {
+    "owner": {
+      "description": "Owner of the favorite.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+    },
     "type": {
       "description": "Favorite type.",
       "enum": [
@@ -31,6 +35,7 @@
     }
   },
   "required": [
+    "owner",
     "type",
     "entity"
   ],

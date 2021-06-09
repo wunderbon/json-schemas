@@ -11,6 +11,10 @@
   "description": "A rating representation within the wunderbon domain.",
   "type": "object",
   "properties": {
+    "owner": {
+      "description": "Owner of the rating.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+    },
     "type": {
       "description": "Rating type.",
       "enum": [
@@ -54,6 +58,7 @@
     }
   },
   "required": [
+    "owner",
     "type",
     "entity",
     "value"
