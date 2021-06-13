@@ -1,5 +1,5 @@
 {
-  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/truncatedNumber/truncatedNumber.schema.json",
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tse/tse.schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "version": "v0.1.0",
   "contact": {
