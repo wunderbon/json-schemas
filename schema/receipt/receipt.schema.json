@@ -79,26 +79,43 @@
       "description": "Payment part of the receipt. This node contains information on how the amount of the cart was settled.",
       "type": "object",
       "properties": {
-        "payments": {
-          "description": "Collection of payments applied. Must contain at least one payment.",
+        "cashPayments": {
           "type": "array",
           "items": [
             {
               "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashPayment.schema.json"
-            },
+            }
+          ],
+          "minItems": 0
+        },
+        "cashlessPayments": {
+          "type": "array",
+          "items": [
             {
               "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/payment/cashlessPayment.schema.json"
             }
           ],
-          "minItems": 1
+          "minItems": 0
         },
         "total": {
+          "type": "object",
           "description": "The sum of all payments cleared.",
           "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
         }
       },
+      "anyOf": [
+        {
+          "required": [
+            "cashPayments"
+          ]
+        },
+        {
+          "required": [
+            "cashlessPayments"
+          ]
+        }
+      ],
       "required": [
-        "payments",
         "total"
       ],
       "additionalProperties": false
@@ -107,20 +124,26 @@
       "description": "Loyalty part of the receipt. Here the user will see e.g. how many 'points' he has earned or how much money he has saved.",
       "type": "object",
       "properties": {
-        "data": {
-          "description": "The loyalty information",
-          "anyOf": [
-            {
-              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/loyalty/loyaltyBuffered.schema.json"
-            },
-            {
-              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/loyalty/loyaltyStructured.schema.json"
-            }
-          ]
+        "loyaltyBuffered": {
+          "type": "object",
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/loyalty/loyaltyBuffered.schema.json"
+        },
+        "loyaltyStructured": {
+          "type": "object",
+          "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/loyalty/loyaltyStructured.schema.json"
         }
       },
-      "required": [
-        "data"
+      "anyOf": [
+        {
+          "required": [
+            "loyaltyBuffered"
+          ]
+        },
+        {
+          "required": [
+            "loyaltyStructured"
+          ]
+        }
       ]
     },
     "cashier": {

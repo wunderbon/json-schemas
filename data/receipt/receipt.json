@@ -356,67 +356,72 @@
     ]
   },
   "clearing": {
-    "payments": [{
-      "description": "Loyalty Voucher 1.00 € No. 0483274632",
-      "total": {
-        "value": 1.00,
-        "currency": "EUR"
-      },
-      "given": {
-        "value": 1.00,
-        "currency": "EUR"
-      },
-      "change": {
-        "value": 0.00,
-        "currency": "EUR"
-      }
-    },{
-      "total": {
-        "value": 2.28,
-        "currency": "EUR"
-      },
-      "given": {
-        "value": 2.28,
-        "currency": "EUR"
-      },
-      "meta": {
-        "type": "basic-card",
-        "data": {
-          "terminalId": "65110006",
-          "receiptNumber": "0371",
-          "transactionNumber": "000904",
-          "date": "2007-08-31",
-          "time": "16:47:00",
-          "total": {
-            "value": 1.50,
-            "currency": "EUR"
-          },
-          "title": "-K-U-N-D-E-N-B-E-L-E-G-",
-          "contractingCompanyNumber": "0511110006",
-          "cardType": "Debit Mastercard",
-          "contactless": true,
-          "truncatedPan": {
-            "number": "############0527",
-            "asterisks": "#"
-          },
-          "cardSequenceNumber": "1",
-          "emvApplicationIdentifier": "A0000000041010",
-          "emvDataBuffer": [
-            "0020008001/A800/3F0002//",
-            "",
-            "00 GENEHMIGUNG KARTE",
-            "GEPRUEFT"
-          ]
+    "cashPayments": [
+      {
+        "description": "Loyalty Voucher 1.00 € No. 0483274632",
+        "total": {
+          "value": 1.00,
+          "currency": "EUR"
+        },
+        "given": {
+          "value": 1.00,
+          "currency": "EUR"
+        },
+        "change": {
+          "value": 0.00,
+          "currency": "EUR"
         }
       }
-    }],
+    ],
+    "cashlessPayments": [
+      {
+        "total": {
+          "value": 2.28,
+          "currency": "EUR"
+        },
+        "given": {
+          "value": 2.28,
+          "currency": "EUR"
+        },
+        "meta": {
+          "type": "basic-card",
+          "data": {
+            "terminalId": "65110006",
+            "receiptNumber": "0371",
+            "transactionNumber": "000904",
+            "date": "2007-08-31",
+            "time": "16:47:00",
+            "total": {
+              "value": 1.50,
+              "currency": "EUR"
+            },
+            "title": "-K-U-N-D-E-N-B-E-L-E-G-",
+            "contractingCompanyNumber": "0511110006",
+            "cardType": "Debit Mastercard",
+            "contactless": true,
+            "truncatedPan": {
+              "number": "############0527",
+              "asterisks": "#"
+            },
+            "cardSequenceNumber": "1",
+            "emvApplicationIdentifier": "A0000000041010",
+            "emvDataBuffer": [
+              "0020008001/A800/3F0002//",
+              "",
+              "00 GENEHMIGUNG KARTE",
+              "GEPRUEFT"
+            ]
+          }
+        }
+      }
+    ],
     "total": {
       "value": 20.40,
       "currency": "EUR"
     }
   },
   "loyalty": {
-    "data": {
+    "loyaltyStructured": {
       "name": "PAYBACK",
       "identifier": {
         "number": "XXXXXXXXX1410",
