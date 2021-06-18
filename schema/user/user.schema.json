@@ -19,12 +19,14 @@
       "enum": [
         "Consumer",
         "Merchant",
-        "Supplier"
+        "Supplier",
+        "wunderbon"
       ],
       "examples": [
         "Consumer",
         "Merchant",
-        "Supplier"
+        "Supplier",
+        "wunderbon"
       ]
     },
     "salutation": {
