@@ -165,6 +165,10 @@
     "barcode": {
       "description": "Barcode",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/barcode/barcode.schema.json"
+    },
+    "tse": {
+      "description": "The TSE tax information (required by german law).",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tse/tse.schema.json"
     }
   },
   "required": [

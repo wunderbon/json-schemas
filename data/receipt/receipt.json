@@ -447,5 +447,17 @@
     "your favorite supermarket!",
     "Check our online delivery",
     "online-delivery-supermarket.com"
-  ]
+  ],
+  "tse": {
+    "signature": "kMgncWoSSGY0je/b4WhW3WupFo4N83skfvT4kDm2uZigSlSzCfh0NT3tgRR2n5VAEhxxfJxQEhv/LA9VmwOirw6lzwYR7Ori4lr2+dj4Ox3L2aj8VytF13OvuY7dTonQ",
+    "transactionCount": 11846,
+    "start": "2021-02-10T15:40:08.000Z",
+    "end": "2021-02-10T15:40:43.000Z",
+    "serialNumber": "EXAMPLE:00:01:2e:42:62:3a:00",
+    "signatureCount": 23685,
+    "barcode": {
+      "format": "QR-Text",
+      "data": "V0;es-9999999999-0001-53;Kassenbeleg-V1;Beleg^22.50_5.95_0.00_0.00_0.00^30.00:Bar:EUR;58;117;2020-01-16T13:31:29.578+01;2020-01-16T13:31:45.547+01;SHA384WITHECDSA;Utc;Sa8QLLmxPXyL4xxgnI6y8clsKLL0xbk8aeiD2t5WWFD07JJU76S5Lol6PTgr6HCSD7pzEOx75WgDOHzuYF6uV2lBmh3Xvu1eou6cjtp+rLYwMO4XYR9/7cH0M/YyPUJj;MHowFAYHKoZIzj0CAQYJKyQDAwIIAQELA2IABASOg+EOCUQ4Qt0CSWj2xrXoRodCQOJgZfh8paJvV4USOGmr6HBIq4gL/WJRrUFqQS920bw0eGYTo0XEQPKV09sg2JL3hmg0emfFTpl0LEOhm2OYsfgvl6VPkY9wvZ+lLQ=="
+    }
+  }
 }

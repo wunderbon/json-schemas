@@ -19,21 +19,12 @@
         "kMgncWoSSGY0je/b4WhW3WupFo4N83skfvT4kDm2uZigSlSzCfh0NT3tgRR2n5VAEhxxfJxQEhv/LA9VmwOirw6lzwYR7Ori4lr2+dj4Ox3L2aj8VytF13OvuY7dTonQ"
       ]
     },
-    "counter": {
-      "description": "The TSE counter.",
+    "transactionCount": {
+      "description": "The TSE transaction counter.",
       "type": "number",
       "minimum": 1,
       "examples": [
-        "270791"
-      ]
-    },
-    "transaction": {
-      "description": "The TSE transaction identifier.",
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 255,
-      "examples": [
-        "130297"
+        11846
       ]
     },
     "start": {
@@ -45,8 +36,8 @@
         "2021-02-10T15:40:08.000Z"
       ]
     },
-    "stop": {
-      "description": "The TSE start timestamp.",
+    "end": {
+      "description": "The TSE end timestamp.",
       "type": "string",
       "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.\\d{3}Z$",
       "maxLength": 24,
@@ -54,19 +45,59 @@
         "2021-02-10T15:40:44.000Z"
       ]
     },
-    "pos": {
-      "description": "The POS unique identifier / serial number.",
+    "timezone": {
       "type": "string",
-      "minimum": 1
+      "description": "The timezone of start and stop.",
+      "enum": [
+        "UTC"
+      ],
+      "examples": [
+        "UTC"
+      ]
+    },
+    "serialNumber": {
+      "description": "The serial number or unique identifier of the POS.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "signatureCount": {
+      "description": "The TSE transaction counter.",
+      "type": "number",
+      "minimum": 1,
+      "examples": [
+        23685
+      ]
+    },
+    "algorithm": {
+      "description": "The algorithm used for calculating the signature.",
+      "type": "string",
+      "maxLength": 512,
+      "examples": [
+        "ecdsa-plain-SHA256"
+      ]
+    },
+    "publicKey": {
+      "description": "Public key of TSE signature.",
+      "type": "string",
+      "minLength": 128,
+      "maxLength": 128,
+      "examples": [
+        "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMHRCTwqWUvX3M7ip7b0pmh5Rs5FsiQju+00maOXAlY6zQRVr7Qa3nrGtQHWTxeC7tyPTeH1mmduWiG+VFtV/ucCAwEAAQ=="
+      ]
+    },
+    "barcode": {
+      "description": "QR-Code representing the data of TSE.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/barcode/barcode.schema.json"
     }
   },
   "required": [
     "signature",
-    "counter",
-    "transaction",
+    "transactionCount",
     "start",
-    "stop",
-    "pos"
+    "end",
+    "serialNumber",
+    "signatureCount"
   ],
   "additionalProperties": false
 }

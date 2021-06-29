@@ -20,7 +20,7 @@
         "EAN-13/UPC-A",
         "EAN-8",
         "ITF",
-        "QR"
+        "QR-Text"
       ],
       "examples": [
         "Code 128",
