@@ -1,0 +1,45 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/group/group.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.1.0",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Group",
+  "description": "A group representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "owner": {
+      "description": "Owner of the group.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+    },
+    "name": {
+      "description": "Name of the group.",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "examples": [
+        "family",
+        "friends",
+        "colleagues"
+      ]
+    },
+    "members": {
+      "description": "Members of the group.",
+      "type": "array",
+      "items": {
+        "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+      },
+      "minItems": 0,
+      "maxItems": 10
+    }
+  },
+  "required": [
+    "owner",
+    "name",
+    "members"
+  ],
+  "additionalProperties": false
+}
