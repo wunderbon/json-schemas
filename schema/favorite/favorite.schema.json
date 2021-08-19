@@ -14,9 +14,10 @@
     "type": {
       "description": "Favorite type.",
       "enum": [
+        "identifier",
+        "location",
         "merchant",
         "network",
-        "location",
         "product",
         "receipt"
       ],
