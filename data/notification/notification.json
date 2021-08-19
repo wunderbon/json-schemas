@@ -1,0 +1,7 @@
+{
+  "type": "email",
+  "to": "Jane Doe <jane.doe@example.com>",
+  "data": {
+    "priority": "high"
+  }
+}
