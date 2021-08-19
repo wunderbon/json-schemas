@@ -1,0 +1,41 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/notification/notification.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.1.0",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Notification",
+  "description": "A notification representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "Notification type.",
+      "enum": [
+        "email",
+        "sms",
+        "push"
+      ],
+      "examples": [
+        "email",
+        "push"
+      ]
+    },
+    "to": {
+      "description": "Recipient of the notification.",
+      "type": "string"
+    },
+    "data":  {
+      "description": "Data required to process the notification.",
+      "type": "object"
+    }
+  },
+  "required": [
+    "type",
+    "to",
+    "data"
+  ],
+  "additionalProperties": false
+}
