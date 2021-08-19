@@ -15,10 +15,6 @@
       "description": "Issuer of the receipt.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
     },
-    "owner": {
-      "description": "Owner of the receipt.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
-    },
     "merchant": {
       "description": "The Id of the issuer (Merchant). Each Merchant will recive an unique User-Id.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
@@ -173,7 +169,6 @@
   },
   "required": [
     "issuer",
-    "owner" ,
     "merchant",
     "location",
     "pos",

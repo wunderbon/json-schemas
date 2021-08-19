@@ -11,10 +11,6 @@
   "description": "Identifier representation within the wunderbon domain. This identifier can be any Card-Id from any of our supported networks.",
   "type": "object",
   "properties": {
-    "owner": {
-      "description": "Owner of the identifier.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
-    },
     "name": {
       "description": "Identifier within the wunderbon network.",
       "type": "string",
@@ -33,7 +29,6 @@
   },
   "additionalProperties": false,
   "required": [
-    "owner",
     "network",
     "number"
   ]

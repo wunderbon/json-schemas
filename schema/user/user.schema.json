@@ -13,21 +13,7 @@
   "properties": {
     "audience": {
       "description": "Audience of the User.",
-      "type": "string",
-      "minLength": 8,
-      "maxLength": 8,
-      "enum": [
-        "Consumer",
-        "Merchant",
-        "Supplier",
-        "wunderbon"
-      ],
-      "examples": [
-        "Consumer",
-        "Merchant",
-        "Supplier",
-        "wunderbon"
-      ]
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/audience/audience.schema.json"
     },
     "salutation": {
       "description": "Salutation of User.",
@@ -92,7 +78,7 @@
         "description": "List of valid scopes.",
         "type": "string",
         "minLength": 5,
-        "maxLength": 255,
+        "maxLength": 255
       }
     }
   },

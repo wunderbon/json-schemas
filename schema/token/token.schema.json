@@ -11,10 +11,6 @@
   "description": "Token representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-    "owner": {
-      "description": "Owner of the token.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
-    },
     "value": {
       "description": "The token (value) itself.",
       "oneOf": [
@@ -41,7 +37,6 @@
   },
   "additionalProperties": false,
   "required": [
-    "owner",
     "value",
     "type"
   ]

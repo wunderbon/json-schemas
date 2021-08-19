@@ -1,0 +1,25 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/entityStatus/entityStatus.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.1.0",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Entity Status",
+  "description": "Status of an entity. Can be either 1 (active [default]), 0 (disabled/inactive e.g. prepared for deletion).",
+  "type": "integer",
+  "default": 1,
+  "enum": [
+    0,
+    1
+  ],
+  "examples": [
+    0,
+    1
+  ]
+}
+
+
+

@@ -1,0 +1,20 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/audience/audience.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.1.0",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Audience",
+  "description": "Audiences user can act as or join us as (eg. Consumer, Merchant, ...).",
+  "type": "string",
+  "enum": [
+    "Consumer",
+    "Merchant",
+    "Supplier",
+    "wunderbon",
+    "Network"
+  ]
+}
