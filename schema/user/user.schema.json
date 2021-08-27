@@ -21,10 +21,12 @@
       "minLength": 3,
       "maxLength": 4,
       "enum": [
+        "Mx.",
         "Mr.",
         "Mrs."
       ],
       "examples": [
+        "Mx.",
         "Mr.",
         "Mrs."
       ]

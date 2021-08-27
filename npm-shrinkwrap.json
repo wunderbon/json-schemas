@@ -1,6 +1,6 @@
 {
   "name": "@wunderbon/json-schemas",
-  "version": "v0.16.0",
+  "version": "v0.17.0",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# test code
-npm run-script test
+# Test code
+npm run-script test || exit 1
 
 if [ "$?" = "0" ]; then
   # exit with success - important for ci system
