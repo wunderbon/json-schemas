@@ -18,12 +18,18 @@
       "maxLength": 255
     },
     "network": {
-      "description": "Provider Internal Id of the network (e.g. 1, 2, ... 255).",
-      "type": "number",
+      "description": "Internal id (e.g. 1, 2, ... 255) of the network.",
+      "type": "integer",
       "minimum": 1,
-      "maximum": 255
+      "maximum": 255,
+      "examples": [
+        1,
+        2,
+        255
+      ]
     },
     "value": {
+      "description": "The value of the identifier (e.g. PAN, Id, Code, ...).",
       "type": "string",
       "minLength": 1,
       "maxLength": 1024
