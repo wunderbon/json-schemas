@@ -1,5 +1,5 @@
 {
   "name": "My Creditcard",
-  "number": "1234123412341234",
-  "network": "621086c2-60a3-47dc-bcaf-358a3a5c79c8"
+  "network": 1,
+  "value": "NDE1NzMxMzg3ODQ5NTEzMzY2NDc3NDM3NTc2ZTU4NGY3ODQ1NzMyYjU2Nzk0NTYzNWE3NjM4NTIzMTRjNWE2NTJmNDEzZDNk"
 }

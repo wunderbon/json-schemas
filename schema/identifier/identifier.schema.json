@@ -18,10 +18,12 @@
       "maxLength": 255
     },
     "network": {
-      "description": "The Id of the network the identifier belongs to.",
-      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
+      "description": "Provider Internal Id of the network (e.g. 1, 2, ... 255).",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 255
     },
-    "number": {
+    "value": {
       "type": "string",
       "minLength": 1,
       "maxLength": 1024
@@ -30,6 +32,6 @@
   "additionalProperties": false,
   "required": [
     "network",
-    "number"
+    "value"
   ]
 }
