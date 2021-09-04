@@ -11,8 +11,8 @@
   "description": "A favorite representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-    "type": {
-      "description": "Favorite type.",
+    "entityType": {
+      "description": "Favorites entity type.",
       "enum": [
         "Identifier",
         "Location",
@@ -32,7 +32,7 @@
     }
   },
   "required": [
-    "type",
+    "entityType",
     "entity"
   ],
   "additionalProperties": false
