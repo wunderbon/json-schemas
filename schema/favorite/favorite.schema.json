@@ -14,16 +14,16 @@
     "type": {
       "description": "Favorite type.",
       "enum": [
-        "identifier",
-        "location",
-        "merchant",
-        "network",
-        "product",
-        "receipt"
+        "Identifier",
+        "Location",
+        "Merchant",
+        "Network",
+        "Product",
+        "Receipt"
       ],
       "examples": [
-        "receipt",
-        "merchant"
+        "Receipt",
+        "Merchant"
       ]
     },
     "entity": {
