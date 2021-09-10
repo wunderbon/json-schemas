@@ -11,6 +11,18 @@
   "description": "A tag representation within the wunderbon domain.",
   "type": "object",
   "properties": {
+    "entityType": {
+      "description": "Tagged entity type.",
+      "enum": [
+        "Location",
+        "Merchant",
+        "Receipt"
+      ],
+      "examples": [
+        "Receipt",
+        "Merchant"
+      ]
+    },
     "entity": {
       "description": "Id of the entity the tag belongs to.",
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/uuid/uuid.schema.json"
@@ -21,13 +33,14 @@
       "minlength": 3,
       "maxLength": 255,
       "examples": [
-        "foo",
-        "bar",
-        "baz"
+        "birthday",
+        "party",
+        "hangover"
       ]
     }
   },
   "required": [
+    "entityType",
     "entity",
     "value"
   ],
