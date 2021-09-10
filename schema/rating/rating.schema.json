@@ -11,18 +11,18 @@
   "description": "A rating representation within the wunderbon domain.",
   "type": "object",
   "properties": {
-    "type": {
-      "description": "Rating type.",
+    "entityType": {
+      "description": "Ratings entity type.",
       "enum": [
-        "merchant",
-        "network",
-        "location",
-        "product",
-        "receipt"
+        "Location",
+        "Merchant",
+        "Network",
+        "Product",
+        "Receipt"
       ],
       "examples": [
-        "receipt",
-        "merchant"
+        "Receipt",
+        "Merchant"
       ]
     },
     "entity": {
@@ -54,7 +54,7 @@
     }
   },
   "required": [
-    "type",
+    "entityType",
     "entity",
     "value"
   ],
