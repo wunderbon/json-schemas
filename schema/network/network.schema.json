@@ -46,7 +46,7 @@
       ],
       "additionalProperties": false
     },
-    "value": {
+    "address": {
       "description": "Internal id (e.g. 1, 2, ... 255) of the network.",
       "type": "integer",
       "minimum": 1,
@@ -61,7 +61,7 @@
   "required": [
     "name",
     "provider",
-    "value"
+    "address"
   ],
   "additionalProperties": false
 }
