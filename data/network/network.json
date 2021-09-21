@@ -1,6 +1,8 @@
 {
-  "name": "eWAN",
-  "description": "eWAN is the wunderbon account number. This network is the wunderbon native one.",
+  "name": "wunderbon",
+  "description": "The wunderbon network using WAN as identifier.",
+  "logo": "https://cdn.wunderbon.app/wp-content/uploads/2018/08/wunderbon-logo-48x48.png",
+  "color": "ffa400",
   "provider": {
     "name": {
       "entityName": "wunderbon Operation GmbH & Co. KG",

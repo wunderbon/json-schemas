@@ -33,6 +33,28 @@
         "This is your bank."
       ]
     },
+    "logo": {
+      "description": "Logo image (JPG or PNG) of the network (1:1).",
+      "type": "string",
+      "minLength": 12,
+      "maxLength": 1024,
+      "pattern": "^(http(s?):)([/|.|\\w|\\s|-])*\\.(?:jpg|gif|png)",
+      "examples": [
+        "http://www.google.de/logo.jpg",
+        "https://foo.com/folder/folder/folder/logo.png"
+      ]
+    },
+    "color": {
+      "description": "Primary color of the network.",
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 6,
+      "pattern": "^[0-9A-Za-z]{6,6}$",
+      "examples": [
+        "ffa400",
+        "074aab"
+      ]
+    },
     "provider": {
       "type": "object",
       "properties": {
