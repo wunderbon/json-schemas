@@ -1,0 +1,34 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/transaction/transaction.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.1.0",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Transaction",
+  "description": "Transaction representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "transactionId": {
+      "description": "The Id of the transaction.",
+      "type": "string",
+      "examples": [
+        "77dyQ3LB2p8TfSqQWHGzqadd6UWddJAKRJsYjphwDhMh"
+      ]
+    },
+    "description": {
+      "description": "Content of the transaction.",
+      "type": "string",
+      "examples": [
+        "0d4cd516de2f6d963bf06acc7ec441c8025d96d755bea5bf9275401d803853992b5c4b379ee16dcfb47428e9268f342c3057d9c77baaa0a014b9b709bd7196a9"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "transactionId",
+    "description"
+  ]
+}

@@ -27,10 +27,12 @@
       "type": "string",
       "enum": [
         "transmission",
+        "authorization",
         "identifier"
       ],
       "examples": [
         "transmission",
+        "authorization",
         "identifier"
       ]
     }
