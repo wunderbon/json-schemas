@@ -18,7 +18,7 @@
         "77dyQ3LB2p8TfSqQWHGzqadd6UWddJAKRJsYjphwDhMh"
       ]
     },
-    "description": {
+    "content": {
       "description": "Content of the transaction.",
       "type": "string",
       "examples": [
@@ -29,6 +29,6 @@
   "additionalProperties": false,
   "required": [
     "transactionId",
-    "description"
+    "content"
   ]
 }
