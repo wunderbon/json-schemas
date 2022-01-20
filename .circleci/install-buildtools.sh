@@ -22,6 +22,8 @@ apk update && \
 # Upgrade pip
 pip install --upgrade pip
 
+apk add --update py-pip
+
 if [ "$?" = "0" ]; then
   # exit with success - important for ci system
   exit 0
@@ -30,6 +32,3 @@ else
 	# exit with error - important for ci system
 	exit 1
 fi
-
-
-apk add --update py-pip

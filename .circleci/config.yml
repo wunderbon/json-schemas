@@ -1,8 +1,9 @@
 version: 2.1
 
 defaults: &defaults
+  resource_class: large
   docker:
-    - image: google/cloud-sdk:alpine
+    - image: google/cloud-sdk:360.0.0-alpine
 
 jobs:
   build:

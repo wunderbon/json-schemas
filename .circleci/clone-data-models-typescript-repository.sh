@@ -7,7 +7,7 @@ GIT_REPOSITORY_BRANCH="master"
 GIT_REPOSITORY_URL="https://${GIT_REPOSITORY_USERNAME}:${GIT_REPOSITORY_WRITE_ACCESS_KEY}@bitbucket.org/wunderbon/data-models-typescript.git"
 
 # What we do
-echo "Cloning data model typescript repository from \"${GIT_REPOSITORY_URL}\""
+echo "Cloning data-model-typescript repository from \"${GIT_REPOSITORY_URL}\""
 
 # Do it
 git clone -b ${GIT_REPOSITORY_BRANCH} ${GIT_REPOSITORY_URL} ${TARGETPATH}/data-models-typescript 2>&1
