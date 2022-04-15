@@ -71,6 +71,19 @@
       ],
       "additionalProperties": false
     },
+    "cartEncrypted": {
+      "description": "The cart contains an encrypted collection of cartItems (representation of a product, merchant added information and the pricing).",
+      "type": "object",
+      "properties": {
+        "payload": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "payload"
+      ],
+      "additionalProperties": false
+    },
     "clearing": {
       "description": "Payment part of the receipt. This node contains information on how the amount of the cart was settled.",
       "type": "object",
@@ -167,12 +180,23 @@
       "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/tse/tse.schema.json"
     }
   },
+  "anyOf": [
+    {
+      "required": [
+        "cart"
+      ]
+    },
+    {
+      "required": [
+        "cartEncrypted"
+      ]
+    }
+  ],
   "required": [
     "issuer",
     "merchant",
     "location",
     "pos",
-    "cart",
     "clearing"
   ],
   "additionalProperties": false
