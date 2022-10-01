@@ -17,13 +17,38 @@
       "maxLength": 255
     },
     "name": {
-      "description": "A short product name.",
+      "type": "object",
+      "properties": {
+        "short": {
+          "description": "Short product name.",
+          "examples": [
+            "Sun Screen"
+          ],
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "long": {
+          "description": "Full product name.",
+          "examples": [
+            "Sol Feliz LSF 30 Dermatologic Sunscreen"
+          ],
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "short"
+      ]
+    },
+    "description": {
+      "description": "Product description.",
       "type": "string",
+      "minLength": 12,
+      "maxLength": 1024,
       "examples": [
-        "Sun Screen"
-      ],
-      "minLength": 1,
-      "maxLength": 255
+        "100 ml / 133 g brutto\n\n- ohne Parfüm\n- hypoallergen\n- täglich für Gesicht und Körper\n- für sensible Haut\n- vom Dermatologen entwickelt\n\nWas Sol Feliz besonders auszeichnet:\n- 5-Sterne UVA Schutz gegen lichtbedingte Alterung, Falten und Zellschädigung (Boots-Standard)\n- vom europäischen Experten für Sonnenschutz entwickelt (unabhängige Entwicklung)\n- zieht schnell ein\n- ultraleichte Textur\n- wasserfest\n- reine, matt-seidige Haut\n- deutsche Dermakosmetik\n- langzeit-UV-Breitbandfilter mit hohem Schutz gegen UVB- und UVA-Strahlen\n- ideale Basis für Make-Up"
+      ]
     }
   },
   "additionalProperties": false,

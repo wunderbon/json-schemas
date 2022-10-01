@@ -1,4 +1,6 @@
 {
   "productCode": "123456",
-  "name": "Sol Feliz LSF 30 Dermatol. Sonnencreme"
+  "name": {
+    "short": "Sol Feliz LSF 30 Dermatol. Sonnencreme"
+  }
 }

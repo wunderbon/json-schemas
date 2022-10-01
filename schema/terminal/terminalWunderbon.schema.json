@@ -1,0 +1,67 @@
+{
+  "$id": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/terminal/terminalWunderbon.schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "version": "v0.1.0",
+  "contact": {
+    "name": "wunderbon Operation GmbH & Co. KG",
+    "url": "https://developers.wunderbon.io",
+    "email": "open-source@wunderbon.io"
+  },
+  "title": "Terminal-Wunderbon",
+  "description": "A wunderbon terminal response representation within the wunderbon domain.",
+  "type": "object",
+  "properties": {
+    "title": {
+      "description": "The title of the sales slip.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "examples": [
+        "+ W U N D E R B O N +",
+        "-K-U-N-D-E-N-B-E-L-E-G-",
+        "- C U S T O M E R -"
+      ]
+    },
+    "date": {
+      "description": "Date of the transaction (ISO 8601 YYYY-MM-TT).",
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "examples": [
+        "2020-01-01",
+        "2020-03-05",
+        "2019-05-23"
+      ]
+    },
+    "time": {
+      "description": "Time of the transaction (e.g. 12:00:00).",
+      "type": "string",
+      "pattern": "^[0-9]{2}:[0-9]{2}:[0-9]{2}$",
+      "examples": [
+        "12:00:00",
+        "23:39:00"
+      ]
+    },
+    "reference": {
+      "description": "A generic reference field.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
+      "examples": [
+        "some reference text",
+        "Bill No. 23523",
+        "Customer 9876"
+      ]
+    },
+    "total": {
+      "description": "Total amount of transaction.",
+      "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/amount/amount.schema.json"
+    }
+  },
+  "required": [
+    "title",
+    "date",
+    "time",
+    "total"
+  ],
+  "additionalProperties": false
+}

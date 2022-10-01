@@ -33,7 +33,8 @@
           "description": "The cashless payment type. Aligned to w3 (@see https://www.w3.org/TR/payment-method-id/#registry).",
           "type": "string",
           "enum": [
-            "basic-card"
+            "basic-card",
+            "wunderbon"
           ],
           "default": "basic-card"
         },
@@ -45,6 +46,9 @@
             },
             {
               "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/terminal/terminalStructured.schema.json"
+            },
+            {
+              "$ref": "https://bitbucket.org/wunderbon/json-schemas/raw/master/schema/terminal/terminalWunderbon.schema.json"
             }
           ]
         }

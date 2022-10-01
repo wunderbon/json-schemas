@@ -33,6 +33,7 @@
     "BOV",
     "BRL",
     "BSD",
+    "BTC",
     "BTN",
     "BWP",
     "BYR",
@@ -59,6 +60,7 @@
     "EGP",
     "ERN",
     "ETB",
+    "ETH",
     "EUR",
     "FJD",
     "FKP",
@@ -167,6 +169,7 @@
     "VEF",
     "VND",
     "VUV",
+    "WAV",
     "WST",
     "XAF",
     "XAG",
@@ -193,6 +196,6 @@
   "examples": [
     "EUR",
     "USD",
-    "THB"
+    "WAV"
   ]
 }
