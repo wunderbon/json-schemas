@@ -1,7 +1,10 @@
 {
   "product": {
     "data": {
-      "name": "Dummy Product",
+      "name": {
+        "short": "Gouda Cheese",
+        "long": "Gouda Cheese (Bio) 250 gr. AH Bio"
+      },
       "productCode": "0720260063170"
     },
     "quantifier": {
